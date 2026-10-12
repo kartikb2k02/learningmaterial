@@ -60,6 +60,21 @@ Notes on the shape:
   `product-management/XIII-product-by-sector`. Never restate market shape; state the delta.
 * `## Try it` has three tasks and the third applies the lesson to the reader's own product.
 
+## Where a file goes
+
+The course page and the sidebar build themselves from the folder layout, so placement is the only
+instruction the site needs.
+
+| Put it here | It appears as |
+|---|---|
+| A folder listed under a level in `config.yaml` | A topic, under that level, in order |
+| A folder **not** listed under any level | A card under **Build** |
+| A loose `.md` file at the course root | A card under **Reference** |
+| `README.md` in any folder | That folder's landing page |
+
+So `projects/` is the Build shelf and `GLOSSARY.md` is the Reference shelf purely because of where
+they sit. Nothing registers them.
+
 ## Diagrams
 
 Written as Mermaid, rendered in a hand sketched style. One diagram per section at most, and each

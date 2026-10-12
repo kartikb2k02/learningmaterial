@@ -55,7 +55,10 @@ go run ./tools/logos                              # revendor diagram icons (need
 ## Repository layout
 
 ```
-product-management/     the course: folders are topics, files are lessons
+product-management/     the course
+  <topic>/              a topic: README.md is its landing page, 01-*.md are lessons
+  projects/             the Build shelf: things to construct, one folder each
+  GLOSSARY.md           the Reference shelf: any loose .md here becomes one
 config.yaml             which courses are published, and the level each topic sits at
 content/                the content adapter that turns the folders above into a site
 layouts/ assets/        the site itself. Adding a course does not touch these.
