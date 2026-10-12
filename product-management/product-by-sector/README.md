@@ -1,18 +1,19 @@
 # Product by Sector
 
-The same function, bent by the market it runs in. Seven sectors, each one a full product treatment
-rather than a list of industry facts: who actually buys, what the cycle does to the loop, what the
-product must contain that no user ever asked for, and what that does to the roadmap.
+The same job, bent by the market it runs in. Seven sectors, each a full product treatment rather
+than a list of industry facts: who actually buys, what the cycle does to the loop, what the product
+must contain that no user ever asked for, where a model is allowed to decide, and what that does to
+the roadmap.
 
-**Read [Product Archetypes](../what-a-model-changes/04-ai-product-shapes.md) first.** The shape of a product
-usually determines more than the market it sells into. A fintech marketplace behaves like a
+**Read [AI Product Shapes](../what-a-model-changes/04-ai-product-shapes.md) first.** The shape of a
+product usually determines more than the market it sells into. A fintech marketplace behaves like a
 marketplace that happens to move money, and borrowing the fintech playbook for it will mislead you
 about liquidity, which is the thing that will actually kill it.
 
 | # | Lesson | The question it answers |
 |---|---|---|
 | 01 | [Enterprise B2B SaaS](01-enterprise-b2b-saas.md) | Why does the buyer want things the user will never see, and what does that cost? |
-| 02 | [Fintech](02-fintech.md) | What changes when being wrong moves money and the regulator has a veto? |
+| 02 | [Fintech](02-fintech.md) | What changes when being wrong moves money and a regulator has an opinion about how? |
 | 03 | [Ecommerce and D2C](03-ecommerce-and-d2c.md) | Why is this a margin business wearing a funnel costume? |
 | 04 | [Marketplaces](04-marketplaces.md) | How do you build for two customers whose interests oppose each other? |
 | 05 | [Devtools and Infrastructure](05-devtools-and-infrastructure.md) | What happens when your users can read the source and will tell you why you are wrong? |
@@ -21,8 +22,8 @@ about liquidity, which is the thing that will actually kill it.
 
 ## The comparison matrix
 
-The five structural forces, across all seven. This table is the reason the sector block exists in
-one place: every other course states its deltas against these rows and never restates them.
+The five structural forces, across all seven. This table is why the sector block exists in one
+place: every other discussion states its deltas against these rows and never restates them.
 
 | | Who signs | Cycle | Regulation | Data constraint | Margin shape | Abuse surface |
 |---|---|---|---|---|---|---|
@@ -36,7 +37,7 @@ one place: every other course states its deltas against these rows and never res
 
 Treat these as orientation, not benchmarks. They are the typical shapes seen as of **12 October
 2026**, and they are deliberately ranges. Real figures, with sources and dates, live in
-[Benchmarks and Their Limits](../benchmarks-and-their-limits/README.md).
+Benchmarks and Their Limits.
 
 ## How to read a sector you have never worked in
 

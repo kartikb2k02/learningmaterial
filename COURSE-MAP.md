@@ -12,9 +12,9 @@ Every lesson below is written as *the question it answers*, which is the convent
 | Intermediate | 5 | 34 | Building with a model in the product |
 | Advanced | 5 | 34 | Shipping it safely and keeping it working |
 | Expert | 12 | 78 | Planning, measurement and the business. Everything a product manager is held to |
-| Sectors | 1 | 7 | The same job bent by the market it runs in |
+| Sectors | 1 | 7 | ✅ **complete.** The same job bent by the market it runs in |
 
-Written so far: 11 lessons, plus 6 project briefs and the glossary.
+Written so far: 17 lessons, plus 6 project briefs and the glossary. The Sectors level is finished.
 
 ---
 
@@ -445,20 +445,20 @@ measured, and what would falsify it.*
 
 # Sectors
 
-## `product-by-sector` ✅ partly written
+## `product-by-sector` ✅ complete
 
 *Read `what-a-model-changes/04-ai-product-shapes` first. Shape usually determines more than market.
 The topic README carries the cross sector comparison matrix that everything else links to.*
 
 | # | Lesson | The question it answers |
 |---|---|---|
-| 01 | Enterprise B2B SaaS ✅ | Why does the buyer want things the user will never see, and what does AI add to the questionnaire? |
-| 02 | Fintech | What changes when being wrong moves money and a model may not decide alone? |
-| 03 | Ecommerce and D2C | Why is this a margin business, and where does a model pay for itself per order? |
-| 04 | Marketplaces | How do you serve two opposed customers, and what does matching by model change? |
-| 05 | Devtools and Infrastructure | What happens when your users can read the source and your product writes code? |
-| 06 | Healthtech and Regulated Care | How do you build around a clinician when a model may not diagnose? |
-| 07 | Vertical SaaS | How do you win a small market completely, and why is AI the strongest case here? |
+| 01 | Enterprise B2B SaaS ✅ | Why does the buyer want things the user will never see, and what does that cost? |
+| 02 | Fintech ✅ | What changes when being wrong moves money and a regulator has an opinion about how? |
+| 03 | Ecommerce and D2C ✅ | Why is this a margin business wearing a funnel costume? |
+| 04 | Marketplaces ✅ | How do you build for two customers whose interests oppose each other? |
+| 05 | Devtools and Infrastructure ✅ | What happens when your users can read the source and will tell you why you are wrong? |
+| 06 | Healthtech and Regulated Care ✅ | How do you build around a clinician when the buyer, the payer and the patient are three people? |
+| 07 | Vertical SaaS ✅ | How do you win a small market completely, and when does services gravity eat you? |
 
 ---
 
