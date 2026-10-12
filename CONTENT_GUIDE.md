@@ -73,8 +73,12 @@ instruction the site needs.
 | A loose `.md` file at the course root | A card under **Reference** |
 | `README.md` in any folder | That folder's landing page |
 
-So `projects/` is the Build shelf and `GLOSSARY.md` is the Reference shelf purely because of where
-they sit. Nothing registers them.
+So `projects/` is the Build shelf, and `ROADMAP.md`, `WORKFLOWS.md`, `REFERENCES.md` and
+`GLOSSARY.md` are the Reference shelf, purely because of where they sit. Nothing registers them.
+
+**Every link in `REFERENCES.md` must have been checked live before it is added**, and the page
+carries the date it was checked. A source that cannot be reached from a plain request is left out
+rather than quoted from memory, which is the same standard the lessons apply to numbers.
 
 ## Diagrams
 

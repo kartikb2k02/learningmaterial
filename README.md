@@ -14,6 +14,10 @@ to do both: measure honestly, with numbers you can rerun, and explain the mechan
 | `revenue-operations/` | Operating cadence, the funnel as a data model, systems of record, process. *Coming soon.* |
 | `ai-engineering/` | Reserved. Most of this material now lives inside the product course. *Coming soon.* |
 
+Alongside the lessons sit four reference pages: a **roadmap** with four routes through the course,
+**workflows** as runnable procedures, **references** to verified outside sources, and a
+**glossary**. Start with the roadmap.
+
 Courses are organised by **topic**: a course is a list of topics, a topic is a list of lessons.
 Nothing is numbered as a module.
 
@@ -68,7 +72,10 @@ go run ./tools/logos                              # revendor diagram icons (need
 product-management/     the course
   <topic>/              a topic: README.md is its landing page, 01-*.md are lessons
   projects/             the Build shelf: things to construct, one folder each
-  GLOSSARY.md           the Reference shelf: any loose .md here becomes one
+  ROADMAP.md            the Reference shelf: any loose .md at the course root becomes a card
+  WORKFLOWS.md          nine procedures, each with steps and what it produces
+  REFERENCES.md         outside sources, every link checked live
+  GLOSSARY.md           the terms this course uses
 config.yaml             which courses are published, and the level each topic sits at
 content/                the content adapter that turns the folders above into a site
 layouts/ assets/        the site itself. Adding a course does not touch these.
