@@ -31,14 +31,26 @@ params:
     url: https://github.com/kartikb2k02
   # github: https://github.com/kartikb2k02/learningmaterial
 
-  # The five learning levels, in order. Every topic of every course belongs to one.
+  # The learning levels, in order. Every topic of every course belongs to one.
   levels:
-    - { key: foundations,  name: Foundations,  blurb: Start here, and learn the job. }
-    - { key: basic,        name: Basic,        blurb: Users, screens, systems, models. }
-    - { key: intermediate, name: Intermediate, blurb: Build with a model in the product. }
-    - { key: advanced,     name: Advanced,     blurb: Ship it safely, and keep it working. }
-    - { key: expert,       name: Expert,       blurb: Plan it, measure it, run the business. }
-    - { key: sectors,      name: Sectors,      blurb: The same job, bent by the market it runs in. }
+    - key: foundations
+      name: Foundations
+      blurb: Start here, and learn the job itself.
+    - key: basic
+      name: Basic
+      blurb: Users, screens, systems and models.
+    - key: intermediate
+      name: Intermediate
+      blurb: Build with a model in the product.
+    - key: advanced
+      name: Advanced
+      blurb: Ship it safely, and keep it working.
+    - key: expert
+      name: Expert
+      blurb: Plan it, measure it, run the business.
+    - key: sectors
+      name: Sectors
+      blurb: The same job, bent by the market it runs in.
 
   courses:
     - dir: product-management

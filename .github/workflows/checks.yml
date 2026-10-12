@@ -20,6 +20,7 @@ jobs:
           hugo-version: '0.139.0'
           extended: true
       - run: hugo config > /dev/null
+      - run: go run ./tools/configcheck
 
       - name: Go in lessons compiles, vets and runs
         run: go run ./tools/gocheck -run product-management metrics-and-models

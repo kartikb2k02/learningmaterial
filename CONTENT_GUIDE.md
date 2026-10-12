@@ -126,6 +126,7 @@ go run ./tools/gocheck -run product-management   # format, vet and execute every
 go run ./tools/stylecheck product-management     # a dash left in prose or a bullet
 go run ./tools/diagramcheck product-management   # logo tokens, class names, HTML in labels
 go run ./tools/linkcheck -pending                # dangling links, grouped by unwritten folder
+go run ./tools/configcheck                       # the two ways config.yaml truncates silently
 ```
 
 `diagramcheck` catches the failures that render silently rather than loudly: a logo token with no
@@ -136,9 +137,12 @@ has to pass before a course is called complete.
 
 Two gotchas that have each cost time once already:
 
-* **A colon inside an unquoted YAML value breaks `config.yaml`.** Because the house style uses a
-  colon where most writing would use a dash, every `summary` and `description` has to be quoted.
-  Run `hugo config` after any config edit; the failure is silent until the next build.
+* **`config.yaml` fails silently in two ways, and `go run ./tools/configcheck` catches both.**
+  A colon inside an unquoted value makes it a nested mapping, which breaks the build with a
+  cryptic message; the house style uses colons where most writing uses dashes, so quote every
+  `summary` and `description`. Worse, inside a flow mapping `{ a: 1, b: 2 }` a comma starts a new
+  key, so `blurb: Start here, and learn the job.` silently keeps only "Start here" and the site
+  builds happily with a truncated string. Use block mappings, never flow mappings.
 * **Home page card summaries wrap to two lines at about 100 characters.** Longer than that and the
   cards stop lining up, which is what the length is tuned for.
 
