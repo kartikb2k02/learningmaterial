@@ -1,2 +1,7 @@
-{{/* Short course name: "GPU Engineering — From Pixels…" -> "GPU Engineering". */}}
-{{ return (index (split .Title " — ") 0) }}
+{{/* Short course name: the part before the subtitle separator.
+     "Product Management: From a Problem to a Priced Product" -> "Product Management".
+     Accepts a colon or an em dash, so headings written either way shorten correctly. */}}
+{{ $t := .Title }}
+{{ $t = index (split $t " — ") 0 }}
+{{ $t = index (split $t ": ") 0 }}
+{{ return $t }}
