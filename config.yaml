@@ -1,5 +1,5 @@
 baseURL: https://product.kartikbhalerao.in/
-title: Operator
+title: Prodloop
 locale: en
 enableGitInfo: false
 disableKinds: [taxonomy, term, rss]
@@ -20,11 +20,11 @@ enableRobotsTXT: true
 # ─────────────────────────────────────────────────────────────────────────────
 params:
   hero:
-    title: Learn how products are built, grown and sold
-  footer: Operator is a working library for people who ship, price and sell software.
+    title: How AI products are actually built
+  footer: Prodloop is a working library for people who build AI products.
   seo:
-    home_title: Product, Growth, GTM and Operations, from first principles | Operator
-    description: Practitioner courses on product management, growth, go to market, revenue operations and building with AI. Every lesson ends in a diagram, a number you can run, and an artifact.
+    home_title: "AI Product Management, Evals, Pricing and Metrics | Prodloop"
+    description: "Practitioner courses on building AI products: specifying behaviour you cannot pin down, evaluating output you cannot assert on, pricing a feature whose cost scales with use, and the metrics for all of it."
     image: social-card.png
   author:
     name: Kartik Bhalerao

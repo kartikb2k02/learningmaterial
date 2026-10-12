@@ -189,8 +189,7 @@ In [`CONTENT_GUIDE.md`](CONTENT_GUIDE.md), as a checklist.
 
 ## 8. Open decisions
 
-1. **Site title.** "Operator" no longer describes the site. Proposed **AI Product**, hero line
-   *How AI products are actually built*.
+1. ~~Site title.~~ **Settled: Prodloop**, hero line *How AI products are actually built*.
 2. **Folder renames.** `product-management` to `ai-product-management`, and `metrics-and-models` to
    `metrics-and-economics`. Cheap now, expensive after a hundred lessons of cross links.
 3. **Dropped material.** Classic platform and API product work, classic archetypes such as

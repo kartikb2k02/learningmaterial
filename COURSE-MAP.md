@@ -40,8 +40,7 @@ Four changes to make before writing resumes.
 1. **Rename the course folder** `product-management` to `ai-product-management`, and
    `metrics-and-models` to `metrics-and-economics`. Two folder renames, two `config.yaml` entries,
    two `module.mounts` lines, and about six cross links.
-2. **Retitle the site.** "Operator" no longer describes it. Proposed title **AI Product**, hero
-   line *How AI products are actually built*.
+2. **Retitle the site.** Settled: **Prodloop**, hero line *How AI products are actually built*.
 3. **Drop the separate `ai-engineering` course.** It is absorbed into the flagship, because an AI
    course inside an AI library is a tautology.
 4. **Rewire one prerequisite.** The sector README currently points at a classic

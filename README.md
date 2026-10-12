@@ -1,6 +1,7 @@
-# Operator
+# Prodloop
 
-A working library for people who build, grow, price and sell software, published as a static site.
+A working library on how modern AI products are actually built, published as a static site at
+[product.kartikbhalerao.in](https://product.kartikbhalerao.in/).
 
 | Course | What it covers |
 |---|---|
