@@ -1,72 +1,29 @@
-# Course Map: AI Product
+# Course Map
 
-**Site:** product.kartikbhalerao.in · **Repo:** github.com/kartikb2k02/learningmaterial
+**Prodloop** · product.kartikbhalerao.in · one course, six levels, 34 topics, about 221 lessons.
 
-Positioning after the revamp: **how modern AI products are actually built.** Not classic product
-management with an AI chapter bolted on, and not an engineering course. The subject is the product
-work that only exists because there is a model in the product: specifying behaviour you cannot
-pin down, evaluating output you cannot assert on, pricing a feature whose cost scales with use,
-and designing for an answer that is sometimes wrong.
+Every lesson below is written as *the question it answers*, which is the convention the topic
+`README.md` tables use, so each block is copy and paste ready when the topic gets written.
 
-Five courses. Lesson rows below are written as *the question it answers*, which is the same
-convention the topic `README.md` tables use, so each table is copy and paste ready.
+| Level | Topics | Lessons | What the level is for |
+|---|---|---|---|
+| Foundations | 6 | 36 | Start here. The job itself, how to get into it, and the whole product function with no model in it |
+| Basic | 5 | 32 | Users, screens, systems and models. The literacy the rest assumes |
+| Intermediate | 5 | 34 | Building with a model in the product |
+| Advanced | 5 | 34 | Shipping it safely and keeping it working |
+| Expert | 12 | 78 | Planning, measurement and the business. Everything a product manager is held to |
+| Sectors | 1 | 7 | The same job bent by the market it runs in |
 
-| Course | Folder | Topics | Lessons | Status |
-|---|---|---|---|---|
-| **AI Product Management** ⭐ | `ai-product-management` | 16 | ~107 | topics I and XIII partly written |
-| Metrics and Economics | `metrics-and-economics` | 8 | ~51 | topic IV partly written |
-| AI Growth | `ai-growth` | 8 | ~47 | announced |
-| AI Go To Market | `ai-gtm` | 8 | ~46 | announced |
-| AI Operations | `ai-operations` | 8 | ~46 | announced |
-
-About **297 lessons** at full build. A publishable v1 is the flagship plus the metrics course,
-about 158 lessons.
+Written so far: 11 lessons, plus 6 project briefs and the glossary.
 
 ---
 
-## What changes, and what survives
+# Foundations
 
-Everything written so far survives. The revamp replaces unwritten topics, so there is no rework.
+Nothing here needs a model to exist. It is the part that stays true longest, and it is the part a
+person new to the job needs first.
 
-| Already written | Fate |
-|---|---|
-| `product-management/I-the-product-function`, 6 lessons | **Unchanged.** Stays topic I. The job is the job |
-| `product-management/XIII-product-by-sector`, README plus Enterprise | **Stays topic XIII.** Each sector lesson gains a full AI section instead of one table row |
-| `metrics-and-models/IV-revenue-and-efficiency/01-cac-payback-and-ltv` | **Stays topic IV.** Lesson unchanged |
-| `tools/` (gocheck, stylecheck, diagramcheck, linkcheck, logos), config, icon set, CI | Unchanged |
-
-Four changes to make before writing resumes.
-
-1. **Rename the course folder** `product-management` to `ai-product-management`, and
-   `metrics-and-models` to `metrics-and-economics`. Two folder renames, two `config.yaml` entries,
-   two `module.mounts` lines, and about six cross links.
-2. **Retitle the site.** Settled: **Prodloop**, hero line *How AI products are actually built*.
-3. **Drop the separate `ai-engineering` course.** It is absorbed into the flagship, because an AI
-   course inside an AI library is a tautology.
-4. **Rewire one prerequisite.** The sector README currently points at a classic
-   `IX-product-archetypes`, which is replaced by `II-04 AI Product Shapes`.
-
-### What is deliberately dropped
-
-Honest about the cost of the reposition. Classic platform and API product management, classic
-product archetypes such as marketplace liquidity and network density, and classic non generative
-machine learning products (rankers, risk scores, forecasts) all lose their dedicated topics.
-
-Marketplace and network mechanics survive where they matter, inside
-`XIII-product-by-sector/04-marketplaces.md`. The rest is genuinely gone. If you want it back, it
-belongs in a sixth course called `product-foundations` rather than diluting the flagship.
-
----
-
-# 1. `ai-product-management` ⭐
-
-> Building products with a model inside them. What a model changes about the product, how to
-> specify behaviour that is not deterministic, how to know it works, how it should feel, what it
-> costs to run, and how all of it bends by sector.
-
-### I: The Product Function  `[Foundations]` ✅ written
-
-*The job itself, before any model. Unchanged by the revamp.*
+## `the-product-function` ✅ written
 
 | # | Lesson | The question it answers |
 |---|---|---|
@@ -77,19 +34,136 @@ belongs in a sixth course called `product-foundations` rather than diluting the 
 | 05 | How Product, Engineering and Design Split the Work | Where are the real boundaries, and what breaks at each seam? |
 | 06 | What Good Looks Like | How is the job judged, and why is one quarter of outcomes close to noise? |
 
-### II: What a Model Changes  `[Foundations]`
+## `starting-in-product`
+
+*The entry path. What the job is on a Tuesday, how people actually get in, and what to do in the
+first three months so that the second three are easier.*
 
 | # | Lesson | The question it answers |
 |---|---|---|
-| 01 | The Five Facts | Slow, costly, probabilistic, priced by the token, persuadable: what follows from each? |
-| 02 | Deterministic and Probabilistic Products | What breaks in your spec, your QA, your support and your pricing? |
-| 03 | The Capability Map | What can models do and not do as of today, and how do you keep the answer current? |
-| 04 | AI Product Shapes | Copilot, agent, autonomous workflow, AI native app, infrastructure, embedded: which are you building? |
-| 05 | Feature or Product | Where does value accrue in the stack, and what is the thin wrapper risk? |
-| 06 | When Not to Use a Model | What is the deterministic alternative, and how do you argue for it? |
-| 07 | The 2026 Landscape | Frontier labs, open weights, inference providers and tooling, on one map |
+| 01 | The Job on a Tuesday | What does the week actually contain, hour by hour, and which parts are the job? |
+| 02 | How People Actually Get In | What are the real routes, from engineering, support, design, analytics and the outside? |
+| 03 | The First Ninety Days | What should you have produced by day thirty, sixty and ninety? |
+| 04 | Building Your Information Advantage | How do you become the person in the room who has talked to the most customers, and how fast does it decay? |
+| 05 | The Skills That Compound | Which abilities are worth deliberate practice, and which are credentials that do nothing? |
+| 06 | Early Mistakes | What do the common first year mistakes look like from the outside, before anybody tells you? |
 
-### III: Discovery for AI Products  `[Basic]`
+## `discovery-and-problem-framing`
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | Finding a Problem Worth Solving | Which demand signals mean something, and which are noise? |
+| 02 | Interviews That Are Not Useless | Which questions produce facts, which produce flattery, and how many people is enough? |
+| 03 | Jobs, Alternatives and Doing Nothing | What do they do today, including nothing, and why would they stop? |
+| 04 | Sizing a Problem | How many people, how often, and how much does it cost them now? |
+| 05 | Writing the Problem Statement | How do you write one page that is falsifiable and contains no solution? |
+| 06 | Killing Ideas Early | What is the riskiest assumption, and how do you test it before building? |
+
+## `definition-and-delivery`
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | Writing a PRD That Gets Built | Which sections change what gets built, and which are read by nobody? |
+| 02 | Scoping and the First Version | What does minimum actually mean, and what does it never mean? |
+| 03 | Working With Engineering | Estimates, tradeoffs, technical debt, and when to let them decide |
+| 04 | Handling Change Mid Build | Something changed in week three. What do you cut, and who decides? |
+| 05 | Launch Readiness | What has to be true before it ships: docs, support, pricing, legal, rollback? |
+| 06 | The Post Launch Readout | What do you measure at seven, thirty and ninety days, and what do you do about it? |
+
+## `product-strategy`
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | Strategy, Vision and Roadmap | What is each one, and what do you get when you conflate them? |
+| 02 | Where to Play and How to Win | Which two choices actually constitute a strategy? |
+| 03 | Moats for Software | Switching cost, data, network, scale, brand: which are real and which are stories? |
+| 04 | The Strategy Document | How do you write one page that states the bets and what you are not doing? |
+| 05 | Build, Partner or Buy | How do you make the strategic version of this decision, with numbers? |
+| 06 | When Strategy Should Change | What are the signals, and what does changing too often cost? |
+
+## `pricing-and-packaging`
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | What Pricing Actually Is | Why is pricing value capture rather than cost plus? |
+| 02 | The Value Metric | What do you charge for, and why is this the single biggest pricing choice? |
+| 03 | Packaging and Tiers | How do good, better, best, feature fences and the enterprise tier actually work? |
+| 04 | Price Discovery | What does each willingness to pay method tell you, and where does it fail? |
+| 05 | Changing Prices | Grandfathering, migration, communication: how do you raise price without a revolt? |
+| 06 | Discounting and Floors | What does a discount do to your win rate, your margin and your next renewal? |
+
+---
+
+# Basic
+
+Literacy. Enough about users, screens, systems and models to hold your own side of four different
+conversations.
+
+## `customers-and-users`
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | The Buyer, the User and the Blocker | Who are the three people, and what happens when you design for the wrong one? |
+| 02 | Research That Changes Decisions | What separates research that moves a roadmap from research that produces a deck? |
+| 03 | Jobs to Be Done in Practice | How do you use it without turning it into vocabulary? |
+| 04 | Segments That Are Real | Which segments exist in behaviour, and which exist only in your CRM? |
+| 05 | The Feedback Pipeline | How do thousands of signals become a short, defensible list? |
+| 06 | When Users Are Wrong | They asked for a faster horse. When is that true, and how do you tell? |
+
+## `design-and-user-experience`
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | What Designers Actually Do | What is the craft, and what are the three ways product managers get in its way? |
+| 02 | Information Architecture and Naming | Why is naming and grouping the hardest interface problem? |
+| 03 | Interaction Patterns | When does breaking a convention cost more than it saves? |
+| 04 | Running a Design Critique | How do you give feedback that improves the work rather than redirects it? |
+| 05 | Usability Testing on a Budget | What can five users in one afternoon actually tell you? |
+| 06 | Accessibility | What is required, what is decent, and why is this not optional? |
+
+## `technical-foundations`
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | How a Request Actually Travels | Client, API, service, database, cache: what is the mental model? |
+| 02 | APIs for Product Managers | How does the shape of an API constrain the product you can build on it? |
+| 03 | Data Models: Why Schema Is Product | What does a schema permit, and what does it permanently forbid? |
+| 04 | Latency, Caching and the Cost of Slow | Where does time go, and which fixes are cheap? |
+| 05 | Auth, Identity and Permissions | Why are the features enterprise asks for so expensive to build? |
+| 06 | What "It Is Hard" Means | What are the five reasons engineers say no, and which are negotiable? |
+
+## `what-a-model-changes` ✅ partly written
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | The Five Facts ✅ | What is structurally different about a model, and what follows from each property? |
+| 02 | Deterministic and Probabilistic Products ✅ | What breaks in your spec, your tests, your support and your pricing? |
+| 03 | The Capability Map | What can models do and not do today, and how do you keep the answer current? |
+| 04 | AI Product Shapes ✅ | Copilot, assistant, approved action, autonomous worker, native app, infrastructure: which are you building? |
+| 05 | Feature or Product | Where does value accrue when the model is somebody else's? |
+| 06 | When Not to Use a Model | What is the deterministic alternative, and how do you argue for it? |
+| 07 | The 2026 Landscape | What fills each box of the stack, and which parts will have changed by next year? |
+
+## `model-primitives`
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | Tokens and the Context Window | What is the budget you are spending, and what happens at the edges? |
+| 02 | Latency That Users Feel | Time to first token, tokens per second, streaming, and why p95 is the number |
+| 03 | Cost Per Request | What is the arithmetic every AI requirements document needs and almost none contain? |
+| 04 | Structured Output and Schemas | How do you get something a program can rely on? |
+| 05 | Choosing a Model | Frontier or small, hosted or open weights: what is the real tradeoff? |
+| 06 | Routing, Caching and Batching | What are the three cost levers, and what does each cost you in quality? |
+| 07 | The Non Determinism Problem | Temperature, seeds, reproducibility, and what it does to your test suite |
+
+---
+
+# Intermediate
+
+Building with a model in the product. Everything here assumes the five facts and the product shape
+from Basic.
+
+## `discovery-for-ai-products`
 
 | # | Lesson | The question it answers |
 |---|---|---|
@@ -100,7 +174,7 @@ belongs in a sixth course called `product-foundations` rather than diluting the 
 | 05 | Sizing an AI Opportunity | Volume times value times tolerance for error: how do you put numbers on it? |
 | 06 | The Error Tolerance Question | What happens when it is wrong, and who absorbs that? |
 
-### IV: Specs for Non Deterministic Systems  `[Basic]`
+## `specs-for-non-deterministic-systems`
 
 | # | Lesson | The question it answers |
 |---|---|---|
@@ -109,21 +183,9 @@ belongs in a sixth course called `product-foundations` rather than diluting the 
 | 03 | Writing the Rubric | How does quality get defined before it can be measured? |
 | 04 | The Prompt Is the Spec | Who owns it, who reviews it, and how is it versioned? |
 | 05 | Golden Examples and Counter Examples | How does the spec become a dataset? |
-| 06 | The AI PRD | What does the document actually look like now? |
+| 06 | The AI Requirements Document | What does the document actually look like now? |
 
-### V: Model Primitives  `[Basic]`
-
-| # | Lesson | The question it answers |
-|---|---|---|
-| 01 | Tokens and the Context Window | What is the budget you are spending, and what happens at the edges? |
-| 02 | Latency That Users Feel | Time to first token, tokens per second, streaming, and why p95 is the number |
-| 03 | Cost Per Request | What is the arithmetic every AI PRD needs and almost none contain? |
-| 04 | Structured Output and Schemas | How do you get something a program can rely on? |
-| 05 | Choosing a Model | Frontier or small, hosted or open weights: what is the real tradeoff? |
-| 06 | Routing, Caching and Batching | What are the three cost levers, and what does each one cost you in quality? |
-| 07 | The Non Determinism Problem | Temperature, seeds, reproducibility, and what it does to your test suite |
-
-### VI: Context and Knowledge  `[Intermediate]`
+## `context-and-knowledge`
 
 | # | Lesson | The question it answers |
 |---|---|---|
@@ -135,20 +197,20 @@ belongs in a sixth course called `product-foundations` rather than diluting the 
 | 06 | Knowledge That Goes Stale | What is the half life of a wrong answer, and how do you invalidate? |
 | 07 | When Finetuning Is the Answer | Rarely. What do you do instead, and what is the exception? |
 
-### VII: Agents and Autonomy  `[Intermediate]`
+## `agents-and-autonomy`
 
 | # | Lesson | The question it answers |
 |---|---|---|
 | 01 | The Autonomy Spectrum | Suggest, draft, act with approval, act: where should this product sit? |
 | 02 | When a Workflow Beats an Agent | The most money saving lesson here. How do you tell? |
 | 03 | Tools and Actions | What is the model allowed to touch, and who decided? |
-| 04 | MCP and the Integration Layer | What does an agent native integration story look like? |
+| 04 | The Integration Layer | What does an agent native integration story look like, and what is MCP for? |
 | 05 | Approval Gates and Human in the Loop | Where does a human belong, and what does their attention cost? |
 | 06 | Blast Radius and Reversibility | How do you design for the wrong action rather than against it? |
 | 07 | Multi Step Reliability | Why is 95% per step only 60% over ten steps, and what do you do? |
 | 08 | Agent Identity and Delegated Permissions | Who is the agent acting as, and what may it do on their behalf? |
 
-### VIII: AI Product UX  `[Intermediate]`
+## `ai-product-ux`
 
 | # | Lesson | The question it answers |
 |---|---|---|
@@ -158,34 +220,40 @@ belongs in a sixth course called `product-foundations` rather than diluting the 
 | 04 | Designing for Wrong Answers | Undo, edit, diff review, escalate: what has to exist? |
 | 05 | Generative and Adaptive Interfaces | When should the interface itself be generated? |
 | 06 | Voice and Multimodal Surfaces | What changes when there is no screen, or more than text? |
-| 07 | Feedback Loops in the Interface | How does the UI feed the eval set? |
+| 07 | Feedback Loops in the Interface | How does the interface feed the eval set? |
 
-### IX: Evaluation and Quality  `[Advanced]` ★ flagship topic
+---
+
+# Advanced
+
+Shipping it safely and keeping it working after the model underneath you changes.
+
+## `evaluation-and-quality` ★ the topic the positioning rests on
 
 | # | Lesson | The question it answers |
 |---|---|---|
 | 01 | Why You Cannot Unit Test a Model | What replaces an assertion, and what does that cost? |
 | 02 | Building the Dataset | Why thirty real cases beat five thousand synthetic ones |
 | 03 | Graders: Code, Judge and Human | Which grader for which claim, and what is each one blind to? |
-| 04 | A Judge Prompt That Agrees With Humans | How do you validate the judge before trusting its numbers? |
+| 04 | A Judge That Agrees With Humans | How do you validate the judge before trusting its numbers? |
 | 05 | The Statistics You Cannot Skip | Confidence intervals, repeated runs, and reading flipped cases |
 | 06 | The Release Gate | What has to pass before a prompt, a model or a retrieval setting ships? |
 | 07 | Online Evals and Reading Traces | What do you measure on live traffic, and how often do you read it? |
-| 08 | Evals as the Product Artifact | Why the eval set, not the PRD, is the real specification |
+| 08 | Evals as the Product Artifact | Why the eval set, not the requirements document, is the real specification |
 
-### X: AI Pricing and Packaging  `[Advanced]`
+## `ai-pricing-and-packaging`
 
 | # | Lesson | The question it answers |
 |---|---|---|
 | 01 | Why Seats Break | What happens when cost scales with usage and price does not? |
 | 02 | The Value Metric for AI | Tasks, resolutions, outcomes or seats: what do you charge for? |
 | 03 | Credits and Usage Pricing | How does a meter work, and how do you keep it from feeling hostile? |
-| 04 | Outcome Based Pricing | The trend of the year. When is it right and when is it a trap? |
+| 04 | Outcome Based Pricing | When is it right, and when is it a trap? |
 | 05 | Margin Under Load | What happens when the pricing model and the cost model disagree? |
 | 06 | Free Tiers When Inference Costs Money | How much can you give away, and to whom? |
 | 07 | Repricing as Model Costs Fall | Token prices drop every year. Who captures that? |
 
-### XI: Trust, Safety and Guardrails  `[Advanced]`
+## `trust-safety-and-guardrails`
 
 | # | Lesson | The question it answers |
 |---|---|---|
@@ -197,7 +265,7 @@ belongs in a sixth course called `product-foundations` rather than diluting the 
 | 06 | Transparency Duties and the AI Act | What are you obliged to disclose, as of today, and to whom? |
 | 07 | Incident Response for an AI Feature | What is the runbook when the model says something it should not have? |
 
-### XII: Data Moats and Feedback Loops  `[Advanced]`
+## `data-moats-and-feedback-loops`
 
 | # | Lesson | The question it answers |
 |---|---|---|
@@ -206,14 +274,181 @@ belongs in a sixth course called `product-foundations` rather than diluting the 
 | 03 | Data Rights, Consent and Training | What may you use, and what must you promise not to? |
 | 04 | The Thin Wrapper Critique | Where does value accrue when the model is somebody else's? |
 | 05 | Switching Costs for AI Products | What actually holds a customer when the model is a commodity? |
-| 06 | Build, Buy or Wait for the Model | How do you make a decision when next year's model may do it for free? |
+| 06 | Build, Buy or Wait for the Model | How do you decide when next year's model may do it for free? |
 
-### XIII: Product by Sector  `[Expert]` ✅ README and lesson 01 written
+## `model-lifecycle-and-drift`
 
-*Each lesson is a full product treatment of one market, now with its AI section promoted from a
-table row to a section of its own. The README carries the cross sector comparison matrix that
-every other course links to. Read `II-04 AI Product Shapes` first: shape usually matters more than
-market.*
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | A Model Upgrade Is a Breaking Change | Why does a better model make your product worse, and how often? |
+| 02 | Version Pinning and Migration | What do you pin, and what is the migration runbook? |
+| 03 | Detecting Drift in Production | What signals move first when quality degrades? |
+| 04 | Regression Suites for Prompts and Models | How do you keep a fix from being undone by the next change? |
+| 05 | Deprecating a Model You Depend On | The provider retires it in ninety days. What now? |
+| 06 | Vendor Risk and Multiple Providers | Is portability worth what it costs you in quality? |
+
+---
+
+# Expert
+
+Planning, measurement and the business. Twelve topics, because this is where everything a product
+manager is actually held to ends up: the roadmap, the cross functional machine around it, the money,
+and every number quoted at you in a review.
+
+## `roadmapping-and-prioritisation`
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | Prioritisation That Survives Contact | RICE, weighted shortest job first and the rest: which is a tool and which is theatre? |
+| 02 | The Roadmap Problem | How do you commit enough to be trusted without lying about dates? |
+| 03 | Now, Next, Later or Dates | Which format fits which audience, and what does each one cost you? |
+| 04 | Capacity Allocation | How do you split the quarter between new work, maintenance, debt and the unplanned? |
+| 05 | Saying No in Public | How do you refuse an important person's request and keep the relationship? |
+| 06 | Replanning Without Whiplash | Something changed. How do you redirect without the team losing faith in plans? |
+
+## `the-cross-functional-loop`
+
+*The machine around the product team. Who you depend on, what the cadence is, and where the
+handoffs break.*
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | Who You Actually Depend On | Engineering, design, data, sales, support, finance, legal: what does each need from you? |
+| 02 | The Operating Cadence | What happens weekly, monthly and quarterly, and who runs each? |
+| 03 | The Handoffs That Break | Where does work die between functions, and how do you instrument the seams? |
+| 04 | Sales, Support and the Feedback Channel | How do you take their signal seriously without being run by the loudest account? |
+| 05 | Escalation and the Decision Log | How does a disagreement get resolved without burning the relationship? |
+| 06 | Running the Business Review | What is on the agenda, and what is the one rule that keeps it useful? |
+
+## `business-fundamentals-for-product`
+
+*The terms you are expected to already know by the time somebody uses them in a review.*
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | How Your Company Makes Money | Where does revenue come from, who pays, and what does each dollar cost to earn? |
+| 02 | Reading a Profit and Loss | What are the lines, and which ones does product actually move? |
+| 03 | Unit Economics in Practice | How do you compute yours from the systems you actually have? |
+| 04 | Burn, Runway and Why It Constrains You | How does the cash position decide what you are allowed to propose? |
+| 05 | Capital Efficiency | Magic number, burn multiple, Rule of 40: what does each one test? |
+| 06 | Market Sizing You Can Defend | Top down or bottom up, and which one survives a hostile question? |
+| 07 | What the Board Asks, and Why | Which numbers reach them, what they mean by them, and what they do next |
+
+## `how-to-read-a-metric`
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | What a Metric Is For | Which decision does this number change, and if none, why is it on a dashboard? |
+| 02 | The Denominator Problem | Why is conversion rate three different numbers, and which did you mean? |
+| 03 | Rates, Ratios and Averages | Why is the average nearly always the wrong summary? |
+| 04 | Simpson's Paradox and Mix Shift | How can every segment improve while the total gets worse? |
+| 05 | Leading, Lagging and Vanity | How do you tell a predictive number from a flattering one? |
+| 06 | The North Star and Its Critics | What is a single top metric good for, and where does it mislead? |
+
+## `funnel-retention-and-experiments`
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | Funnel Mechanics | How does loss compound across stages, and where is the leverage? |
+| 02 | Acquisition Cost, Blended and Paid | What belongs in the numerator, and why is blended misleading? |
+| 03 | What Retention Means | Which of the three common definitions are you using? |
+| 04 | Building a Cohort Table | How do you build the one chart that tells the truth about a product? |
+| 05 | A/B Testing and When It Lies | Power, duration, peeking, novelty: when is the result not real? |
+| 06 | When You Cannot A/B Test | Holdouts, switchbacks, before and after: what do you do with low traffic? |
+| 07 | Deciding With Ambiguous Data | How do you write a decision memo when the data does not settle it? |
+| 08 | Engagement Ratios and Resurrection | What does daily over monthly hide, and who comes back? |
+
+## `revenue-and-efficiency` ✅ partly written
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | CAC Payback, and LTV ✅ | Which assumptions are load bearing, and why is payback the honest number? |
+| 02 | Recurring Revenue and the Movements | How do new, expansion, contraction and churn build the waterfall? |
+| 03 | Net and Gross Revenue Retention | What do they measure, and how are they gamed? |
+| 04 | Gross Margin for Software | What belongs in cost of revenue, inference included? |
+| 05 | The Efficiency Metrics | What does each capital efficiency ratio actually test? |
+| 06 | The Ratio Is Not a Strategy | What can lifetime value over acquisition cost actually tell you? |
+
+## `ai-quality-metrics`
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | Eval Pass Rate and Coverage | What does a pass rate mean, and what share of real behaviour does your set cover? |
+| 02 | Groundedness and Citation Accuracy | How do you measure whether an answer is supported by its sources? |
+| 03 | Task Success on End State | Why grade the outcome rather than the path, and how? |
+| 04 | Acceptance Rate and Edit Distance | The copilot metrics: what fraction is kept, and how much is rewritten? |
+| 05 | Intervention and Escalation Rate | How often does a human step in, and what does that cost? |
+| 06 | Containment and Deflection | The support metric everyone quotes. What does it hide? |
+| 07 | Retry, Regeneration and Abandonment | What do users do when the answer is bad, and how do you count it? |
+| 08 | Measuring Trust | Can you measure it at all, and what are the honest proxies? |
+
+## `ai-cost-and-margin`
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | Cost Per Task | The new line item. How do you compute it for a real feature? |
+| 02 | Tokens Per Task and Context Efficiency | Where does the context budget go, and what is waste? |
+| 03 | Inference in Cost of Revenue | What does it do to gross margin, and who books it today? |
+| 04 | The Routing and Caching Savings Model | How much do the cost levers save, and at what quality cost? |
+| 05 | Margin Under Engagement Growth | What happens when your best cohort is also your most expensive? |
+| 06 | The Cost of Quality | What do evals, judge calls and human review cost per task? |
+| 07 | A Worked Margin Model | One feature, from token count to gross margin, end to end |
+
+## `agent-and-task-metrics`
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | Steps Per Task and Loop Depth | What does a rising step count tell you before quality drops? |
+| 02 | Tool Error and Recovery Rate | How often do actions fail, and does the agent recover? |
+| 03 | Autonomy Ratio | What share of actions happen without a human, and should it rise? |
+| 04 | Time to Task Completion | Why is this the metric users actually feel? |
+| 05 | Cost and Latency Percentiles | Why does the mean hide the thing that makes people leave? |
+| 06 | Reliability as a Compound Number | How do you turn per step rates into a number you can promise? |
+
+## `benchmarks-and-their-limits`
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | Where Benchmarks Come From | Why is most of what gets quoted unsourced, and how do you check one? |
+| 02 | Public Model Benchmarks | What does a leaderboard score predict about your product? Usually little |
+| 03 | Your Eval Set Is the Only Benchmark | How do you build the one number that means something to you? |
+| 04 | Measuring Drift Across Versions | How do you compare two models on your own work, fairly? |
+| 05 | Benchmarks by Sector | The table, every number sourced and dated |
+| 06 | Reading a Public Filing | How do you get real figures instead of conference slides? |
+
+## `ai-product-org-and-process`
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | The New Team Shape | Product, AI engineer, eval owner, designer: who owns what? |
+| 02 | Prototyping as a Product Manager | What changes when you can build the thing yourself in an afternoon? |
+| 03 | The AI Review Ritual | What is the checklist before an AI feature ships? |
+| 04 | Trace Triage as a Weekly Habit | Who reads production output every week, and what do they do with it? |
+| 05 | Levels and Hiring | What actually changes at each level, and what do you test for in an interview? |
+| 06 | What to Centralise | Platform team or embedded: which parts of this should be shared? |
+
+## `worked-ai-products`
+
+*Each lesson runs one real build end to end: situation, numbers, options, decision, how it is
+measured, and what would falsify it.*
+
+| # | Lesson | What it works through |
+|---|---|---|
+| 01 | An In Product Copilot | Acceptance rate, trust budget, and cost per accepted suggestion |
+| 02 | An AI Support Assistant | Containment against satisfaction, and the escalation design |
+| 03 | An AI Analyst Feature | Grounding on a warehouse, citations, and what happens when the number is wrong |
+| 04 | An Agentic Workflow That Acts | Approval gates, blast radius, and the reliability maths over ten steps |
+| 05 | A Model Upgrade Gone Wrong | A real regression, found late, and the postmortem |
+| 06 | The AI Product Review | The checklist, runnable against any AI feature |
+
+---
+
+# Sectors
+
+## `product-by-sector` ✅ partly written
+
+*Read `what-a-model-changes/04-ai-product-shapes` first. Shape usually determines more than market.
+The topic README carries the cross sector comparison matrix that everything else links to.*
 
 | # | Lesson | The question it answers |
 |---|---|---|
@@ -225,230 +460,25 @@ market.*
 | 06 | Healthtech and Regulated Care | How do you build around a clinician when a model may not diagnose? |
 | 07 | Vertical SaaS | How do you win a small market completely, and why is AI the strongest case here? |
 
-### XIV: Model Lifecycle and Drift  `[Expert]`
-
-| # | Lesson | The question it answers |
-|---|---|---|
-| 01 | A Model Upgrade Is a Breaking Change | Why does a better model make your product worse, and how often? |
-| 02 | Version Pinning and Migration | What do you pin, and what is the migration runbook? |
-| 03 | Detecting Drift in Production | What signals move first when quality degrades? |
-| 04 | Regression Suites for Prompts and Models | How do you keep a fix from being undone by the next change? |
-| 05 | Deprecating a Model You Depend On | The provider retires it in ninety days. What now? |
-| 06 | Vendor Risk and Multiple Providers | Is portability worth what it costs you in quality? |
-
-### XV: AI Product Org and Process  `[Expert]`
-
-| # | Lesson | The question it answers |
-|---|---|---|
-| 01 | The New Team Shape | PM, AI engineer, eval owner, designer: who owns what? |
-| 02 | Prototyping as a Product Manager | What changes when you can build the thing yourself in an afternoon? |
-| 03 | The AI Review Ritual | What is the checklist before an AI feature ships? |
-| 04 | Trace Triage as an Operating Habit | Who reads production output every week, and what do they do with it? |
-| 05 | Hiring for AI Product Work | What do you actually test for in an interview? |
-| 06 | What to Centralise | Platform team or embedded: which parts of this should be shared? |
-
-### XVI: Worked AI Products  `[Expert]`
-
-*Each lesson runs one real build end to end: situation, numbers, options, decision, how it is
-measured, and what would falsify it.*
-
-| # | Lesson | What it works through |
-|---|---|---|
-| 01 | An In Product Copilot | Suggestion acceptance, trust budget, and the cost per accepted suggestion |
-| 02 | An AI Support Assistant | Containment rate against satisfaction, and the escalation design |
-| 03 | An AI Analyst Feature | Grounding on a warehouse, citations, and what happens when the number is wrong |
-| 04 | An Agentic Workflow That Acts | Approval gates, blast radius, and the reliability maths over ten steps |
-| 05 | A Model Upgrade Gone Wrong | A real regression, found late, and the postmortem |
-| 06 | The AI Product Review | The checklist, runnable against any AI feature |
-
-### `projects/`, Build
-
-`01-eval-harness` · `02-cost-per-task-model` · `03-retrieval-quality-bench` ·
-`04-trust-budget-calculator` · `05-agent-reliability-sim` · `06-ai-pricing-model` ·
-`07-guardrail-test-set` · `08-drift-detector`
-
 ---
 
-# 2. `metrics-and-economics`
+# Build and Reference
 
-> Every number an AI product is judged on, defined once. Classic revenue arithmetic first, because
-> it still decides whether the business works, then the quality, cost and agent metrics that only
-> exist because there is a model in the product.
->
-> **This course is the definition site. No other course defines a metric; they link here.**
+Neither is registered anywhere. A folder not listed under a level becomes a **Build** card, and a
+loose `.md` file at the course root becomes a **Reference** card.
 
-### I: How to Read a Metric  `[Foundations]`
+| Shelf | Contents |
+|---|---|
+| Build | `projects/` ✅ six briefs: eval harness, cost per task, trust budget, cohort table, agent reliability, pricing and margin |
+| Reference | `GLOSSARY.md` ✅ about fifty terms, each naming the topic that treats it properly |
 
-| # | Lesson | The question it answers |
-|---|---|---|
-| 01 | What a Metric Is For | Which decision does this number change, and if none, why is it on a dashboard? |
-| 02 | The Denominator Problem | Why is conversion rate three different numbers, and which did you mean? |
-| 03 | Rates, Ratios and Averages | Why is the average nearly always the wrong summary? |
-| 04 | Simpson's Paradox and Mix Shift | How can every segment improve while the total gets worse? |
-| 05 | Leading, Lagging and Vanity | How do you tell a predictive number from a flattering one? |
-| 06 | The North Star and Its Critics | What is a single top metric good for, and where does it mislead? |
+# Build order
 
-### II: Funnel and Acquisition  `[Basic]`
-
-| # | Lesson | The question it answers |
-|---|---|---|
-| 01 | Funnel Mechanics | How does loss compound across stages, and where is the leverage? |
-| 02 | Traffic, Visits and Sessions | Why does every tool report a different number for the same thing? |
-| 03 | Signup and Conversion Rate | What counts, over what denominator, in what window? |
-| 04 | Acquisition Cost: Blended and Paid | What belongs in the numerator, and why is blended misleading? |
-| 05 | Attribution | First touch, last touch, multi touch: in what way is each wrong? |
-| 06 | Cost Per What | Translating between the cost per thousand, click, lead and action |
-
-### III: Retention and Cohorts  `[Basic]`
-
-| # | Lesson | The question it answers |
-|---|---|---|
-| 01 | What Retention Means | Which of the three common definitions are you using? |
-| 02 | Building a Cohort Table | How do you build the one chart that tells the truth about a product? |
-| 03 | The Curve and the Flattening | Does it flatten, and why does that decide whether you have a business? |
-| 04 | Churn: Logo and Revenue | Why do these move in opposite directions? |
-| 05 | Engagement Ratios | What does the daily over monthly ratio hide? |
-| 06 | Resurrection and Dormancy | How big is the segment everyone forgets, and what is it worth? |
-
-### IV: Revenue and Efficiency  `[Intermediate]` ✅ lesson 01 written
-
-| # | Lesson | The question it answers |
-|---|---|---|
-| 01 | CAC Payback, and LTV ✅ | Which assumptions are load bearing, and why is payback the honest number? |
-| 02 | MRR, ARR and the Movements | How do new, expansion, contraction and churn build the waterfall? |
-| 03 | Net and Gross Revenue Retention | What do they measure, and how are they gamed? |
-| 04 | Gross Margin for Software | What belongs in cost of revenue, inference included? |
-| 05 | The Efficiency Metrics | Magic number, burn multiple, Rule of 40: what does each one test? |
-| 06 | The Ratio Is Not a Strategy | What can lifetime value over acquisition cost actually tell you? |
-
-### V: AI Quality Metrics  `[Intermediate]`
-
-*The metrics that did not exist five years ago. Most AI products measure none of these.*
-
-| # | Lesson | The question it answers |
-|---|---|---|
-| 01 | Eval Pass Rate and Coverage | What does a pass rate mean, and what fraction of real behaviour does your set cover? |
-| 02 | Groundedness and Citation Accuracy | How do you measure whether an answer is supported by its sources? |
-| 03 | Task Success on End State | Why grade the outcome rather than the path, and how? |
-| 04 | Acceptance Rate and Edit Distance | The copilot metrics: what fraction is kept, and how much is rewritten? |
-| 05 | Intervention and Escalation Rate | How often does a human have to step in, and what does that cost? |
-| 06 | Containment and Deflection | The support metric everyone quotes. What does it hide? |
-| 07 | Retry, Regeneration and Abandonment | What do users do when the answer is bad, and how do you count it? |
-| 08 | Measuring Trust | Can you measure it at all, and what are the honest proxies? |
-
-### VI: AI Cost and Margin  `[Advanced]`
-
-| # | Lesson | The question it answers |
-|---|---|---|
-| 01 | Cost Per Task | The new line item. How do you compute it for a real feature? |
-| 02 | Tokens Per Task and Context Efficiency | Where does the context budget go, and what is waste? |
-| 03 | Inference in Cost of Revenue | What does it do to gross margin, and who books it today? |
-| 04 | The Routing and Caching Savings Model | How much do the three cost levers actually save, and at what quality cost? |
-| 05 | Margin Under Engagement Growth | What happens when your best cohort is also your most expensive? |
-| 06 | The Cost of Quality | What do evals, judge calls and human review cost per task? |
-| 07 | A Worked AI Margin Model | One feature, from token count to gross margin, end to end |
-
-### VII: Agent and Task Metrics  `[Advanced]`
-
-| # | Lesson | The question it answers |
-|---|---|---|
-| 01 | Steps Per Task and Loop Depth | What does a rising step count tell you before quality drops? |
-| 02 | Tool Error and Recovery Rate | How often do actions fail, and does the agent recover? |
-| 03 | Autonomy Ratio | What share of actions happen without a human, and should it rise? |
-| 04 | Time to Task Completion | Why is this the metric users actually feel? |
-| 05 | Cost and Latency Percentiles | Why does the mean hide the thing that makes people leave? |
-| 06 | Reliability as a Compound Number | How do you turn per step rates into a number you can promise? |
-
-### VIII: Benchmarks, Drift and Their Limits  `[Expert]`
-
-| # | Lesson | The question it answers |
-|---|---|---|
-| 01 | Where Benchmarks Come From | Why is most of what gets quoted unsourced, and how do you check one? |
-| 02 | Public Model Benchmarks | What does a leaderboard score predict about your product? Usually little |
-| 03 | Your Eval Set Is the Only Benchmark | How do you build the one number that means something to you? |
-| 04 | Measuring Drift Across Versions | How do you compare two models on your own work, fairly? |
-| 05 | Benchmarks by Sector | The table, every number sourced and dated |
-| 06 | Reading a Public Filing | How do you get real figures instead of conference slides? |
-
-### `projects/`, Build
-
-`01-cohort-retention-table` · `02-cac-payback-calculator` · `03-arr-waterfall` ·
-`04-cost-per-task-model` · `05-eval-pass-rate-with-intervals` · `06-agent-reliability-compounder`
-
----
-
-# 3. `ai-growth`
-
-> Distribution for AI products, where the usual playbook breaks twice: search traffic is being
-> replaced by answers, and every free user now costs real money.
-
-| Topic | Level | What it covers |
-|---|---|---|
-| `I-how-ai-products-grow` | Foundations | The loops that work for AI products, and the ones that stopped |
-| `II-distribution-after-search` | Basic | Answer engines, citation as the new ranking, and what is left of content |
-| `III-activation-and-time-to-first-output` | Intermediate | The empty prompt box problem, templates, and first useful result |
-| `IV-retention-and-habit` | Intermediate | Why AI retention curves fall steeply, and what flattens them |
-| `V-free-tiers-when-inference-costs-money` | Advanced | Giving away a marginal cost, abuse, and the economics of a free user |
-| `VI-artifact-and-sharing-loops` | Advanced | When the output is the marketing, and how to design for it |
-| `VII-the-growth-operating-system` | Expert | The experiment machine, when every experiment also changes cost |
-| `VIII-growth-by-sector` | Expert | One delta lesson per sector |
-
-### 4. `ai-gtm`
-
-> Selling a product that is sometimes wrong, to buyers who have been promised AI by everyone.
-
-| Topic | Level | What it covers |
-|---|---|---|
-| `I-market-and-buyer-for-ai` | Foundations | Who buys AI, who blocks it, and the new committee member |
-| `II-positioning-against-we-have-ai-too` | Basic | Differentiating when every competitor shipped the same feature |
-| `III-pilots-pocs-and-production` | Intermediate | The pilot trap, and what moves a POC into a contract |
-| `IV-the-ai-security-review` | Intermediate | Subprocessors, training opt out, residency, and the model questionnaire |
-| `V-motions-and-channels` | Advanced | What acquisition cost per deal looks like when the product sells itself unevenly |
-| `VI-launch-and-expectation-management` | Advanced | Launching something probabilistic without overpromising |
-| `VII-worked-gtm-plans` | Expert | Zero to one enterprise AI, and a self service AI launch |
-| `VIII-gtm-by-sector` | Expert | One delta lesson per sector |
-
-### 5. `ai-operations`
-
-> Running an AI product: the traces, the costs, the vendors, the policy and the obligations.
-
-| Topic | Level | What it covers |
-|---|---|---|
-| `I-why-operations-exists` | Foundations | What breaks without it, in an AI product specifically |
-| `II-operating-cadence-for-ai-teams` | Basic | The weekly trace review, the cost review, the eval review |
-| `III-ai-observability` | Intermediate | Traces, spans, token accounting and what to alert on |
-| `IV-data-consent-and-retention` | Intermediate | What you keep, for how long, and what you promised |
-| `V-vendor-and-model-management` | Advanced | Subprocessors, rate limits, fallbacks and contractual exposure |
-| `VI-governance-policy-and-the-ai-act` | Advanced | Risk classification, documentation duties, and who signs |
-| `VII-finance-ops-for-usage-pricing` | Expert | Metering, invoicing, overage, revenue recognition and bad debt |
-| `VIII-operations-by-sector` | Expert | One delta lesson per sector |
-
----
-
-## Cross course rules
-
-1. **Metrics** are defined only in `metrics-and-economics`. Every other lesson links.
-2. **Sector market shape** is defined only in `ai-product-management/XIII-product-by-sector`.
-   Other courses' sector topics carry function deltas only.
-3. **Product shape is read before market.** `II-04 AI Product Shapes` is a prerequisite for every
-   sector lesson.
-4. **Evals are owned by topic IX.** Other lessons reference the method rather than restating it.
-5. **Cost arithmetic** lives in `metrics-and-economics/VI-ai-cost-and-margin`. Product lessons
-   quote results and link.
-6. Every course `README.md` ends with a **How it connects to the other courses** section.
-
-## Build order
-
-| Phase | Deliverable | Lessons |
-|---|---|---|
-| 0 | The renames, the retitle, and the prerequisite rewiring | 0 |
-| 1 | Flagship topics **II, III, IV, V**: what a model changes, discovery, specs, primitives | ~26 |
-| 2 | Flagship topics **VI, VII, VIII**: context, agents, UX | ~22 |
-| 3 | Flagship topic **IX** evals, plus `metrics-and-economics` **V** quality metrics | ~16 |
-| 4 | Flagship topics **X, XI, XII**: pricing, guardrails, moats | ~20 |
-| 5 | `metrics-and-economics` **I, II, III, IV, VI, VII, VIII** | ~43 |
-| 6 | Flagship **XIII** remaining six sectors, plus **XIV, XV, XVI** | ~24 |
-| 7 | `ai-growth`, then `ai-gtm`, then `ai-operations` | ~139 |
-
-Phases 1 to 4 plus 6 give a complete flagship, which with the written topic I is a real site on its
-own. Phase 3 is the one to reach quickly: evaluation is the topic the whole positioning rests on.
+1. Finish **Foundations**, since it is the level a new product manager starts at and the only one
+   that is useless while incomplete. 30 lessons.
+2. **Basic**, which the rest of the course assumes. 32 lessons.
+3. **`evaluation-and-quality`** out of order, because it is the strongest claim the site has and
+   almost nothing good exists for a product audience. 8 lessons.
+4. The remaining Intermediate and Advanced topics.
+5. **Expert**, largest and most referenced, so it benefits from everything above being linkable.
+6. The six remaining **sector** lessons.

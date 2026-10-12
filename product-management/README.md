@@ -89,17 +89,18 @@ flowchart LR
 | Topic | You will be able to | Level |
 |---|---|---|
 | [The Product Function](the-product-function/README.md) | Say what the job is, where the loop breaks, and how the work is actually judged | Foundations |
-| Product Strategy | Write a one page strategy that names the bets and the refusals, and tell a real moat from a story | Foundations |
+| Starting in Product | Know what the week contains, how people get in, and what to produce in the first ninety days | Foundations |
 | Discovery and Problem Framing | Tell a real problem from a loud one, size it, and kill ideas before they cost anything | Foundations |
 | Definition and Delivery | Write a PRD that gets built, scope a first version, and get it launched | Foundations |
-| Prioritisation and Roadmapping | Order the work, commit enough to be trusted, and defend the refusals | Foundations |
+| Product Strategy | Write a one page strategy that names the bets and the refusals, and tell a real moat from a story | Foundations |
 | Pricing and Packaging | Choose a value metric, build tiers, discover willingness to pay, and change a price safely | Foundations |
-| Technical Foundations | Read a system well enough to know which requests are cheap, which are expensive, and why | Basic |
+| Customers and Users | Separate buyer from user from blocker, and turn thousands of signals into a short list | Basic |
 | Design and User Experience | Run a critique, test with five users, and name the information architecture problem | Basic |
+| Technical Foundations | Read a system well enough to know which requests are cheap, which are expensive, and why | Basic |
 | [What a Model Changes](what-a-model-changes/README.md) | Name the five facts, pick the product shape you are building, and argue for not using a model | Basic |
+| Model Primitives | Reason about tokens, latency, cost and structured output well enough to make the call | Basic |
 | Discovery for AI Products | Tell a demo from a product, decompose work into tasks, and size by error tolerance | Intermediate |
 | Specs for Non Deterministic Systems | Write a behaviour contract and a rubric instead of a pixel spec | Intermediate |
-| Model Primitives | Reason about tokens, latency, cost and structured output well enough to make the call | Intermediate |
 | Context and Knowledge | Decide what goes in the window, ground an answer, and make it checkable | Intermediate |
 | Agents and Autonomy | Place a product on the autonomy spectrum and contain what it can get wrong | Intermediate |
 | AI Product UX | Spend a trust budget, show uncertainty, and design for the wrong answer | Intermediate |
@@ -108,6 +109,9 @@ flowchart LR
 | Trust, Safety and Guardrails | Predict the abuse, build the guardrail stack, and run the incident | Advanced |
 | Data Moats and Feedback Loops | Test honestly whether your data is a moat, and build the flywheel | Advanced |
 | Model Lifecycle and Drift | Survive a model upgrade, pin versions, and detect drift before users do | Advanced |
+| Roadmapping and Prioritisation | Order the work, commit enough to be trusted, say no in public, and replan without whiplash | Expert |
+| The Cross Functional Loop | Run the cadence, instrument the handoffs, and resolve escalations without burning relationships | Expert |
+| Business Fundamentals for Product | Read a profit and loss, know what burn allows you to propose, and answer what the board asks | Expert |
 | How to Read a Metric | Spot a bad denominator, a mix shift and a vanity metric before acting on one | Expert |
 | Funnel, Retention and Experiments | Build a cohort table, read whether the curve flattens, and know when a test is lying | Expert |
 | [Revenue and Efficiency](revenue-and-efficiency/README.md) | Compute payback, lifetime value and retention of revenue honestly | Expert |
@@ -121,11 +125,12 @@ flowchart LR
 
 ## How the six levels are meant to be read
 
-**Foundations** is the whole product function, in detail and with no model in it. Everything there
-would be true if generative models had never shipped, and it is the part that stays true longest.
+**Foundations** is where a person new to the job starts: what the week contains, how people get in,
+and then the whole product function in detail with no model in it. Everything there would be true if
+generative models had never shipped, which is why it goes first and why it stays true longest.
 
-**Basic** is literacy: enough of a systems mental model and enough design craft to hold your side of
-the conversation, plus the first contact with what a model changes.
+**Basic** is literacy in four directions at once: customers and users, the screen, the system
+underneath, and the model. It is the level that makes the rest of the course legible.
 
 **Intermediate** is building with a model in the product: discovery, behaviour specs, primitives,
 context, agents and the interface.
@@ -133,9 +138,10 @@ context, agents and the interface.
 **Advanced** is shipping it safely and keeping it working: evaluation, pricing it, the guardrails,
 whether you have a moat, and surviving the next model release.
 
-**Expert** is measurement and construction. Every metric the job is judged on is defined here, and
-the topics that build real things end to end sit alongside them, because a number you cannot
-compute is a number you do not have.
+**Expert** is planning, measurement and the business, which is where everything a product manager is
+actually held to ends up: the roadmap, the cross functional machine around it, the money, and every
+number quoted at you in a review. Twelve topics, and a number you cannot compute is a number you do
+not have.
 
 **Sectors** comes last on purpose. It is the same job bent by the market it runs in, and it only
 makes sense once the job itself is familiar.
