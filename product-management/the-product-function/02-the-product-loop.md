@@ -95,7 +95,7 @@ produces a real signal.
 The failure mode on the other side is real too: slicing a bet so thin that no slice can move the
 metric means every readout is noise, and you learn nothing while feeling rigorous. The test is
 whether one slice can produce a statistically legible result, which is a question of traffic, not
-of taste. See [A/B Testing and When It Lies](../funnel-retention-and-experiments/05-ab-testing-and-when-it-lies.md).
+of taste. See [A/B Testing and When It Lies](../funnel-retention-and-experiments/06-ab-testing-and-when-it-lies.md).
 
 ### What fills the box in 2026
 
