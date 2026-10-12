@@ -35,19 +35,19 @@ params:
   levels:
     - key: foundations
       name: Foundations
-      blurb: Start here, and learn the job itself.
+      blurb: The whole product function, with no model in it.
     - key: basic
       name: Basic
-      blurb: Users, screens, systems and models.
+      blurb: What a model is, and what it changes.
     - key: intermediate
       name: Intermediate
       blurb: Build with a model in the product.
     - key: advanced
       name: Advanced
-      blurb: Ship it safely, and keep it working.
+      blurb: Ship it safely, and survive the next release.
     - key: expert
       name: Expert
-      blurb: Plan it, measure it, run the business.
+      blurb: Measure it, cost it, and build the real thing.
     - key: sectors
       name: Sectors
       blurb: The same job, bent by the market it runs in.
@@ -57,11 +57,11 @@ params:
       short: Product
       summary: "The product function from first principles, and what changes once there is a model in the product."
       levels:
-        foundations:  [the-product-function, starting-in-product, discovery-and-problem-framing, definition-and-delivery, product-strategy, pricing-and-packaging]
-        basic:        [customers-and-users, design-and-user-experience, technical-foundations, what-a-model-changes, model-primitives]
-        intermediate: [discovery-for-ai-products, specs-for-non-deterministic-systems, context-and-knowledge, agents-and-autonomy, ai-product-ux]
-        advanced:     [evaluation-and-quality, ai-pricing-and-packaging, trust-safety-and-guardrails, data-moats-and-feedback-loops, model-lifecycle-and-drift]
-        expert:       [roadmapping-and-prioritisation, the-cross-functional-loop, business-fundamentals-for-product, how-to-read-a-metric, funnel-retention-and-experiments, revenue-and-efficiency, ai-quality-metrics, ai-cost-and-margin, agent-and-task-metrics, benchmarks-and-their-limits, ai-product-org-and-process, worked-ai-products]
+        foundations:  [the-product-function, starting-in-product, customers-and-users, discovery-and-problem-framing, definition-and-delivery, roadmapping-and-prioritisation, product-strategy, pricing-and-packaging, design-and-user-experience, technical-foundations, the-cross-functional-loop, how-to-read-a-metric]
+        basic:        [what-a-model-changes, model-primitives, discovery-for-ai-products]
+        intermediate: [specs-for-non-deterministic-systems, context-and-knowledge, agents-and-autonomy, ai-product-ux]
+        advanced:     [evaluation-and-quality, trust-safety-and-guardrails, ai-pricing-and-packaging, model-lifecycle-and-drift]
+        expert:       [funnel-retention-and-experiments, revenue-and-efficiency, business-fundamentals-for-product, ai-quality-metrics, ai-cost-and-margin, agent-and-task-metrics, benchmarks-and-their-limits, data-moats-and-feedback-loops, ai-product-org-and-process, worked-ai-products]
         sectors:      [product-by-sector]
 
     - dir: growth-engineering

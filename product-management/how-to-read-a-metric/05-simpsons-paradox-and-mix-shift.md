@@ -1,7 +1,7 @@
 # Simpson's Paradox and Mix Shift
 
 ```text
-Level: Expert
+Level: Foundations
 Prerequisites: Windows, Cohorts and Snapshots
 Estimated difficulty: 3/5 | Estimated time: 30 min
 ```

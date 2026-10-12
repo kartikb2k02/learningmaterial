@@ -1,7 +1,7 @@
 # Windows, Cohorts and Snapshots
 
 ```text
-Level: Expert
+Level: Foundations
 Prerequisites: Rates, Ratios and Averages
 Estimated difficulty: 3/5 | Estimated time: 30 min
 ```

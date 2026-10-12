@@ -44,7 +44,8 @@ Notes on the shape:
 * The `text` block is parsed by the site for the difficulty badge, prerequisites and reading time.
   Keep the three field names exactly as written, and make `Level:` match the level the topic sits at
   in `config.yaml`. A lesson that says Expert inside a topic listed under Sectors prints both chips
-  and reads as a mistake.
+  and reads as a mistake. `go run ./tools/levelcheck` enforces this, which matters because topics
+  move between levels and the lessons do not follow on their own.
 * **Topic folders carry no number.** Order comes from the `levels` lists in `config.yaml`, so a
   restructure is a config edit rather than a mass rename. Lesson files keep their `01-` prefixes,
   which the site does parse for ordering.
@@ -127,6 +128,7 @@ go run ./tools/stylecheck product-management     # a dash left in prose or a bul
 go run ./tools/diagramcheck product-management   # logo tokens, class names, HTML in labels
 go run ./tools/linkcheck -pending                # dangling links, grouped by unwritten folder
 go run ./tools/configcheck                       # the two ways config.yaml truncates silently
+go run ./tools/levelcheck                        # a lesson whose Level disagrees with config.yaml
 ```
 
 `diagramcheck` catches the failures that render silently rather than loudly: a logo token with no

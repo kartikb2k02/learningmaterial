@@ -1,7 +1,7 @@
 # APIs for Product Managers
 
 ```text
-Level: Basic
+Level: Foundations
 Prerequisites: How a Request Actually Travels
 Estimated difficulty: 2/5 | Estimated time: 30 min
 ```

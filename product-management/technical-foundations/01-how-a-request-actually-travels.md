@@ -1,7 +1,7 @@
 # How a Request Actually Travels
 
 ```text
-Level: Basic
+Level: Foundations
 Prerequisites: None
 Estimated difficulty: 2/5 | Estimated time: 30 min
 ```

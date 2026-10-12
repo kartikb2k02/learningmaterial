@@ -1,7 +1,7 @@
 # Leading, Lagging and Vanity
 
 ```text
-Level: Expert
+Level: Foundations
 Prerequisites: Simpson's Paradox and Mix Shift
 Estimated difficulty: 3/5 | Estimated time: 30 min
 ```

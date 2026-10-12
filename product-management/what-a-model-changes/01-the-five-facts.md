@@ -1,7 +1,7 @@
 # The Five Facts
 
 ```text
-Level: Foundations
+Level: Basic
 Prerequisites: The Product Loop
 Estimated difficulty: 2/5 | Estimated time: 35 min
 ```

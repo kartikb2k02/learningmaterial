@@ -8,6 +8,7 @@
 # deletes and rewrites the very files it is serving.
 set -e
 go run ./tools/configcheck
+go run ./tools/levelcheck
 go run ./tools/stylecheck README.md CONTENT_GUIDE.md COURSE-MAP.md product-management
 go run ./tools/diagramcheck README.md product-management
 go run ./tools/gocheck -run product-management

@@ -1,7 +1,7 @@
 # The Denominator Problem
 
 ```text
-Level: Expert
+Level: Foundations
 Prerequisites: What a Metric Is For
 Estimated difficulty: 2/5 | Estimated time: 30 min
 ```

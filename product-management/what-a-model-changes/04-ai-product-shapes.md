@@ -1,7 +1,7 @@
 # AI Product Shapes
 
 ```text
-Level: Foundations
+Level: Basic
 Prerequisites: The Five Facts
 Estimated difficulty: 2/5 | Estimated time: 35 min
 ```

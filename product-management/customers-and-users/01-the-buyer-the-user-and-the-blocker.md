@@ -1,7 +1,7 @@
 # The Buyer, the User and the Blocker
 
 ```text
-Level: Basic
+Level: Foundations
 Prerequisites: Finding a Problem Worth Solving
 Estimated difficulty: 2/5 | Estimated time: 30 min
 ```

@@ -1,7 +1,7 @@
 # The Roadmap Problem
 
 ```text
-Level: Expert
+Level: Foundations
 Prerequisites: Scoring Without Fooling Yourself
 Estimated difficulty: 3/5 | Estimated time: 30 min
 ```

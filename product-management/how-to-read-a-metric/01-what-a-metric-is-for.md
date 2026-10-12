@@ -1,7 +1,7 @@
 # What a Metric Is For
 
 ```text
-Level: Expert
+Level: Foundations
 Prerequisites: What Good Looks Like
 Estimated difficulty: 2/5 | Estimated time: 25 min
 ```

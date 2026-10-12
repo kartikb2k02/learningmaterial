@@ -1,7 +1,7 @@
 # Working With Support
 
 ```text
-Level: Expert
+Level: Foundations
 Prerequisites: Working With Sales
 Estimated difficulty: 2/5 | Estimated time: 30 min
 ```

@@ -1,7 +1,7 @@
 # Research That Changes Decisions
 
 ```text
-Level: Basic
+Level: Foundations
 Prerequisites: The Buyer, the User and the Blocker
 Estimated difficulty: 2/5 | Estimated time: 30 min
 ```

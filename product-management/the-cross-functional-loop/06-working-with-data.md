@@ -1,7 +1,7 @@
 # Working With Data
 
 ```text
-Level: Expert
+Level: Foundations
 Prerequisites: Working With Support
 Estimated difficulty: 3/5 | Estimated time: 30 min
 ```

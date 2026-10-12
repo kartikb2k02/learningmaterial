@@ -1,7 +1,7 @@
 # Who You Actually Depend On
 
 ```text
-Level: Expert
+Level: Foundations
 Prerequisites: Influence Without Authority
 Estimated difficulty: 2/5 | Estimated time: 25 min
 ```

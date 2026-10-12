@@ -1,7 +1,7 @@
 # CAC Payback, and LTV
 
 ```text
-Level: Intermediate
+Level: Expert
 Prerequisites: How to Read a Metric
 Estimated difficulty: 3/5 | Estimated time: 45 min
 ```

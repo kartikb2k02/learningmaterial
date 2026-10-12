@@ -1,7 +1,7 @@
 # Rates, Ratios and Averages
 
 ```text
-Level: Expert
+Level: Foundations
 Prerequisites: The Denominator Problem
 Estimated difficulty: 2/5 | Estimated time: 30 min
 ```

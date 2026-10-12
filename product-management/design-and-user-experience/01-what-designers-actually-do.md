@@ -1,7 +1,7 @@
 # What Designers Actually Do
 
 ```text
-Level: Basic
+Level: Foundations
 Prerequisites: How Product, Engineering and Design Split the Work
 Estimated difficulty: 1/5 | Estimated time: 25 min
 ```

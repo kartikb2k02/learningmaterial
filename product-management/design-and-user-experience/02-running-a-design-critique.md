@@ -1,7 +1,7 @@
 # Running a Design Critique
 
 ```text
-Level: Basic
+Level: Foundations
 Prerequisites: What Designers Actually Do
 Estimated difficulty: 2/5 | Estimated time: 25 min
 ```

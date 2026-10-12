@@ -1,7 +1,7 @@
 # The Operating Cadence
 
 ```text
-Level: Expert
+Level: Foundations
 Prerequisites: Who You Actually Depend On
 Estimated difficulty: 2/5 | Estimated time: 25 min
 ```

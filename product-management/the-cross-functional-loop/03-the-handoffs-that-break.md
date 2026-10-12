@@ -1,7 +1,7 @@
 # The Handoffs That Break
 
 ```text
-Level: Expert
+Level: Foundations
 Prerequisites: The Operating Cadence
 Estimated difficulty: 3/5 | Estimated time: 30 min
 ```

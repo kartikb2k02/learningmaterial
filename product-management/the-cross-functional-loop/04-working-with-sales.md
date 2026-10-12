@@ -1,7 +1,7 @@
 # Working With Sales
 
 ```text
-Level: Expert
+Level: Foundations
 Prerequisites: The Handoffs That Break
 Estimated difficulty: 3/5 | Estimated time: 30 min
 ```

@@ -1,7 +1,7 @@
 # Prioritisation That Survives Contact
 
 ```text
-Level: Expert
+Level: Foundations
 Prerequisites: What Good Looks Like
 Estimated difficulty: 3/5 | Estimated time: 30 min
 ```

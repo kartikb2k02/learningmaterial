@@ -1,7 +1,7 @@
 # Capacity Allocation
 
 ```text
-Level: Expert
+Level: Foundations
 Prerequisites: The Roadmap Problem
 Estimated difficulty: 3/5 | Estimated time: 30 min
 ```

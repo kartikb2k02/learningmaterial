@@ -21,6 +21,7 @@ jobs:
           extended: true
       - run: hugo config > /dev/null
       - run: go run ./tools/configcheck
+      - run: go run ./tools/levelcheck
 
       - name: Go in lessons compiles, vets and runs
         run: go run ./tools/gocheck -run product-management metrics-and-models

@@ -1,7 +1,7 @@
 # Dependencies and the Critical Path
 
 ```text
-Level: Expert
+Level: Foundations
 Prerequisites: Capacity Allocation
 Estimated difficulty: 3/5 | Estimated time: 30 min
 ```
