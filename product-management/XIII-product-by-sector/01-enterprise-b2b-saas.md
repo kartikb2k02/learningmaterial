@@ -129,7 +129,7 @@ contract value covers a fixed cost of entry plus a permanent capacity tax. This 
 the annual contract value at which it starts paying.
 
 ```go
-// upmarket.go — what enterprise readiness costs, and the contract value that covers it.
+// upmarket.go: what enterprise readiness costs, and the contract value that covers it.
 package main
 
 import (

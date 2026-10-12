@@ -117,7 +117,7 @@ are building, because writing cost is fixed while avoided rework scales with hea
 program computes net hours saved for three artifacts across team sizes.
 
 ```go
-// artifacts.go — when a document pays for itself.
+// artifacts.go: when a document pays for itself.
 package main
 
 import "fmt"

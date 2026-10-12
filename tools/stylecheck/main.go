@@ -1,4 +1,5 @@
-// stylecheck enforces the house rule that prose and bullets carry no dashes.
+// stylecheck enforces the house rule that prose and bullets carry no dashes of any kind:
+// the hyphen, the en dash and the em dash.
 //
 //	go run ./tools/stylecheck product-management metrics-and-models
 //
@@ -7,6 +8,7 @@
 //
 //	fenced code blocks        the programs, and the Level/Prerequisites metadata block
 //	table delimiter rows      |---|---| is the only legal spelling
+//	horizontal rules          a line of --- is a thematic break, not prose
 //	inline code spans         `01-foo.md`, `--flag`
 //	link and image targets    the (…) half of [text](path), since filenames keep prefixes
 //
@@ -29,6 +31,7 @@ var (
 	code      = regexp.MustCompile("`[^`]*`")
 	target    = regexp.MustCompile(`\]\([^)]*\)`)
 	anchor    = regexp.MustCompile(`^\s*\[[^\]]+\]:\s*\S+`)
+	rule      = regexp.MustCompile(`^[ \t]*-{3,}[ \t]*$`)
 )
 
 func main() {
@@ -73,11 +76,11 @@ func check(path string) int {
 			in = !in
 			continue
 		}
-		if in || delimiter.MatchString(line) || anchor.MatchString(line) {
+		if in || delimiter.MatchString(line) || anchor.MatchString(line) || rule.MatchString(line) {
 			continue
 		}
 		stripped := target.ReplaceAllString(code.ReplaceAllString(line, ""), "]()")
-		if strings.Contains(stripped, "-") {
+		if strings.ContainsAny(stripped, "-\u2013\u2014") {
 			bad++
 			fmt.Printf("%s:%d: %s\n", path, n, strings.TrimSpace(line))
 		}

@@ -136,7 +136,7 @@ percent of each cohort still present. The program computes payback both ways and
 ways.
 
 ```go
-// ltv.go — payback is one number; lifetime value is a range.
+// ltv.go: payback is one number; lifetime value is a range.
 package main
 
 import (

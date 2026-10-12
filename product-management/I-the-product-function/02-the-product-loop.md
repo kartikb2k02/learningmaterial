@@ -112,7 +112,7 @@ base success rate, and the only differences are loop length and closure rate. Le
 every closed loop nudges the hit rate up a little, capped at a ceiling.
 
 ```go
-// loop.go — how cycle time and closure rate compound into results.
+// loop.go: how cycle time and closure rate compound into results.
 package main
 
 import (

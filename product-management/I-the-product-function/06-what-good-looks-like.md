@@ -106,7 +106,7 @@ from a mediocre one. It computes the exact chance of ranking them wrongly: the p
 one with a 30% hit rate produces fewer wins than the one with 15%, counting ties as half a mistake.
 
 ```go
-// judging.go — how long outcomes take to separate skill from luck.
+// judging.go: how long outcomes take to separate skill from luck.
 package main
 
 import (

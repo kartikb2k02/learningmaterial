@@ -110,7 +110,7 @@ the number changes how carefully you want the decision written. This program com
 cost of a bet and the success probability it has to clear to be worth making.
 
 ```go
-// bet.go — what a quarter of team time costs, and the odds a bet must clear.
+// bet.go: what a quarter of team time costs, and the odds a bet must clear.
 package main
 
 import "fmt"
