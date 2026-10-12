@@ -1,7 +1,10 @@
-# Prodloop
+# Fathom
 
 A working library on how modern AI products are actually built, published as a static site at
 [product.kartikbhalerao.in](https://product.kartikbhalerao.in/).
+
+A fathom is a unit for measuring depth. To fathom something is to understand it. This library tries
+to do both: measure honestly, with numbers you can rerun, and explain the mechanism underneath.
 
 | Course | What it covers |
 |---|---|

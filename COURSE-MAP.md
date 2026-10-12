@@ -1,6 +1,6 @@
 # Course Map
 
-**Prodloop** · product.kartikbhalerao.in · one course, six levels, 34 topics, about 221 lessons.
+**Fathom** · product.kartikbhalerao.in · one course, six levels, 34 topics, about 221 lessons.
 
 Every lesson below is written as *the question it answers*, which is the convention the topic
 `README.md` tables use, so each block is copy and paste ready when the topic gets written.

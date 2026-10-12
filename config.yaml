@@ -1,5 +1,5 @@
 baseURL: https://product.kartikbhalerao.in/
-title: Prodloop
+title: Fathom
 locale: en
 enableGitInfo: false
 disableKinds: [taxonomy, term, rss]
@@ -21,9 +21,9 @@ enableRobotsTXT: true
 params:
   hero:
     title: How AI products are actually built
-  footer: Prodloop is a working library for people who build AI products.
+  footer: Fathom is a working library for people who build AI products. To fathom is to measure a depth, and to understand it.
   seo:
-    home_title: "AI Product Management, Evals, Pricing and Metrics | Prodloop"
+    home_title: "AI Product Management, Evals, Pricing and Metrics | Fathom"
     description: "Practitioner courses on building AI products: specifying behaviour you cannot pin down, evaluating output you cannot assert on, pricing a feature whose cost scales with use, and the metrics for all of it."
     image: social-card.png
   author:
