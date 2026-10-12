@@ -93,7 +93,7 @@ a kind of credibility that cannot be bought any other way, because it is expensi
 
 ### What changes with level
 
-Briefly, since [Product Operations and the Org](../XV-product-operations-and-the-org/05-pm-levels-archetypes-and-hiring.md)
+Briefly, since [Product Operations and the Org](../XXII-ai-product-org-and-process/05-pm-levels-and-hiring.md)
 covers it properly. Junior work is judged on execution of a defined problem. Mid level work is
 judged on choosing the problem correctly within a given strategy. Senior work is judged on the
 strategy, and on whether other people made good decisions without you. The signals above do not
@@ -179,13 +179,13 @@ it is for your domain.
 
 | Sector | What changes about judging the work |
 |---|---|
-| [Enterprise B2B SaaS](../XIII-product-by-sector/01-enterprise-b2b-saas.md) | Outcomes arrive on renewal cycles, so the lag is a year or more and process signals carry almost all the weight |
-| [Fintech](../XIII-product-by-sector/02-fintech.md) | Avoided losses are a real outcome that never appears in a dashboard, so refusals must be reported explicitly |
-| [Ecommerce and D2C](../XIII-product-by-sector/03-ecommerce-and-d2c.md) | Traffic makes outcomes fast and clean, which is the one case where quarterly outcome judging is defensible |
-| [Marketplaces](../XIII-product-by-sector/04-marketplaces.md) | A win on one side can be a loss overall, so single metric judging is actively misleading |
-| [Devtools and Infra](../XIII-product-by-sector/05-devtools-and-infrastructure.md) | Adoption lags release by quarters, and the leading signals are qualitative |
-| [Healthtech](../XIII-product-by-sector/06-healthtech-and-regulated-care.md) | Some outcomes are measured in clinical studies, which puts the lag beyond any review cycle |
-| [Vertical SaaS](../XIII-product-by-sector/07-vertical-saas.md) | Small customer counts mean every number is a named account, and n is too small for statistics at all |
+| [Enterprise B2B SaaS](../XIX-product-by-sector/01-enterprise-b2b-saas.md) | Outcomes arrive on renewal cycles, so the lag is a year or more and process signals carry almost all the weight |
+| [Fintech](../XIX-product-by-sector/02-fintech.md) | Avoided losses are a real outcome that never appears in a dashboard, so refusals must be reported explicitly |
+| [Ecommerce and D2C](../XIX-product-by-sector/03-ecommerce-and-d2c.md) | Traffic makes outcomes fast and clean, which is the one case where quarterly outcome judging is defensible |
+| [Marketplaces](../XIX-product-by-sector/04-marketplaces.md) | A win on one side can be a loss overall, so single metric judging is actively misleading |
+| [Devtools and Infra](../XIX-product-by-sector/05-devtools-and-infrastructure.md) | Adoption lags release by quarters, and the leading signals are qualitative |
+| [Healthtech](../XIX-product-by-sector/06-healthtech-and-regulated-care.md) | Some outcomes are measured in clinical studies, which puts the lag beyond any review cycle |
+| [Vertical SaaS](../XIX-product-by-sector/07-vertical-saas.md) | Small customer counts mean every number is a named account, and n is too small for statistics at all |
 
 ## Remember this
 

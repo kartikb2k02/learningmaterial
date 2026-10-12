@@ -47,8 +47,10 @@ Notes on the shape:
   to stand alone. Do not open with "In this lesson we will".
 * `## Run the numbers` is included only where arithmetic decides the answer. A lesson about a
   ritual does not need a program.
-* `## The AI layer` must be specific: where a model fits, what it costs per unit of work, how it
-  fails. "Nothing yet, and here is why" is a better answer than a hedge.
+* `## The AI layer` is required only where the lesson's subject is not already the model: topic I,
+  the metrics topics, the sector topic. On an AI native lesson the whole page is the AI layer, and
+  repeating the heading is padding. Where it does appear it must be specific: where a model fits,
+  what it costs per unit of work, how it fails. "Nothing yet, and here is why" beats a hedge.
 * `## Sector lens` is a table with one row per sector, linking to
   `product-management/XIII-product-by-sector`. Never restate market shape; state the delta.
 * `## Try it` has three tasks and the third applies the lesson to the reader's own product.

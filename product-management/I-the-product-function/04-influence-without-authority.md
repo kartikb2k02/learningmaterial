@@ -129,13 +129,13 @@ send anything.
 
 | Sector | What changes about influence |
 |---|---|
-| [Enterprise B2B SaaS](../XIII-product-by-sector/01-enterprise-b2b-saas.md) | Sales holds a competing information source: real customers with real contracts. Beat it by having talked to users rather than buyers |
-| [Fintech](../XIII-product-by-sector/02-fintech.md) | Compliance and risk have a genuine veto, so influence means learning their framework well enough to propose inside it |
-| [Ecommerce and D2C](../XIII-product-by-sector/03-ecommerce-and-d2c.md) | Data is abundant and fast, so the information source is cheap to acquire and cheap for others to contest |
-| [Marketplaces](../XIII-product-by-sector/04-marketplaces.md) | Two internal factions represent the two sides. Neutrality about which side loses is the scarce asset |
-| [Devtools and Infra](../XIII-product-by-sector/05-devtools-and-infrastructure.md) | Engineers are your users, so they often have better information than you. Credibility comes from using the product daily |
-| [Healthtech](../XIII-product-by-sector/06-healthtech-and-regulated-care.md) | Clinical staff hold domain authority that cannot be out researched. Influence comes from removing work rather than proposing features |
-| [Vertical SaaS](../XIII-product-by-sector/07-vertical-saas.md) | Domain fluency is the entire game. Using the customer's vocabulary correctly is worth more than any analysis |
+| [Enterprise B2B SaaS](../XIX-product-by-sector/01-enterprise-b2b-saas.md) | Sales holds a competing information source: real customers with real contracts. Beat it by having talked to users rather than buyers |
+| [Fintech](../XIX-product-by-sector/02-fintech.md) | Compliance and risk have a genuine veto, so influence means learning their framework well enough to propose inside it |
+| [Ecommerce and D2C](../XIX-product-by-sector/03-ecommerce-and-d2c.md) | Data is abundant and fast, so the information source is cheap to acquire and cheap for others to contest |
+| [Marketplaces](../XIX-product-by-sector/04-marketplaces.md) | Two internal factions represent the two sides. Neutrality about which side loses is the scarce asset |
+| [Devtools and Infra](../XIX-product-by-sector/05-devtools-and-infrastructure.md) | Engineers are your users, so they often have better information than you. Credibility comes from using the product daily |
+| [Healthtech](../XIX-product-by-sector/06-healthtech-and-regulated-care.md) | Clinical staff hold domain authority that cannot be out researched. Influence comes from removing work rather than proposing features |
+| [Vertical SaaS](../XIX-product-by-sector/07-vertical-saas.md) | Domain fluency is the entire game. Using the customer's vocabulary correctly is worth more than any analysis |
 
 ## Remember this
 

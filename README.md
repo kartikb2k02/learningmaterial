@@ -5,12 +5,11 @@ A working library on how modern AI products are actually built, published as a s
 
 | Course | What it covers |
 |---|---|
-| [`product-management/`](product-management/README.md) | The product function from first principles: strategy, discovery, delivery, the technical and design literacy it needs, the archetypes a product can be, the sectors it sells into, and how the job is run as an organisation. 16 topics. |
-| [`metrics-and-models/`](metrics-and-models/README.md) | Every number an operator is judged on: what it measures, the formula, the denominator people get wrong, and a program that computes it. 7 topics. |
+| [`product-management/`](product-management/README.md) | Building products with a model inside them. The product function, what a model changes, discovery, behaviour specs, context and agents, evaluation, pricing, cost, trust and safety, the sectors, and every metric the job is judged on. 23 topics. |
 | `growth-engineering/` | Growth as a system rather than a list of tactics. *Coming soon.* |
 | `gtm-engineering/` | Taking a product to a market: buyer, positioning, motion, pipeline, launch. *Coming soon.* |
 | `revenue-operations/` | Operating cadence, the funnel as a data model, systems of record, process. *Coming soon.* |
-| `ai-engineering/` | Building products with a model inside them, up to the product surface and no further. *Coming soon.* |
+| `ai-engineering/` | Reserved. Most of this material now lives inside the product course. *Coming soon.* |
 
 Courses are organised by **topic**: a course is a list of topics, a topic is a list of lessons.
 Nothing is numbered as a module.
@@ -46,15 +45,17 @@ Needs Hugo extended 0.126 or newer, because the site is generated from the cours
 content adapter rather than from `content/`. Go is needed only for the tools in `tools/`.
 
 ```bash
-go run ./tools/gocheck -run product-management    # format, vet and run every Go block
+go run ./tools/gocheck -run product-management     # format, vet and run every Go block
+go run ./tools/stylecheck product-management      # a dash left in prose or a bullet
+go run ./tools/diagramcheck product-management    # logo tokens, class names, HTML in labels
+go run ./tools/linkcheck -pending                 # dangling links, by unwritten folder
 go run ./tools/logos                              # revendor diagram icons (needs network)
 ```
 
 ## Repository layout
 
 ```
-product-management/     a course: folders are topics, files are lessons
-metrics-and-models/     a course
+product-management/     the course: folders are topics, files are lessons
 config.yaml             which courses are published, and the level each topic sits at
 content/                the content adapter that turns the folders above into a site
 layouts/ assets/        the site itself. Adding a course does not touch these.

@@ -44,21 +44,11 @@ params:
       short: Product
       summary: "The product function from first principles, and what changes once there is a model in the product."
       levels:
-        foundations:  [I-the-product-function, II-product-strategy]
-        basic:        [III-discovery-and-problem-framing, IV-definition-and-delivery, V-technical-foundations]
-        intermediate: [VI-design-and-user-experience, VII-analytics-and-experimentation, VIII-pricing-and-packaging]
-        advanced:     [IX-product-archetypes, X-platform-and-api-products, XI-data-and-ml-products, XII-trust-safety-and-abuse]
-        expert:       [XIII-product-by-sector, XIV-lifecycle-migrations-and-sunsets, XV-product-operations-and-the-org, XVI-worked-product-decisions]
-
-    - dir: metrics-and-models
-      short: Metrics
-      summary: "Every number an operator is judged on: what it measures, the formula, and a program that computes it."
-      levels:
-        foundations:  [I-how-to-read-a-metric]
-        basic:        [II-funnel-and-acquisition]
-        intermediate: [III-retention-and-cohorts, IV-revenue-and-efficiency]
-        advanced:     [V-sales-and-pipeline-math, VI-unit-economics-with-ai-costs]
-        expert:       [VII-benchmarks-and-their-limits]
+        foundations:  [I-the-product-function, II-what-a-model-changes, III-how-to-read-a-metric]
+        basic:        [IV-discovery-for-ai-products, V-specs-for-non-deterministic-systems, VI-model-primitives, VII-funnel-retention-and-experiments]
+        intermediate: [VIII-context-and-knowledge, IX-agents-and-autonomy, X-agent-and-task-metrics, XI-ai-product-ux, XII-revenue-and-efficiency]
+        advanced:     [XIII-evaluation-and-quality, XIV-ai-quality-metrics, XV-ai-pricing-and-packaging, XVI-ai-cost-and-margin, XVII-trust-safety-and-guardrails, XVIII-data-moats-and-feedback-loops]
+        expert:       [XIX-product-by-sector, XX-model-lifecycle-and-drift, XXI-benchmarks-and-their-limits, XXII-ai-product-org-and-process, XXIII-worked-ai-products]
 
     - dir: growth-engineering
       title: Growth Engineering
@@ -95,8 +85,6 @@ module:
       target: assets
     - source: product-management
       target: assets/_watch/product-management
-    - source: metrics-and-models
-      target: assets/_watch/metrics-and-models
 
 outputs:
   home: [html, json]

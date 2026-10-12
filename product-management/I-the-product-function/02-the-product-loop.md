@@ -95,7 +95,7 @@ produces a real signal.
 The failure mode on the other side is real too: slicing a bet so thin that no slice can move the
 metric means every readout is noise, and you learn nothing while feeling rigorous. The test is
 whether one slice can produce a statistically legible result, which is a question of traffic, not
-of taste. See [A/B Testing and When It Lies](../VII-analytics-and-experimentation/04-ab-testing-and-when-it-lies.md).
+of taste. See [A/B Testing and When It Lies](../VII-funnel-retention-and-experiments/05-ab-testing-and-when-it-lies.md).
 
 ### What fills the box in 2026
 
@@ -186,13 +186,13 @@ bar as a number and require the readout to state pass or fail against it before 
 
 | Sector | What changes about the loop |
 |---|---|
-| [Enterprise B2B SaaS](../XIII-product-by-sector/01-enterprise-b2b-saas.md) | Measurement is slow and small sample. Closure often means three customer conversations rather than a number |
-| [Fintech](../XIII-product-by-sector/02-fintech.md) | Release gates lengthen the build leg, so small batch size matters more and is harder to get |
-| [Ecommerce and D2C](../XIII-product-by-sector/03-ecommerce-and-d2c.md) | Traffic makes the loop days long, so cycle time stops being the constraint and closure is everything |
-| [Marketplaces](../XIII-product-by-sector/04-marketplaces.md) | Both sides must be measured, and a win on one side can be a loss overall |
-| [Devtools and Infra](../XIII-product-by-sector/05-devtools-and-infrastructure.md) | Adoption is slow and voluntary, so leading signals are qualitative for months |
-| [Healthtech](../XIII-product-by-sector/06-healthtech-and-regulated-care.md) | Some measurements require a study protocol, which makes the loop quarterly at best |
-| [Vertical SaaS](../XIII-product-by-sector/07-vertical-saas.md) | Small customer counts mean the readout is named accounts, not percentages |
+| [Enterprise B2B SaaS](../XIX-product-by-sector/01-enterprise-b2b-saas.md) | Measurement is slow and small sample. Closure often means three customer conversations rather than a number |
+| [Fintech](../XIX-product-by-sector/02-fintech.md) | Release gates lengthen the build leg, so small batch size matters more and is harder to get |
+| [Ecommerce and D2C](../XIX-product-by-sector/03-ecommerce-and-d2c.md) | Traffic makes the loop days long, so cycle time stops being the constraint and closure is everything |
+| [Marketplaces](../XIX-product-by-sector/04-marketplaces.md) | Both sides must be measured, and a win on one side can be a loss overall |
+| [Devtools and Infra](../XIX-product-by-sector/05-devtools-and-infrastructure.md) | Adoption is slow and voluntary, so leading signals are qualitative for months |
+| [Healthtech](../XIX-product-by-sector/06-healthtech-and-regulated-care.md) | Some measurements require a study protocol, which makes the loop quarterly at best |
+| [Vertical SaaS](../XIX-product-by-sector/07-vertical-saas.md) | Small customer counts mean the readout is named accounts, not percentages |
 
 ## Remember this
 

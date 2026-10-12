@@ -257,13 +257,13 @@ pick a formula and a churn rate and present the result without flagging that it 
 
 | Sector | What changes about these numbers |
 |---|---|
-| [Enterprise B2B SaaS](../../product-management/XIII-product-by-sector/01-enterprise-b2b-saas.md) | The cost of winning a deal is close to fixed, so payback is driven by contract size more than by efficiency. Lag between spend and win is months |
-| [Fintech](../../product-management/XIII-product-by-sector/02-fintech.md) | Revenue is often a spread or a per transaction fee, so margin varies with customer behaviour rather than being a constant |
-| [Ecommerce and D2C](../../product-management/XIII-product-by-sector/03-ecommerce-and-d2c.md) | Contribution margin after shipping, payment fees and returns is the only margin worth using. Repeat rate replaces churn |
-| [Marketplaces](../../product-management/XIII-product-by-sector/04-marketplaces.md) | Acquisition cost exists separately for each side, and lifetime value on one side depends on liquidity provided by the other |
-| [Devtools and Infrastructure](../../product-management/XIII-product-by-sector/05-devtools-and-infrastructure.md) | Adoption is free and long before payment, so acquisition cost per paying customer is a small fraction of users and the lag is quarters |
-| [Healthtech](../../product-management/XIII-product-by-sector/06-healthtech-and-regulated-care.md) | Contracts run for years with institutional renewal, so the horizon is genuinely long but the cohort count is tiny |
-| [Vertical SaaS](../../product-management/XIII-product-by-sector/07-vertical-saas.md) | Services revenue at low margin is often bundled in, which inflates revenue and destroys the margin assumption |
+| [Enterprise B2B SaaS](../XIX-product-by-sector/01-enterprise-b2b-saas.md) | The cost of winning a deal is close to fixed, so payback is driven by contract size more than by efficiency. Lag between spend and win is months |
+| [Fintech](../XIX-product-by-sector/02-fintech.md) | Revenue is often a spread or a per transaction fee, so margin varies with customer behaviour rather than being a constant |
+| [Ecommerce and D2C](../XIX-product-by-sector/03-ecommerce-and-d2c.md) | Contribution margin after shipping, payment fees and returns is the only margin worth using. Repeat rate replaces churn |
+| [Marketplaces](../XIX-product-by-sector/04-marketplaces.md) | Acquisition cost exists separately for each side, and lifetime value on one side depends on liquidity provided by the other |
+| [Devtools and Infrastructure](../XIX-product-by-sector/05-devtools-and-infrastructure.md) | Adoption is free and long before payment, so acquisition cost per paying customer is a small fraction of users and the lag is quarters |
+| [Healthtech](../XIX-product-by-sector/06-healthtech-and-regulated-care.md) | Contracts run for years with institutional renewal, so the horizon is genuinely long but the cohort count is tiny |
+| [Vertical SaaS](../XIX-product-by-sector/07-vertical-saas.md) | Services revenue at low margin is often bundled in, which inflates revenue and destroys the margin assumption |
 
 ## Remember this
 
