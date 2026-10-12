@@ -33,22 +33,24 @@ params:
 
   # The five learning levels, in order. Every topic of every course belongs to one.
   levels:
-    - { key: foundations,  name: Foundations,  blurb: Build the mental model. }
-    - { key: basic,        name: Basic,        blurb: Learn the core mechanisms. }
-    - { key: intermediate, name: Intermediate, blurb: Run the playbooks. }
-    - { key: advanced,     name: Advanced,     blurb: Operate at scale. }
-    - { key: expert,       name: Expert,       blurb: Make the calls and defend them. }
+    - { key: foundations,  name: Foundations,  blurb: The whole product function.  }
+    - { key: basic,        name: Basic,        blurb: Read the system and the screen. }
+    - { key: intermediate, name: Intermediate, blurb: Build with a model in the product. }
+    - { key: advanced,     name: Advanced,     blurb: Ship it safely, and keep it working. }
+    - { key: expert,       name: Expert,       blurb: Measure it, and build the real thing. }
+    - { key: sectors,      name: Sectors,      blurb: The same job, bent by the market it runs in. }
 
   courses:
     - dir: product-management
       short: Product
       summary: "The product function from first principles, and what changes once there is a model in the product."
       levels:
-        foundations:  [I-the-product-function, II-what-a-model-changes, III-how-to-read-a-metric]
-        basic:        [IV-discovery-for-ai-products, V-specs-for-non-deterministic-systems, VI-model-primitives, VII-funnel-retention-and-experiments]
-        intermediate: [VIII-context-and-knowledge, IX-agents-and-autonomy, X-agent-and-task-metrics, XI-ai-product-ux, XII-revenue-and-efficiency]
-        advanced:     [XIII-evaluation-and-quality, XIV-ai-quality-metrics, XV-ai-pricing-and-packaging, XVI-ai-cost-and-margin, XVII-trust-safety-and-guardrails, XVIII-data-moats-and-feedback-loops]
-        expert:       [XIX-product-by-sector, XX-model-lifecycle-and-drift, XXI-benchmarks-and-their-limits, XXII-ai-product-org-and-process, XXIII-worked-ai-products]
+        foundations:  [the-product-function, product-strategy, discovery-and-problem-framing, definition-and-delivery, prioritisation-and-roadmapping, pricing-and-packaging]
+        basic:        [technical-foundations, design-and-user-experience, what-a-model-changes]
+        intermediate: [discovery-for-ai-products, specs-for-non-deterministic-systems, model-primitives, context-and-knowledge, agents-and-autonomy, ai-product-ux]
+        advanced:     [evaluation-and-quality, ai-pricing-and-packaging, trust-safety-and-guardrails, data-moats-and-feedback-loops, model-lifecycle-and-drift]
+        expert:       [how-to-read-a-metric, funnel-retention-and-experiments, revenue-and-efficiency, ai-quality-metrics, ai-cost-and-margin, agent-and-task-metrics, benchmarks-and-their-limits, ai-product-org-and-process, worked-ai-products]
+        sectors:      [product-by-sector]
 
     - dir: growth-engineering
       title: Growth Engineering

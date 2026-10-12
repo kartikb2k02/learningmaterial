@@ -42,7 +42,12 @@ Estimated difficulty: 3/5 | Estimated time: 40 min
 Notes on the shape:
 
 * The `text` block is parsed by the site for the difficulty badge, prerequisites and reading time.
-  Keep the three field names exactly as written.
+  Keep the three field names exactly as written, and make `Level:` match the level the topic sits at
+  in `config.yaml`. A lesson that says Expert inside a topic listed under Sectors prints both chips
+  and reads as a mistake.
+* **Topic folders carry no number.** Order comes from the `levels` lists in `config.yaml`, so a
+  restructure is a config edit rather than a mass rename. Lesson files keep their `01-` prefixes,
+  which the site does parse for ordering.
 * The first paragraph after that block becomes the card blurb and the meta description, so it has
   to stand alone. Do not open with "In this lesson we will".
 * `## Run the numbers` is included only where arithmetic decides the answer. A lesson about a

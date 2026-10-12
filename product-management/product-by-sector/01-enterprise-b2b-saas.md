@@ -1,8 +1,8 @@
 # Enterprise B2B SaaS
 
 ```text
-Level: Expert
-Prerequisites: Product Archetypes
+Level: Sectors
+Prerequisites: AI Product Shapes
 Estimated difficulty: 3/5 | Estimated time: 40 min
 ```
 
@@ -63,7 +63,7 @@ renewal decision a year later. Your learning loop is as long as that chain unles
 build shorter ones.
 
 What this means in practice is that you cannot run the loop from
-[The Product Loop](../I-the-product-function/02-the-product-loop.md) on outcomes. You run it on
+[The Product Loop](../the-product-function/02-the-product-loop.md) on outcomes. You run it on
 leading signals: how many security reviews raised the same gap, how many deals stalled at the same
 stage, how many admins asked for the same report. Those are available in weeks, and the honest
 version of enterprise product measurement is mostly counting recurring objections.
@@ -109,7 +109,7 @@ Three structural consequences.
 2. **The loudest customer is not the largest market.** One enterprise customer can generate a
    quarter of roadmap requests. The discipline is to build what several customers need and to
    refuse the rest, visibly and politely. See the refusals signal in
-   [What Good Looks Like](../I-the-product-function/06-what-good-looks-like.md).
+   [What Good Looks Like](../the-product-function/06-what-good-looks-like.md).
 3. **Deprecation becomes expensive.** Contracts constrain what you may remove and when, so
    decisions you make now are harder to undo than in any other sector.
 

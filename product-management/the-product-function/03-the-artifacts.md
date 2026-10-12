@@ -196,13 +196,13 @@ refusals, because the refusals are the decision.
 
 | Sector | What changes about the artifacts |
 |---|---|
-| [Enterprise B2B SaaS](../XIX-product-by-sector/01-enterprise-b2b-saas.md) | The PRD acquires an audience outside the team: sales, CS and sometimes the customer. Refusals become contractual |
-| [Fintech](../XIX-product-by-sector/02-fintech.md) | Some documents are regulated records with retention requirements, so drift is a compliance problem rather than an annoyance |
-| [Ecommerce and D2C](../XIX-product-by-sector/03-ecommerce-and-d2c.md) | Cycles are short enough that the one pager plus an experiment brief replaces the PRD for most work |
-| [Marketplaces](../XIX-product-by-sector/04-marketplaces.md) | Every PRD needs a section on the effect on the other side, or it will be found later |
-| [Devtools and Infra](../XIX-product-by-sector/05-devtools-and-infrastructure.md) | Public API documentation is the product, so the spec and the docs converge and versioning matters |
-| [Healthtech](../XIX-product-by-sector/06-healthtech-and-regulated-care.md) | Design history files and risk assessments are mandatory artifacts with defined formats |
-| [Vertical SaaS](../XIX-product-by-sector/07-vertical-saas.md) | Domain workflows must be documented in the customer's own vocabulary or the review is worthless |
+| [Enterprise B2B SaaS](../product-by-sector/01-enterprise-b2b-saas.md) | The PRD acquires an audience outside the team: sales, CS and sometimes the customer. Refusals become contractual |
+| [Fintech](../product-by-sector/02-fintech.md) | Some documents are regulated records with retention requirements, so drift is a compliance problem rather than an annoyance |
+| [Ecommerce and D2C](../product-by-sector/03-ecommerce-and-d2c.md) | Cycles are short enough that the one pager plus an experiment brief replaces the PRD for most work |
+| [Marketplaces](../product-by-sector/04-marketplaces.md) | Every PRD needs a section on the effect on the other side, or it will be found later |
+| [Devtools and Infra](../product-by-sector/05-devtools-and-infrastructure.md) | Public API documentation is the product, so the spec and the docs converge and versioning matters |
+| [Healthtech](../product-by-sector/06-healthtech-and-regulated-care.md) | Design history files and risk assessments are mandatory artifacts with defined formats |
+| [Vertical SaaS](../product-by-sector/07-vertical-saas.md) | Domain workflows must be documented in the customer's own vocabulary or the review is worthless |
 
 ## Remember this
 

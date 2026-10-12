@@ -85,7 +85,7 @@ correlation to the one you actually have.
 
 This is a slow failure. Margin erodes in the direction of your best customers, which is also the
 direction your product strategy is pushing, so the two effects hide each other for several quarters.
-See [AI Cost and Margin](../XVI-ai-cost-and-margin/README.md).
+See [AI Cost and Margin](../ai-cost-and-margin/README.md).
 
 ### Trust does not reset
 
@@ -168,19 +168,19 @@ alarms effectively disappear.
 That is the real difference between the two worlds. Flakiness on a single case is something that
 happens to you. The noise in a rate gate is a parameter you set, deliberately, by choosing how many
 cases to run and where to put the bar relative to the rate you actually achieve. Doing that properly
-is [Evaluation and Quality](../XIII-evaluation-and-quality/05-the-statistics-you-cannot-skip.md).
+is [Evaluation and Quality](../evaluation-and-quality/05-the-statistics-you-cannot-skip.md).
 
 ## Sector lens
 
 | Sector | What breaks hardest |
 |---|---|
-| [Enterprise B2B SaaS](../XIX-product-by-sector/01-enterprise-b2b-saas.md) | Support reproduction. Enterprise support contracts assume a deterministic product and promise resolution times |
-| [Fintech](../XIX-product-by-sector/02-fintech.md) | The specification. A regulator expects a described behaviour, and "usually" is not a description |
-| [Ecommerce and D2C](../XIX-product-by-sector/03-ecommerce-and-d2c.md) | Pricing. Thin margin per order means per run cost is felt immediately |
-| [Marketplaces](../XIX-product-by-sector/04-marketplaces.md) | Trust. A wrong answer to one side is read as bias toward the other |
-| [Devtools and Infrastructure](../XIX-product-by-sector/05-devtools-and-infrastructure.md) | The test suite. Your users expect reproducible builds and will file the non determinism as a bug |
-| [Healthtech](../XIX-product-by-sector/06-healthtech-and-regulated-care.md) | The specification, with a regulatory requirement to document intended behaviour |
-| [Vertical SaaS](../XIX-product-by-sector/07-vertical-saas.md) | Trust. A small market talks to itself, and one bad story travels |
+| [Enterprise B2B SaaS](../product-by-sector/01-enterprise-b2b-saas.md) | Support reproduction. Enterprise support contracts assume a deterministic product and promise resolution times |
+| [Fintech](../product-by-sector/02-fintech.md) | The specification. A regulator expects a described behaviour, and "usually" is not a description |
+| [Ecommerce and D2C](../product-by-sector/03-ecommerce-and-d2c.md) | Pricing. Thin margin per order means per run cost is felt immediately |
+| [Marketplaces](../product-by-sector/04-marketplaces.md) | Trust. A wrong answer to one side is read as bias toward the other |
+| [Devtools and Infrastructure](../product-by-sector/05-devtools-and-infrastructure.md) | The test suite. Your users expect reproducible builds and will file the non determinism as a bug |
+| [Healthtech](../product-by-sector/06-healthtech-and-regulated-care.md) | The specification, with a regulatory requirement to document intended behaviour |
+| [Vertical SaaS](../product-by-sector/07-vertical-saas.md) | Trust. A small market talks to itself, and one bad story travels |
 
 ## Remember this
 

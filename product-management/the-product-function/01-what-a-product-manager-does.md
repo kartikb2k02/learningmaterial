@@ -179,13 +179,13 @@ The part it cannot touch is job three. Accountability is not a task.
 
 | Sector | What changes about the job |
 |---|---|
-| [Enterprise B2B SaaS](../XIX-product-by-sector/01-enterprise-b2b-saas.md) | Job two expands enormously: sales, CS and the champion all shape scope. Job one is partly done for you by contracts |
-| [Fintech](../XIX-product-by-sector/02-fintech.md) | Compliance holds a real veto, so "decide" means decide within a legal envelope you must learn |
-| [Ecommerce and D2C](../XIX-product-by-sector/03-ecommerce-and-d2c.md) | Feedback is same day and quantitative, so job three is fast and public |
-| [Marketplaces](../XIX-product-by-sector/04-marketplaces.md) | You have two customers with opposed interests, and job one includes choosing which one loses |
-| [Devtools and Infra](../XIX-product-by-sector/05-devtools-and-infrastructure.md) | Your users can read the code and will tell you precisely why you are wrong. Information asymmetry is weak |
-| [Healthtech](../XIX-product-by-sector/06-healthtech-and-regulated-care.md) | Clinical risk means some decisions are not yours at all, and the artifact is a regulated document |
-| [Vertical SaaS](../XIX-product-by-sector/07-vertical-saas.md) | Domain depth replaces data volume as the source of authority |
+| [Enterprise B2B SaaS](../product-by-sector/01-enterprise-b2b-saas.md) | Job two expands enormously: sales, CS and the champion all shape scope. Job one is partly done for you by contracts |
+| [Fintech](../product-by-sector/02-fintech.md) | Compliance holds a real veto, so "decide" means decide within a legal envelope you must learn |
+| [Ecommerce and D2C](../product-by-sector/03-ecommerce-and-d2c.md) | Feedback is same day and quantitative, so job three is fast and public |
+| [Marketplaces](../product-by-sector/04-marketplaces.md) | You have two customers with opposed interests, and job one includes choosing which one loses |
+| [Devtools and Infra](../product-by-sector/05-devtools-and-infrastructure.md) | Your users can read the code and will tell you precisely why you are wrong. Information asymmetry is weak |
+| [Healthtech](../product-by-sector/06-healthtech-and-regulated-care.md) | Clinical risk means some decisions are not yours at all, and the artifact is a regulated document |
+| [Vertical SaaS](../product-by-sector/07-vertical-saas.md) | Domain depth replaces data volume as the source of authority |
 
 ## Remember this
 

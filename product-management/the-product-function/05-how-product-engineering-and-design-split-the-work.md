@@ -147,13 +147,13 @@ its own cut, so the conversation about tradeoffs starts with options instead of 
 
 | Sector | What changes at the seams |
 |---|---|
-| [Enterprise B2B SaaS](../XIX-product-by-sector/01-enterprise-b2b-saas.md) | A fifth party appears at seam 1: the customer's own administrator, whose constraints are contractual |
-| [Fintech](../XIX-product-by-sector/02-fintech.md) | Compliance holds a refusal at seam 4 that outranks all three roles |
-| [Ecommerce and D2C](../XIX-product-by-sector/03-ecommerce-and-d2c.md) | Merchandising and operations own parts of the solution space that design does not |
-| [Marketplaces](../XIX-product-by-sector/04-marketplaces.md) | Seam 1 doubles, because there are two user groups with conflicting problems |
-| [Devtools and Infra](../XIX-product-by-sector/05-devtools-and-infrastructure.md) | Engineering holds the information source as well as the approach, so product's constraint must be unusually well evidenced |
-| [Healthtech](../XIX-product-by-sector/06-healthtech-and-regulated-care.md) | Clinical safety sits above seam 3: durability is not negotiable in parts of the system |
-| [Vertical SaaS](../XIX-product-by-sector/07-vertical-saas.md) | Domain experts, often former practitioners, hold part of the solution space legitimately |
+| [Enterprise B2B SaaS](../product-by-sector/01-enterprise-b2b-saas.md) | A fifth party appears at seam 1: the customer's own administrator, whose constraints are contractual |
+| [Fintech](../product-by-sector/02-fintech.md) | Compliance holds a refusal at seam 4 that outranks all three roles |
+| [Ecommerce and D2C](../product-by-sector/03-ecommerce-and-d2c.md) | Merchandising and operations own parts of the solution space that design does not |
+| [Marketplaces](../product-by-sector/04-marketplaces.md) | Seam 1 doubles, because there are two user groups with conflicting problems |
+| [Devtools and Infra](../product-by-sector/05-devtools-and-infrastructure.md) | Engineering holds the information source as well as the approach, so product's constraint must be unusually well evidenced |
+| [Healthtech](../product-by-sector/06-healthtech-and-regulated-care.md) | Clinical safety sits above seam 3: durability is not negotiable in parts of the system |
+| [Vertical SaaS](../product-by-sector/07-vertical-saas.md) | Domain experts, often former practitioners, hold part of the solution space legitimately |
 
 ## Remember this
 

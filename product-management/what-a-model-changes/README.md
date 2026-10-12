@@ -15,5 +15,5 @@ actually building, and when the right answer is to use no model at all.
 | 06 | [When Not to Use a Model](06-when-not-to-use-a-model.md) | What is the deterministic alternative, and how do you argue for it? |
 | 07 | [The 2026 Landscape](07-the-2026-landscape.md) | What fills each box of the stack, and which parts will have changed by next year? |
 
-Lesson 04 is a prerequisite for [Product by Sector](../XIX-product-by-sector/README.md). Shape
+Lesson 04 is a prerequisite for [Product by Sector](../product-by-sector/README.md). Shape
 usually determines more about a product than the market it sells into.

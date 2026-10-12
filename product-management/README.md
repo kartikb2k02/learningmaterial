@@ -68,7 +68,7 @@ Every lesson follows the same shape.
 7. **Remember this**, **Try it**, **Check yourself.**
 
 Two rules hold throughout. A metric is defined in exactly one lesson and linked everywhere else.
-Market shape is defined once, in [Product by Sector](XIX-product-by-sector/README.md), and every
+Market shape is defined once, in [Product by Sector](product-by-sector/README.md), and every
 other sector mention states only the delta.
 
 ## The topics
@@ -88,29 +88,57 @@ flowchart LR
 
 | Topic | You will be able to | Level |
 |---|---|---|
-| [The Product Function](I-the-product-function/README.md) | Say what the job is, where the loop breaks, and how the work is actually judged | Foundations |
-| What a Model Changes | Name the five facts, pick the product shape you are building, and argue for not using a model | Foundations |
-| How to Read a Metric | Spot a bad denominator, a mix shift and a vanity metric before acting on one | Foundations |
-| Discovery for AI Products | Tell a demo from a product, decompose work into tasks, and size an opportunity by error tolerance | Basic |
-| Specs for Non Deterministic Systems | Write a behaviour contract and a rubric instead of a pixel spec | Basic |
-| Model Primitives | Reason about tokens, latency, cost and structured output well enough to make the call | Basic |
-| Funnel, Retention and Experiments | Build a cohort table, read whether the curve flattens, and know when a test is lying | Basic |
+| [The Product Function](the-product-function/README.md) | Say what the job is, where the loop breaks, and how the work is actually judged | Foundations |
+| Product Strategy | Write a one page strategy that names the bets and the refusals, and tell a real moat from a story | Foundations |
+| Discovery and Problem Framing | Tell a real problem from a loud one, size it, and kill ideas before they cost anything | Foundations |
+| Definition and Delivery | Write a PRD that gets built, scope a first version, and get it launched | Foundations |
+| Prioritisation and Roadmapping | Order the work, commit enough to be trusted, and defend the refusals | Foundations |
+| Pricing and Packaging | Choose a value metric, build tiers, discover willingness to pay, and change a price safely | Foundations |
+| Technical Foundations | Read a system well enough to know which requests are cheap, which are expensive, and why | Basic |
+| Design and User Experience | Run a critique, test with five users, and name the information architecture problem | Basic |
+| [What a Model Changes](what-a-model-changes/README.md) | Name the five facts, pick the product shape you are building, and argue for not using a model | Basic |
+| Discovery for AI Products | Tell a demo from a product, decompose work into tasks, and size by error tolerance | Intermediate |
+| Specs for Non Deterministic Systems | Write a behaviour contract and a rubric instead of a pixel spec | Intermediate |
+| Model Primitives | Reason about tokens, latency, cost and structured output well enough to make the call | Intermediate |
 | Context and Knowledge | Decide what goes in the window, ground an answer, and make it checkable | Intermediate |
 | Agents and Autonomy | Place a product on the autonomy spectrum and contain what it can get wrong | Intermediate |
-| Agent and Task Metrics | Measure steps, tool errors, autonomy and reliability as a compound number | Intermediate |
 | AI Product UX | Spend a trust budget, show uncertainty, and design for the wrong answer | Intermediate |
-| [Revenue and Efficiency](XII-revenue-and-efficiency/README.md) | Compute payback, lifetime value and retention of revenue honestly | Intermediate |
 | Evaluation and Quality | Build the dataset, grade it, gate a release on it, and read production traces | Advanced |
-| AI Quality Metrics | Measure groundedness, task success, acceptance, intervention and trust | Advanced |
-| AI Pricing and Packaging | Choose a value metric when cost scales with use, and price credits or outcomes | Advanced |
-| AI Cost and Margin | Put inference in cost of revenue and find where the margin breaks | Advanced |
+| AI Pricing and Packaging | Price a feature whose cost scales with use, through credits, usage or outcomes | Advanced |
 | Trust, Safety and Guardrails | Predict the abuse, build the guardrail stack, and run the incident | Advanced |
 | Data Moats and Feedback Loops | Test honestly whether your data is a moat, and build the flywheel | Advanced |
-| [Product by Sector](XIX-product-by-sector/README.md) | Work in enterprise, fintech, ecommerce, marketplaces, devtools, healthtech or vertical software | Expert |
-| Model Lifecycle and Drift | Survive a model upgrade, pin versions, and detect drift before users do | Expert |
+| Model Lifecycle and Drift | Survive a model upgrade, pin versions, and detect drift before users do | Advanced |
+| How to Read a Metric | Spot a bad denominator, a mix shift and a vanity metric before acting on one | Expert |
+| Funnel, Retention and Experiments | Build a cohort table, read whether the curve flattens, and know when a test is lying | Expert |
+| [Revenue and Efficiency](revenue-and-efficiency/README.md) | Compute payback, lifetime value and retention of revenue honestly | Expert |
+| AI Quality Metrics | Measure groundedness, task success, acceptance, intervention and trust | Expert |
+| AI Cost and Margin | Put inference in cost of revenue and find where the margin breaks | Expert |
+| Agent and Task Metrics | Measure steps, tool errors, autonomy and reliability as a compound number | Expert |
 | Benchmarks and Their Limits | Find a real benchmark, adjust it for stage, and build your own baseline | Expert |
 | AI Product Org and Process | Shape the team, run the review, and triage traces as a weekly habit | Expert |
 | Worked AI Products | Produce and defend a complete build, with the numbers and the falsification test | Expert |
+| [Product by Sector](product-by-sector/README.md) | Work in enterprise, fintech, ecommerce, marketplaces, devtools, healthtech or vertical software | Sectors |
+
+## How the six levels are meant to be read
+
+**Foundations** is the whole product function, in detail and with no model in it. Everything there
+would be true if generative models had never shipped, and it is the part that stays true longest.
+
+**Basic** is literacy: enough of a systems mental model and enough design craft to hold your side of
+the conversation, plus the first contact with what a model changes.
+
+**Intermediate** is building with a model in the product: discovery, behaviour specs, primitives,
+context, agents and the interface.
+
+**Advanced** is shipping it safely and keeping it working: evaluation, pricing it, the guardrails,
+whether you have a moat, and surviving the next model release.
+
+**Expert** is measurement and construction. Every metric the job is judged on is defined here, and
+the topics that build real things end to end sit alongside them, because a number you cannot
+compute is a number you do not have.
+
+**Sectors** comes last on purpose. It is the same job bent by the market it runs in, and it only
+makes sense once the job itself is familiar.
 
 ## What you need
 

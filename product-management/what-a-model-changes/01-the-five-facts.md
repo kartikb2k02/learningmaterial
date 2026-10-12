@@ -64,7 +64,7 @@ pricing evolved in a world where the tenth thousand user cost nothing to serve.
 
 What follows: free tiers have a real floor, the most engaged users are the most expensive, gross
 margin stops being a constant, and usage you cannot predict is spend you cannot forecast.
-Arithmetic in [AI Cost and Margin](../XVI-ai-cost-and-margin/README.md).
+Arithmetic in [AI Cost and Margin](../ai-cost-and-margin/README.md).
 
 ### Fact three: it is probabilistic
 
@@ -86,7 +86,7 @@ cost increase in the world to cause by accident: one more retrieved document, on
 longer conversation history.
 
 This is why context is a budget rather than a setting. See
-[Context Engineering](../VIII-context-and-knowledge/01-context-engineering.md).
+[Context Engineering](../context-and-knowledge/01-context-engineering.md).
 
 ### Fact five: it is persuadable
 
@@ -97,7 +97,7 @@ because the instructions and the data are the same thing.
 
 What follows: every piece of content that reaches the context window is untrusted input, and the
 question for any feature is what the model is allowed to do if it is talked into it. Treated
-properly in [Prompt Injection as a Product Problem](../XVII-trust-safety-and-guardrails/01-prompt-injection-as-a-product-problem.md).
+properly in [Prompt Injection as a Product Problem](../trust-safety-and-guardrails/01-prompt-injection-as-a-product-problem.md).
 
 ### Which one binds first
 
@@ -186,13 +186,13 @@ token count and a call volume you can estimate in ten minutes.
 
 | Sector | Which fact binds first, usually |
 |---|---|
-| [Enterprise B2B SaaS](../XIX-product-by-sector/01-enterprise-b2b-saas.md) | Persuadable. The model touches customer data under contract, and the security review asks about exactly this |
-| [Fintech](../XIX-product-by-sector/02-fintech.md) | Probabilistic. A wrong answer moves money or breaks a rule, so the tolerated error rate is near zero |
-| [Ecommerce and D2C](../XIX-product-by-sector/03-ecommerce-and-d2c.md) | Cost. Margin per order is thin enough that a few cents of inference is a real line item |
-| [Marketplaces](../XIX-product-by-sector/04-marketplaces.md) | Persuadable. Both sides supply text, and one of them has a reason to manipulate you |
-| [Devtools and Infrastructure](../XIX-product-by-sector/05-devtools-and-infrastructure.md) | Slow. Developers compare everything to a local command that returns instantly |
-| [Healthtech](../XIX-product-by-sector/06-healthtech-and-regulated-care.md) | Probabilistic, with a regulatory floor under what error rate is permissible at all |
-| [Vertical SaaS](../XIX-product-by-sector/07-vertical-saas.md) | Cost. Small contract values leave little room for an expensive feature per seat |
+| [Enterprise B2B SaaS](../product-by-sector/01-enterprise-b2b-saas.md) | Persuadable. The model touches customer data under contract, and the security review asks about exactly this |
+| [Fintech](../product-by-sector/02-fintech.md) | Probabilistic. A wrong answer moves money or breaks a rule, so the tolerated error rate is near zero |
+| [Ecommerce and D2C](../product-by-sector/03-ecommerce-and-d2c.md) | Cost. Margin per order is thin enough that a few cents of inference is a real line item |
+| [Marketplaces](../product-by-sector/04-marketplaces.md) | Persuadable. Both sides supply text, and one of them has a reason to manipulate you |
+| [Devtools and Infrastructure](../product-by-sector/05-devtools-and-infrastructure.md) | Slow. Developers compare everything to a local command that returns instantly |
+| [Healthtech](../product-by-sector/06-healthtech-and-regulated-care.md) | Probabilistic, with a regulatory floor under what error rate is permissible at all |
+| [Vertical SaaS](../product-by-sector/07-vertical-saas.md) | Cost. Small contract values leave little room for an expensive feature per seat |
 
 ## Remember this
 

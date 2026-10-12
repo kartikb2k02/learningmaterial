@@ -4,7 +4,7 @@ The same function, bent by the market it runs in. Seven sectors, each one a full
 rather than a list of industry facts: who actually buys, what the cycle does to the loop, what the
 product must contain that no user ever asked for, and what that does to the roadmap.
 
-**Read [Product Archetypes](../II-what-a-model-changes/04-ai-product-shapes.md) first.** The shape of a product
+**Read [Product Archetypes](../what-a-model-changes/04-ai-product-shapes.md) first.** The shape of a product
 usually determines more than the market it sells into. A fintech marketplace behaves like a
 marketplace that happens to move money, and borrowing the fintech playbook for it will mislead you
 about liquidity, which is the thing that will actually kill it.
@@ -36,7 +36,7 @@ one place: every other course states its deltas against these rows and never res
 
 Treat these as orientation, not benchmarks. They are the typical shapes seen as of **12 October
 2026**, and they are deliberately ranges. Real figures, with sources and dates, live in
-[Benchmarks and Their Limits](../XXI-benchmarks-and-their-limits/README.md).
+[Benchmarks and Their Limits](../benchmarks-and-their-limits/README.md).
 
 ## How to read a sector you have never worked in
 

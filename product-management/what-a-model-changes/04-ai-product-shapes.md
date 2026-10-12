@@ -90,7 +90,7 @@ The shapes are visible in the tooling. Suggestion and assistant surfaces are bui
 model APIs with a streaming interface. Approved actions and autonomous workers usually need durable
 execution, so Temporal, Inngest or a queue appears. Agent frameworks such as LangGraph and CrewAI
 target the last two shapes. Infrastructure sellers live or die on the things in
-[Model Lifecycle and Drift](../XX-model-lifecycle-and-drift/README.md), because their customers
+[Model Lifecycle and Drift](../model-lifecycle-and-drift/README.md), because their customers
 pinned a version.
 
 ## Run the numbers
@@ -172,13 +172,13 @@ not build it. Those are four product decisions, and none of them is a better pro
 
 | Sector | The shape that fits, and why |
 |---|---|
-| [Enterprise B2B SaaS](../XIX-product-by-sector/01-enterprise-b2b-saas.md) | Approved action. There is already an approval culture and an audit trail to hang it on |
-| [Fintech](../XIX-product-by-sector/02-fintech.md) | Assistant and approved action. Autonomy over money needs a regulatory answer first |
-| [Ecommerce and D2C](../XIX-product-by-sector/03-ecommerce-and-d2c.md) | Suggestion. High volume, cheap mistakes, and the user is already browsing |
-| [Marketplaces](../XIX-product-by-sector/04-marketplaces.md) | Autonomous worker for matching and moderation, where volume makes review impossible |
-| [Devtools and Infrastructure](../XIX-product-by-sector/05-devtools-and-infrastructure.md) | Suggestion and infrastructure. Developers accept or reject in the editor, or build on your API |
-| [Healthtech](../XIX-product-by-sector/06-healthtech-and-regulated-care.md) | Assistant only, in most of the product. A clinician reads everything, by rule |
-| [Vertical SaaS](../XIX-product-by-sector/07-vertical-saas.md) | AI native application. The whole workflow is narrow enough to rebuild around the model |
+| [Enterprise B2B SaaS](../product-by-sector/01-enterprise-b2b-saas.md) | Approved action. There is already an approval culture and an audit trail to hang it on |
+| [Fintech](../product-by-sector/02-fintech.md) | Assistant and approved action. Autonomy over money needs a regulatory answer first |
+| [Ecommerce and D2C](../product-by-sector/03-ecommerce-and-d2c.md) | Suggestion. High volume, cheap mistakes, and the user is already browsing |
+| [Marketplaces](../product-by-sector/04-marketplaces.md) | Autonomous worker for matching and moderation, where volume makes review impossible |
+| [Devtools and Infrastructure](../product-by-sector/05-devtools-and-infrastructure.md) | Suggestion and infrastructure. Developers accept or reject in the editor, or build on your API |
+| [Healthtech](../product-by-sector/06-healthtech-and-regulated-care.md) | Assistant only, in most of the product. A clinician reads everything, by rule |
+| [Vertical SaaS](../product-by-sector/07-vertical-saas.md) | AI native application. The whole workflow is narrow enough to rebuild around the model |
 
 ## Remember this
 
