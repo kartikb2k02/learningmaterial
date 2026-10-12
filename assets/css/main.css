@@ -157,10 +157,7 @@ kbd { display: inline-grid; place-items: center; min-width: 22px; height: 22px; 
 [data-level="sectors"]      { --lvl: var(--l-sectors); }
 .lvl[data-level] { color: var(--lvl); }
 .tree-label[data-level] .lvl-num { color: var(--lvl); }
-.tree-label[data-level]::before {
-  content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 2px;
-  background: var(--lvl); margin-right: 7px; vertical-align: 1px;
-}
+.lvl-dot { flex: none; width: 7px; height: 7px; border-radius: 2px; background: var(--lvl, var(--hair)); }
 
 .crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; font-size: var(--text-sm); font-weight: 500; color: var(--faint); }
 .crumbs a { color: var(--muted); }
@@ -275,14 +272,34 @@ a.tile:hover .tile-go { background: var(--ink); color: #fff; transform: rotate(-
 .side-course { display: flex; align-items: center; gap: var(--space-2); margin: 0 var(--space-2); padding-bottom: var(--space-3); border-bottom: var(--line); color: var(--ink); font-size: 17px; font-weight: 800; letter-spacing: -.03em; }
 .tree > .side-course:not(:first-child) { margin-top: var(--space-6); }
 .tree { font-size: 14px; }
-.tree-label { display: flex; gap: var(--space-2); margin: var(--space-5) var(--space-2) 6px; }
+.tree-label { display: flex; gap: var(--space-2); margin: 0; }
+.tree > .tree-label { margin: var(--space-5) var(--space-2) 6px; }
 .tree-group > summary { display: flex; align-items: center; gap: var(--space-2); padding: 7px var(--space-2); border-radius: var(--radius-sm); color: var(--ink); list-style: none; cursor: pointer; user-select: none; transition: background var(--ease); }
-.tree-group > summary::-webkit-details-marker { display: none; }
+.tree-group > summary::-webkit-details-marker, .tree-level > summary::-webkit-details-marker { display: none; }
+.tree-group > summary, .tree-level > summary { list-style: none; }
+.tree-group > summary::before, .tree-level > summary::before {
+  content: ""; flex: none; width: 0; height: 0; margin-right: 1px;
+  border: 4px solid transparent; border-left-color: currentColor;
+  transform-origin: 2px 50%; transition: transform var(--ease); opacity: .55;
+}
+.tree-group[open] > summary::before, .tree-level[open] > summary::before { transform: rotate(90deg); }
+.tree-group > summary:hover::before, .tree-level > summary:hover::before { opacity: 1; }
+
+/* Level groups collapse like folders. The label keeps its own spacing. */
+.tree-level > summary { display: flex; align-items: center; gap: var(--space-2); cursor: pointer; user-select: none; border-radius: var(--radius-sm); padding: 4px var(--space-2); transition: background var(--ease); }
+.tree-level > summary:hover { background: var(--tint); }
+.tree-level { margin-top: var(--space-5); }
+.tree-level:first-of-type { margin-top: var(--space-2); }
+.tree-level > .tree-kids { margin-left: 9px; }
+
+/* Indent guides pick up when you are inside that branch, as in a file tree. */
+.tree-kids { transition: border-color var(--ease); }
+.tree-kids:hover { border-left-color: var(--muted); }
 .tree-group > summary:hover { background: var(--tint); }
 .tree-title { flex: 1; font-weight: 700; line-height: 1.35; letter-spacing: -.01em; }
 .count { font: 700 11px var(--font-mono); color: var(--faint); }
 .tree-kids { margin: 2px 0 var(--space-2) 11px; padding-left: 6px; border-left: 1.5px solid var(--hair); }
-.tree-link { display: flex; gap: var(--space-2); padding: 6px var(--space-2); border-radius: var(--radius-sm); color: var(--muted); font-weight: 500; line-height: 1.4; transition: background var(--ease), color var(--ease); }
+.tree-link { display: flex; gap: var(--space-2); padding: 6px var(--space-2) 6px 11px; border-radius: var(--radius-sm); color: var(--muted); font-weight: 500; line-height: 1.4; transition: background var(--ease), color var(--ease); }
 .tree-link:hover { background: var(--tint); color: var(--ink); }
 .tree-link .num { flex: none; width: 20px; font: 700 11px/1.75 var(--font-mono); }
 .tree-link.is-active { background: var(--ink); color: #fff; font-weight: 700; }

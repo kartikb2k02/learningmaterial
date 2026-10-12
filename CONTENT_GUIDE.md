@@ -93,6 +93,10 @@ code change and would render unstyled.
 | `memory` | green | stores and retained value: CRM, warehouse, money, the installed base |
 | `warn` | red | risk, churn, failure, leakage |
 
+The sidebar is a file tree: every level and every topic is a `<details>` with a disclosure
+chevron, nested under indent guides, so a reader can collapse what they are not working on. Levels
+start open. Nothing needs doing per topic; the structure comes from the folder layout.
+
 Separately from the diagram palette, each **level** carries a colour, set in `assets/css/main.css`
 as `--l-foundations` through `--l-sectors` and applied through a `data-level` attribute on the
 level badge and the sidebar label. The ramp runs green, teal, blue, orange, crimson as difficulty

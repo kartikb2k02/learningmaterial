@@ -6,16 +6,22 @@
   {{ range site.Params.levels }}
     {{ $l := partial "func/level.html" .key }}
     {{ with where $mods "Params.track" .key }}
-    <div class="tree-label" data-level="{{ $l.key }}"><span class="lvl-num">{{ $l.num }}</span>{{ $l.name }}</div>
-    {{ range . }}{{ partial "nav-node.html" . }}{{ end }}
+    <details class="tree-level" data-level="{{ $l.key }}" open>
+      <summary class="tree-label"><span class="lvl-dot" aria-hidden="true"></span><span class="lvl-num">{{ $l.num }}</span>{{ $l.name }}</summary>
+      <div class="tree-kids">{{ range . }}{{ partial "nav-node.html" . }}{{ end }}</div>
+    </details>
     {{ end }}
   {{ end }}
   {{ with where $mods "Params.track" "" }}
-  <div class="tree-label">Build</div>
-  {{ range . }}{{ partial "nav-node.html" . }}{{ end }}
+  <details class="tree-level" open>
+    <summary class="tree-label"><span class="lvl-dot" aria-hidden="true"></span>Build</summary>
+    <div class="tree-kids">{{ range . }}{{ partial "nav-node.html" . }}{{ end }}</div>
+  </details>
   {{ end }}
   {{ with where .Pages "Kind" "page" }}
-  <div class="tree-label">Reference</div>
-  {{ range . }}<a class="tree-link" href="{{ .RelPermalink }}"><span class="num">§</span><span>{{ .Title }}</span></a>{{ end }}
+  <details class="tree-level" open>
+    <summary class="tree-label"><span class="lvl-dot" aria-hidden="true"></span>Reference</summary>
+    <div class="tree-kids">{{ range . }}<a class="tree-link" href="{{ .RelPermalink }}"><span class="num">§</span><span>{{ .Title }}</span></a>{{ end }}</div>
+  </details>
   {{ end }}
 </nav>
