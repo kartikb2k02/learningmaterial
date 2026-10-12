@@ -135,7 +135,12 @@ unbalanced `<b>` makes Mermaid drop the label. `linkcheck -pending` is the view 
 course is being written; forward references are tracked rather than forbidden, and the strict form
 has to pass before a course is called complete.
 
-Two gotchas that have each cost time once already:
+Three gotchas that have each cost time already:
+
+* **Never build into `public/` while `hugo server` is running.** This version renders the server to
+  disk, so `hugo` and `rm -rf public` fight the process serving your pages: the site goes stale or
+  404s and nothing in the log says why. Start the server with `--renderToMemory` and let
+  `./check.sh` build to a temporary directory.
 
 * **`config.yaml` fails silently in two ways, and `go run ./tools/configcheck` catches both.**
   A colon inside an unquoted value makes it a nested mapping, which breaks the build with a

@@ -38,8 +38,15 @@ its logo, and a tool named in a diagram is an example of what fills the box, not
 ## Read it
 
 ```bash
-hugo server            # http://localhost:1313
+hugo server --renderToMemory    # http://localhost:1313
+./check.sh                      # every gate, building to a temp directory
 ```
+
+**Pass `--renderToMemory`.** This version of Hugo renders the dev server to `public/`, so any
+ordinary `hugo` build while the server is running deletes and rewrites the files it is serving,
+and the site goes stale or starts returning 404 with nothing in the log to explain it. Rendering
+to memory makes `public/` irrelevant to the server, and `check.sh` builds to a temporary directory
+for the same reason.
 
 Needs Hugo extended 0.126 or newer, because the site is generated from the course folders by a
 content adapter rather than from `content/`. Go is needed only for the tools in `tools/`.
