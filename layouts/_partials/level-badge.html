@@ -1,5 +1,5 @@
 {{- /* A level is shown as its name plus one bar per level, n of them filled, never by colour alone. */ -}}
 {{- $total := len site.Params.levels -}}
 {{- with partial "func/level.html" . -}}
-<span class="lvl" title="Level {{ .n }} of {{ $total }}: {{ .name }}"><span class="lvl-bars" aria-hidden="true">{{ $n := .n }}{{ range seq $total }}<i{{ if le . $n }} class="on"{{ end }}></i>{{ end }}</span>{{ .name }}</span>
+<span class="lvl" data-level="{{ .key }}" title="Level {{ .n }} of {{ $total }}: {{ .name }}"><span class="lvl-bars" aria-hidden="true">{{ $n := .n }}{{ range seq $total }}<i{{ if le . $n }} class="on"{{ end }}></i>{{ end }}</span>{{ .name }}</span>
 {{- end -}}

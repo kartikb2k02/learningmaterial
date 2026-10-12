@@ -93,6 +93,12 @@ code change and would render unstyled.
 | `memory` | green | stores and retained value: CRM, warehouse, money, the installed base |
 | `warn` | red | risk, churn, failure, leakage |
 
+Separately from the diagram palette, each **level** carries a colour, set in `assets/css/main.css`
+as `--l-foundations` through `--l-sectors` and applied through a `data-level` attribute on the
+level badge and the sidebar label. The ramp runs green, teal, blue, orange, crimson as difficulty
+rises, and Sectors sits on violet because it is a different axis rather than a harder one. Adding a
+level means adding one variable and one selector.
+
 Six grammars cover almost everything in this library. Pick one before drawing.
 
 1. **Loop** for anything that compounds.

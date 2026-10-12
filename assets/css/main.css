@@ -21,6 +21,14 @@
   --c6: #e5484d;                     /* security */
   --c7: #f5a524;                     /* vllm */
   --c-soon: #b9bbc4;                 /* not written yet */
+  /* The six levels, ramping from green at Foundations. Sectors is a different hue
+     on purpose: it is not harder than Expert, it is a different axis. */
+  --l-foundations:  #12804a;
+  --l-basic:        #0f9488;
+  --l-intermediate: #1f6feb;
+  --l-advanced:     #c2600a;
+  --l-expert:       #c2255c;
+  --l-sectors:      #7a3fd4;
   --c: var(--accent);
   --note: #2540d9; --tip: #12804a; --warning: #a15c00; --important: #c2255c;
 
@@ -136,8 +144,23 @@ kbd { display: inline-grid; place-items: center; min-width: 22px; height: 22px; 
 .lvl-bars i { width: 3px; border-radius: 1px; background: var(--hair); }
 .lvl-bars i:nth-child(1) { height: 3px; } .lvl-bars i:nth-child(2) { height: 5px; } .lvl-bars i:nth-child(3) { height: 7px; }
 .lvl-bars i:nth-child(4) { height: 9px; } .lvl-bars i:nth-child(5) { height: 11px; }
-.lvl-bars i.on { background: var(--ink); }
+.lvl-bars i.on { background: var(--lvl, var(--ink)); }
 .lvl-num { font: 700 var(--text-xs) var(--font-mono); color: var(--faint); }
+
+/* Each level carries a colour, ramping from green at Foundations through to Expert,
+   with Sectors on its own hue. Set on anything that knows which level it is. */
+[data-level="foundations"]  { --lvl: var(--l-foundations); }
+[data-level="basic"]        { --lvl: var(--l-basic); }
+[data-level="intermediate"] { --lvl: var(--l-intermediate); }
+[data-level="advanced"]     { --lvl: var(--l-advanced); }
+[data-level="expert"]       { --lvl: var(--l-expert); }
+[data-level="sectors"]      { --lvl: var(--l-sectors); }
+.lvl[data-level] { color: var(--lvl); }
+.tree-label[data-level] .lvl-num { color: var(--lvl); }
+.tree-label[data-level]::before {
+  content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 2px;
+  background: var(--lvl); margin-right: 7px; vertical-align: 1px;
+}
 
 .crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; font-size: var(--text-sm); font-weight: 500; color: var(--faint); }
 .crumbs a { color: var(--muted); }
@@ -269,9 +292,9 @@ a.tile:hover .tile-go { background: var(--ink); color: #fff; transform: rotate(-
 .page-head h1 { margin: 0 0 var(--space-4); font-size: clamp(32px, 4.2vw, 48px); line-height: 1.05; letter-spacing: -.04em; word-spacing: .04em; font-weight: 850; }
 .meta-line { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font: 700 11px var(--font-mono); letter-spacing: .05em; text-transform: uppercase; color: var(--ink); }
 .meta-line > * { padding: 3px 10px; border: 1.5px solid var(--hair); border-radius: 999px; background: var(--tint); }
-.meta-line > .lvl { border-color: var(--ink); background: var(--c); }
-.meta-line .lvl-bars i { background: color-mix(in srgb, var(--ink) 25%, transparent); }
-.meta-line .lvl-bars i.on { background: var(--ink); }
+.meta-line > .lvl { border-color: var(--ink); background: color-mix(in srgb, var(--lvl, var(--c)) 16%, var(--paper)); color: var(--lvl, var(--ink)); }
+.meta-line .lvl-bars i { background: color-mix(in srgb, var(--lvl, var(--ink)) 25%, transparent); }
+.meta-line .lvl-bars i.on { background: var(--lvl, var(--ink)); }
 .prereq { margin: var(--space-3) 0 0; font-size: var(--text-sm); color: var(--muted); }
 .prereq b { margin-right: var(--space-2); font: 700 11px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink); }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: var(--space-3) 0 0; }

@@ -6,7 +6,7 @@
   {{ range site.Params.levels }}
     {{ $l := partial "func/level.html" .key }}
     {{ with where $mods "Params.track" .key }}
-    <div class="tree-label"><span class="lvl-num">{{ $l.num }}</span>{{ $l.name }}</div>
+    <div class="tree-label" data-level="{{ $l.key }}"><span class="lvl-num">{{ $l.num }}</span>{{ $l.name }}</div>
     {{ range . }}{{ partial "nav-node.html" . }}{{ end }}
     {{ end }}
   {{ end }}
