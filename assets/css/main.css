@@ -168,7 +168,7 @@ a:hover > .go { color: var(--ink); transform: translateX(3px); }
 
 /* course tiles */
 .tile-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); }
-.tile { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-3) var(--space-4); align-content: space-between; padding: var(--space-6); border: var(--line); border-radius: var(--radius-lg); background: var(--paper); color: var(--text); transition: transform var(--ease), box-shadow var(--ease); }
+.tile { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-3) var(--space-4); align-content: start; padding: var(--space-6); border: var(--line); border-radius: var(--radius-lg); background: var(--paper); color: var(--text); transition: transform var(--ease), box-shadow var(--ease); }
 a.tile:hover { transform: translate(-4px, -4px); box-shadow: 8px 8px 0 var(--c); }
 a.tile:active { transform: none; box-shadow: none; }
 .tile-num { grid-column: 1; justify-self: start; display: grid; place-items: center; min-width: 46px; height: 32px; padding: 0 10px; border: var(--line); border-radius: 999px; background: var(--c); color: var(--ink); font: 700 13px var(--font-mono); }

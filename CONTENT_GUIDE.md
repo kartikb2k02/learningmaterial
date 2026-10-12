@@ -112,6 +112,14 @@ unbalanced `<b>` makes Mermaid drop the label. `linkcheck -pending` is the view 
 course is being written; forward references are tracked rather than forbidden, and the strict form
 has to pass before a course is called complete.
 
+Two gotchas that have each cost time once already:
+
+* **A colon inside an unquoted YAML value breaks `config.yaml`.** Because the house style uses a
+  colon where most writing would use a dash, every `summary` and `description` has to be quoted.
+  Run `hugo config` after any config edit; the failure is silent until the next build.
+* **Home page card summaries wrap to two lines at about 100 characters.** Longer than that and the
+  cards stop lining up, which is what the length is tuned for.
+
 One thing no tool can check: **the prose around a program must match what the program prints.**
 Run the program, read its output, then write the paragraph. Three of the first five programs in
 this library had narratives that the output contradicted, and every one of them was caught by

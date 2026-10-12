@@ -26,6 +26,7 @@
         <div class="tile is-soon">
           <span class="tile-num">{{ printf "%02d" $i }}</span>
           <h3>{{ $cfg.title }}</h3>
+          <p>{{ $cfg.summary }}</p>
           <span class="tile-meta"><span>Coming soon</span></span>
         </div>
         {{ end }}
@@ -36,6 +37,7 @@
         <a class="tile" href="{{ .RelPermalink }}" style="--c: var(--c{{ $i }})">
           <span class="tile-num">{{ printf "%02d" $i }}</span>
           <h3>{{ partial "func/cname.html" . }}</h3>
+          <p>{{ $cfg.summary | default .Params.desc }}</p>
           <span class="tile-meta"><span>{{ len $mods }} topics</span><span>{{ len $lessons }} lessons</span>{{ with partial "func/dur.html" $min }}<span>~{{ . }}</span>{{ end }}</span>
           <span class="tile-go">{{ partial "icon.html" "arrow" }}</span>
         </a>

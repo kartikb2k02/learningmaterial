@@ -42,7 +42,7 @@ params:
   courses:
     - dir: product-management
       short: Product
-      summary: The product function from first principles. How to find a problem worth solving, choose a strategy, define it, ship it, measure it, price it, and how the whole job bends by archetype and by sector.
+      summary: "The product function from first principles, and what changes once there is a model in the product."
       levels:
         foundations:  [I-the-product-function, II-product-strategy]
         basic:        [III-discovery-and-problem-framing, IV-definition-and-delivery, V-technical-foundations]
@@ -52,7 +52,7 @@ params:
 
     - dir: metrics-and-models
       short: Metrics
-      summary: Every number an operator is judged on. What it measures, the formula, the denominator people get wrong, what good looks like by sector, and a program that computes it. Nothing else in this library defines a metric.
+      summary: "Every number an operator is judged on: what it measures, the formula, and a program that computes it."
       levels:
         foundations:  [I-how-to-read-a-metric]
         basic:        [II-funnel-and-acquisition]
@@ -63,25 +63,25 @@ params:
     - dir: growth-engineering
       title: Growth Engineering
       short: Growth
-      summary: Growth as a system rather than a list of tactics. The loop, the model, the experiment machine, and the four places compounding actually comes from.
+      summary: "Growth as a system rather than a list of tactics: the loops, the model, and the experiment machine."
       soon: true
 
     - dir: gtm-engineering
       title: GTM Engineering
       short: GTM
-      summary: Taking a product to a market. Sizing it, naming the buyer, positioning against the real alternative, picking a motion, building pipeline arithmetic that holds, and launching.
+      summary: "Taking a product to a market: the buyer, the positioning, the motion, and pipeline arithmetic that holds."
       soon: true
 
     - dir: revenue-operations
       title: Revenue Operations
       short: Operations
-      summary: The machinery underneath. Operating cadence, the funnel as a data model, systems of record, reporting you can trust, process design, and the economics of running it.
+      summary: "The machinery underneath: operating cadence, the funnel as a data model, systems of record and process."
       soon: true
 
     - dir: ai-engineering
       title: AI Engineering
       short: AI
-      summary: Building products with a model inside them. The primitives, context and retrieval, where a workflow beats an agent, how to know it works, how it should feel, and what it costs to run.
+      summary: "Building products with a model inside them: context, agents, evaluation, and what it costs to run."
       soon: true
 
 # Lets `hugo server` live reload when a course file changes. Courses are read from
