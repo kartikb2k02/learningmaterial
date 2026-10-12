@@ -77,13 +77,13 @@ Four pages sit alongside the lessons, under **Reference** in the sidebar.
 
 | Page | Use it when |
 |---|---|
-| [Roadmap](roadmap.md) | **Start here.** Four routes through the course, chosen by where you are rather than by the order of the sidebar, with honest hour estimates |
+| [Roadmap](roadmap.md) | **Start here.** One path in order through everything that is written, in nine stages, with what to do before moving on from each |
 | [Workflows](workflows.md) | You have to actually do something: run discovery, build an eval set, price a feature, investigate a number that moved. Nine procedures, each with its steps and what it produces |
 | [References](references.md) | A lesson raised a question this course stopped short of answering. Every link verified live rather than quoted from memory |
 | [Glossary](glossary.md) | A term appeared and you want the definition this course uses, plus which topic treats it properly |
 
-If you read nothing else first, read the Roadmap. Thirty four topics in sidebar order is the wrong
-sequence for almost everybody.
+If you read nothing else first, read the Roadmap. It lists only lessons that exist, so you can
+follow it top to bottom without hitting a topic that has not been written yet.
 
 ## The topics
 
