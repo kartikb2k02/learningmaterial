@@ -1,0 +1,22 @@
+{{- /* Search index: one entry per page, with its kind, course, learning level and headings. */ -}}
+{{- $out := slice -}}
+{{- range site.Pages -}}
+  {{- $src := . -}}
+  {{- if in (slice "page" "section") .Kind -}}
+    {{- $heads := slice -}}
+    {{- range .Fragments.HeadingsMap }}{{ if and (ge .Level 2) (le .Level 3) }}{{ $heads = $heads | append (dict "i" .ID "t" (.Title | plainify | htmlUnescape | replaceRE `^\d+\.\s*` "")) }}{{ end }}{{ end -}}
+    {{- if eq (lower .Title) "glossary" -}}
+      {{- range findRE `(?m)^(\| )?\*\*[^*\n]+\*\*` $src.RawContent }}{{ $t := trim . "*| " }}{{ $heads = $heads | append (dict "i" (printf "term-%s" (anchorize $t)) "t" $t) }}{{ end -}}
+    {{- end -}}
+    {{- $crumb := slice -}}
+    {{- range .Ancestors.Reverse }}{{ if not .IsHome }}{{ $crumb = $crumb | append (cond (eq .Path $src.FirstSection.Path) (partial "func/cname.html" .) .Params.short) }}{{ end }}{{ end -}}
+    {{- $lvl := (partial "func/level.html" .Params.track).name | default "" -}}
+    {{- $kind := "Lesson" -}}
+    {{- $title := .Title -}}
+    {{- if eq .Path .FirstSection.Path }}{{ $kind = "Path" }}{{ $title = partial "func/cname.html" . -}}
+    {{- else if and .IsSection .Pages }}{{ $kind = "Topic" -}}
+    {{- else if and .IsPage (eq .Parent.Path .FirstSection.Path) }}{{ $kind = "Reference" }}{{ end -}}
+    {{- $out = $out | append (dict "u" .RelPermalink "t" $title "c" (delimit $crumb " / ") "l" $lvl "k" $kind "h" $heads "x" (replace $src.Plain "# " ": " | truncate 3000 "")) -}}
+  {{- end -}}
+{{- end -}}
+{{- $out | jsonify -}}

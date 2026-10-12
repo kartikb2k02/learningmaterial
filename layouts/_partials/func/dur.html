@@ -1,0 +1,4 @@
+{{ $s := "" }}
+{{ if ge . 60 }}{{ $s = printf "%dh" (div . 60) }}{{ with mod . 60 }}{{ $s = printf "%s %dm" $s . }}{{ end }}
+{{ else if gt . 0 }}{{ $s = printf "%d min" . }}{{ end }}
+{{ return $s }}

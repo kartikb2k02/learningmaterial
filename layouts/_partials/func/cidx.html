@@ -1,0 +1,4 @@
+{{/* 1-based position of a page's course in config.yaml (0 if none): picks the course colour. */}}
+{{ $n := 0 }}{{ $i := 0 }}
+{{ with .FirstSection }}{{ $dir := .Params.srcdir }}{{ range site.Params.courses }}{{ $i = add $i 1 }}{{ if eq .dir $dir }}{{ $n = $i }}{{ end }}{{ end }}{{ end }}
+{{ return $n }}

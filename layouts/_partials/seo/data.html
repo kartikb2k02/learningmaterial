@@ -1,0 +1,34 @@
+{{/* Search metadata for a page: {title, description, related}. Overrides in data/seo.yaml win;
+     otherwise the title is built from the page, its topic and its course, and the description
+     is the page's own first paragraph. */}}
+{{ $o := index (site.Data.seo.pages | default dict) (strings.TrimPrefix "/" .Path) | default dict }}
+{{ $brand := site.Title }}
+{{ $title := .Title }}
+{{ $desc := .Params.desc | default "" }}
+{{ if .IsHome }}
+  {{ $title = site.Params.seo.home_title }}
+  {{ $desc = site.Params.seo.description }}
+{{ else if eq .Kind "404" }}
+  {{ $title = printf "Page not found | %s" $brand }}
+{{ else if .FirstSection }}
+  {{ $course := partial "func/cname.html" .FirstSection }}
+  {{ if eq .Path .FirstSection.Path }}
+    {{ $title = .Title }}
+    {{ with (index (where site.Params.courses "dir" .Params.srcdir) 0) }}{{ $desc = .summary | default $desc }}{{ end }}
+  {{ else if eq .Parent.Path .FirstSection.Path }}
+    {{ $title = printf "%s — %s" (.Params.short | default .Title) $course }}
+    {{ if eq (lower .Title) "glossary" }}{{ $title = printf "%s Glossary: Terms and Definitions" $course }}{{ end }}
+  {{ else }}
+    {{/* lesson: add the topic, then the course, while the title stays a readable length */}}
+    {{ $title = .Title }}
+    {{ range slice (printf " — %s" .Parent.Params.short) (printf " | %s" $course) }}
+      {{ if le (add (strings.RuneCount $title) (strings.RuneCount .)) 65 }}{{ $title = printf "%s%s" $title . }}{{ end }}
+    {{ end }}
+  {{ end }}
+  {{ if eq (lower .Title) "glossary" }}{{ $desc = printf "Glossary of %s terms: short, blunt definitions, each pointing to the lesson where the term is explained." $course }}{{ end }}
+  {{ if le (add (strings.RuneCount $title) (strings.RuneCount $brand)) 62 }}{{ $title = printf "%s | %s" $title $brand }}{{ end }}
+{{ end }}
+{{ with $o.title }}{{ $title = . }}{{ if le (add (strings.RuneCount .) (strings.RuneCount $brand)) 62 }}{{ $title = printf "%s | %s" . $brand }}{{ end }}{{ end }}
+{{ with $o.description }}{{ $desc = . }}{{ end }}
+{{ if not $desc }}{{ $desc = site.Params.seo.description }}{{ end }}
+{{ return (dict "title" $title "description" ($desc | truncate 165) "related" ($o.related | default slice)) }}

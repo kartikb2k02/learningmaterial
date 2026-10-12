@@ -1,0 +1,13 @@
+{{/* Reading order under a section: [{p, leaf}], folders first then their lessons.
+     "top" skips loose pages at the course root (reference docs). */}}
+{{ $out := slice }}
+{{ range .s.Pages }}
+  {{ if .IsSection }}
+    {{ $kids := partial "func/seq.html" (dict "s" . "top" false) }}
+    {{ $out = $out | append (dict "p" . "leaf" (eq (len $kids) 0)) }}
+    {{ if $kids }}{{ $out = $out | append $kids }}{{ end }}
+  {{ else if not $.top }}
+    {{ $out = $out | append (dict "p" . "leaf" true) }}
+  {{ end }}
+{{ end }}
+{{ return $out }}

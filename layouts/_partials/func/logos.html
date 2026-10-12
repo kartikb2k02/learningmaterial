@@ -1,0 +1,4 @@
+{{/* Names of the icons in static/logos, space-separated: what ":name:" may refer to in a diagram. */}}
+{{ $out := slice }}
+{{ range os.ReadDir "static/logos" }}{{ if strings.HasSuffix .Name ".svg" }}{{ $out = $out | append (strings.TrimSuffix ".svg" .Name) }}{{ end }}{{ end }}
+{{ return (delimit $out " ") }}

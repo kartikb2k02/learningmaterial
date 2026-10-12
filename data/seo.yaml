@@ -1,0 +1,8 @@
+# Search metadata overrides for high value pages. Everything else is generated from the
+# page itself (title plus topic plus course; first paragraph as description) by layouts/_partials/seo/.
+#
+# Key: the page's folder path, lowercase, no leading slash and no .md.
+#   title        <title> and og:title (keep under ~65 characters)
+#   description  meta description (keep under ~160 characters)
+#   related      curated "Related lessons" shown at the end of the page (same key format)
+pages: {}

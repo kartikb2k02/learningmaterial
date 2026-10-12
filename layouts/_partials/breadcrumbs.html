@@ -1,0 +1,11 @@
+{{ $page := . }}
+{{ $course := .FirstSection }}
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="{{ site.Home.RelPermalink }}">Home</a>
+  {{ range .Ancestors.Reverse }}{{ if not .IsHome }}
+    <span aria-hidden="true">/</span><a href="{{ .RelPermalink }}">{{ if eq .Path $course.Path }}{{ partial "func/cname.html" . }}{{ else }}{{ .Params.short }}{{ end }}</a>
+    {{ if eq .Path $course.Path }}{{ with partial "func/level.html" $page.Params.track }}
+    <span aria-hidden="true">/</span><a href="{{ $course.RelPermalink }}#level-{{ .key }}">{{ .name }}</a>
+    {{ end }}{{ end }}
+  {{ end }}{{ end }}
+</nav>

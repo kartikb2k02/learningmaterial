@@ -1,0 +1,21 @@
+{{ $course := . }}
+{{ $mods := where .Pages "Kind" "section" }}
+{{ partial "path-switch.html" $course }}
+<a class="side-course" href="{{ .RelPermalink }}"><i aria-hidden="true"></i>{{ partial "func/cname.html" . }}</a>
+<nav class="tree" aria-label="Course contents">
+  {{ range site.Params.levels }}
+    {{ $l := partial "func/level.html" .key }}
+    {{ with where $mods "Params.track" .key }}
+    <div class="tree-label"><span class="lvl-num">{{ $l.num }}</span>{{ $l.name }}</div>
+    {{ range . }}{{ partial "nav-node.html" . }}{{ end }}
+    {{ end }}
+  {{ end }}
+  {{ with where $mods "Params.track" "" }}
+  <div class="tree-label">Build</div>
+  {{ range . }}{{ partial "nav-node.html" . }}{{ end }}
+  {{ end }}
+  {{ with where .Pages "Kind" "page" }}
+  <div class="tree-label">Reference</div>
+  {{ range . }}<a class="tree-link" href="{{ .RelPermalink }}"><span class="num">§</span><span>{{ .Title }}</span></a>{{ end }}
+  {{ end }}
+</nav>

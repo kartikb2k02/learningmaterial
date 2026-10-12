@@ -1,0 +1,7 @@
+Inter — Copyright (c) The Inter Project Authors. SIL Open Font License 1.1. https://rsms.me/inter/
+JetBrains Mono — Copyright (c) JetBrains s.r.o. SIL Open Font License 1.1. https://github.com/JetBrains/JetBrainsMono
+Excalifont — Copyright (c) Excalidraw. SIL Open Font License 1.1. https://github.com/excalidraw/excalidraw
+
+Diagram icons (static/logos/, fetched by tools/logos):
+Simple Icons — CC0 1.0. https://simpleicons.org/  Brand marks are trademarks of their respective owners and are used only to identify the products named.
+Lucide — ISC License. https://lucide.dev/  (files named i-*.svg)

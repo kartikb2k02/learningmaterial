@@ -1,0 +1,10 @@
+<footer class="site-foot" data-word="{{ site.Title }}">
+  <div class="site-foot-in">
+    <p class="foot-line">{{ site.Params.footer }}</p>
+    <nav aria-label="Footer">
+      {{ range site.Params.courses }}{{ with site.GetPage (printf "/%s" .dir) }}<a href="{{ .RelPermalink }}">{{ partial "func/cname.html" . }}</a>{{ end }}{{ end }}
+      {{ with site.Params.github }}<a href="{{ . }}" target="_blank" rel="noopener">GitHub</a>{{ end }}
+    </nav>
+    <p class="muted">© {{ now.Year }} {{ site.Title }}</p>
+  </div>
+</footer>

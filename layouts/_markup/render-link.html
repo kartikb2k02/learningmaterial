@@ -1,0 +1,13 @@
+{{- $dest := .Destination -}}
+{{- $u := urls.Parse $dest -}}
+{{- $href := $dest -}}
+{{- if and (not $u.IsAbs) (not (hasPrefix $dest "/")) $u.Path .Page.Params.srcdir -}}
+  {{- $p := path.Join .Page.Params.srcdir $u.Path | replaceRE `(?i)\.md$` "" -}}
+  {{- if eq (path.Base $p | lower) "readme" }}{{ $p = path.Dir $p }}{{ end -}}
+  {{- with site.GetPage (printf "/%s" $p) -}}
+    {{- $href = .RelPermalink -}}
+    {{- with $u.Fragment }}{{ $href = printf "%s#%s" $href . }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+<a href="{{ $href | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $u.IsAbs }} target="_blank" rel="noopener"{{ end }}>{{ .Text }}</a>
+{{- /**/ -}}

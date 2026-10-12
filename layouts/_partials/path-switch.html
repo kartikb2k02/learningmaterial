@@ -1,0 +1,6 @@
+{{/* Course switcher at the top of the mobile drawer. Context: the current course page, or nil. */}}
+{{ $cur := "" }}{{ with . }}{{ $cur = .Path }}{{ end }}
+{{ $i := 0 }}
+<nav class="path-switch" aria-label="Courses">
+  {{ range site.Params.courses }}{{ $i = add $i 1 }}{{ with site.GetPage (printf "/%s" .dir) }}<a href="{{ .RelPermalink }}" style="--c: var(--c{{ $i }})"{{ if eq .Path $cur }} aria-current="page"{{ end }}>{{ partial "func/sname.html" . }}</a>{{ end }}{{ if .soon }}<span class="nav-soon">{{ replace .title " Engineering" "" }} <small>soon</small></span>{{ end }}{{ end }}
+</nav>

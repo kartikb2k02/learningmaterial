@@ -1,0 +1,14 @@
+{{/* The line under a lesson title: level / difficulty / time / position, then prerequisites. */}}
+{{ $time := partial "func/dur.html" (.Params.min | default 0) }}
+{{ if or .Params.track .Params.level $time }}
+<div class="meta-line">
+  {{ partial "level-badge.html" .Params.track }}
+  {{ $track := (partial "func/level.html" .Params.track).name | default "" }}
+  {{ with .Params.level }}{{ if ne (lower .) (lower $track) }}<span>{{ . }}</span>{{ end }}{{ end }}
+  {{ with $time }}<span>{{ . }}</span>{{ end }}
+  {{ with .Params.difficulty }}<span title="Difficulty {{ . }} of 5">Difficulty {{ . }}/5</span>{{ end }}
+  {{ if and .Params.label .Parent (ne .Parent.Path .FirstSection.Path) }}<span>Lesson {{ .Params.label }} of {{ printf "%02d" (len .Parent.Pages) }}</span>{{ end }}
+</div>
+{{ end }}
+{{ with .Params.prereq }}{{ if ne (lower .) "none" }}<p class="prereq"><b>Prerequisites</b> {{ . }}</p>{{ end }}{{ end }}
+{{ with .Params.tags }}<p class="tags">{{ range . }}<span>{{ . }}</span>{{ end }}</p>{{ end }}

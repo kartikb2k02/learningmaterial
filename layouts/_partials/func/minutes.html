@@ -1,0 +1,3 @@
+{{ $n := 0 }}
+{{ range partial "func/seq.html" (dict "s" .s "top" .top) }}{{ if .leaf }}{{ $n = add $n (.p.Params.min | default 0) }}{{ end }}{{ end }}
+{{ return $n }}

@@ -1,0 +1,5 @@
+{{/* Shortest course name, for the top bar: `short` in config.yaml, else "GPU Engineering — …" -> "GPU". */}}
+{{ $n := replace (partial "func/cname.html" .) " Engineering" "" }}
+{{ $dir := .Params.srcdir }}
+{{ range site.Params.courses }}{{ if and (eq .dir $dir) .short }}{{ $n = .short }}{{ end }}{{ end }}
+{{ return $n }}

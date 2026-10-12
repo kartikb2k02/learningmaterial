@@ -1,0 +1,63 @@
+{{/* Everything a crawler reads in <head>: title, description, canonical, social cards, JSON-LD. */}}
+{{ $seo := partial "seo/data.html" . }}
+{{ $url := .Permalink }}
+{{/* link-preview banner: the course's own card when there is one, else the site card */}}
+{{ $img := site.Params.seo.image | absURL }}
+{{ with .FirstSection }}{{ $card := printf "social/%s.png" .Params.srcdir }}{{ if fileExists (printf "static/%s" $card) }}{{ $img = $card | absURL }}{{ end }}{{ end }}
+{{ $isArticle := and .FirstSection (ne .Path .FirstSection.Path) (not .Pages) }}
+<title>{{ $seo.title }}</title>
+<meta name="description" content="{{ $seo.description }}">
+{{ if eq .Kind "404" }}<meta name="robots" content="noindex">
+{{ else }}<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="{{ $url }}">{{ end }}
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:type" content="{{ cond $isArticle "article" "website" }}">
+<meta property="og:title" content="{{ $seo.title }}">
+<meta property="og:description" content="{{ $seo.description }}">
+<meta property="og:url" content="{{ $url }}">
+<meta property="og:image" content="{{ $img }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="{{ $seo.title }}">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $seo.title }}">
+<meta name="twitter:description" content="{{ $seo.description }}">
+<meta name="twitter:image" content="{{ $img }}">
+<meta name="twitter:image:alt" content="{{ $seo.title }}">
+{{ with site.Params.author }}<meta name="author" content="{{ .name }}">{{ end }}
+
+{{ $author := dict }}
+{{ with site.Params.author }}{{ $author = dict "@type" "Person" "name" .name "url" .url }}{{ end }}
+{{ $site := dict "@type" "WebSite" "@id" (printf "%s#website" site.Home.Permalink) "name" site.Title "url" site.Home.Permalink "description" site.Params.seo.description "inLanguage" "en" }}
+{{ if $author }}{{ $site = merge $site (dict "author" $author) }}{{ end }}
+{{ $graph := slice }}
+{{ if .IsHome }}
+  {{ $graph = $graph | append $site }}
+{{ else if ne .Kind "404" }}
+  {{/* breadcrumbs: Home → course → topic → page */}}
+  {{ $items := slice (dict "@type" "ListItem" "position" 1 "name" "Home" "item" site.Home.Permalink) }}
+  {{ $n := 1 }}
+  {{ range .Ancestors.Reverse }}{{ if not .IsHome }}
+    {{ $n = add $n 1 }}
+    {{ $items = $items | append (dict "@type" "ListItem" "position" $n "name" (cond (eq .Path .FirstSection.Path) (partial "func/cname.html" .) (.Params.short | default .Title)) "item" .Permalink) }}
+  {{ end }}{{ end }}
+  {{ $items = $items | append (dict "@type" "ListItem" "position" (add $n 1) "name" (cond (eq .Path .FirstSection.Path) (partial "func/cname.html" .) .Title) "item" $url) }}
+  {{ $graph = $graph | append (dict "@type" "BreadcrumbList" "itemListElement" $items) }}
+  {{ $ref := dict "@id" (printf "%s#website" site.Home.Permalink) }}
+  {{ if $isArticle }}
+    {{ $a := dict "@type" "TechArticle" "headline" .Title "description" $seo.description "url" $url "mainEntityOfPage" $url "image" $img "inLanguage" "en" "isPartOf" $ref }}
+    {{ if $author }}{{ $a = merge $a (dict "author" $author) }}{{ end }}
+    {{ with (partial "func/level.html" .Params.track).name }}{{ $a = merge $a (dict "proficiencyLevel" .) }}{{ end }}
+    {{ $graph = $graph | append $a }}
+  {{ else }}
+    {{/* a course or a topic: a collection whose parts are its pages, in reading order */}}
+    {{ $parts := slice }}
+    {{ range $i, $p := .Pages }}{{ $parts = $parts | append (dict "@type" "ListItem" "position" (add $i 1) "name" ($p.Params.short | default $p.Title) "url" $p.Permalink) }}{{ end }}
+    {{ $c := dict "@type" "CollectionPage" "name" .Title "description" $seo.description "url" $url "inLanguage" "en" "isPartOf" $ref }}
+    {{ if $parts }}{{ $c = merge $c (dict "mainEntity" (dict "@type" "ItemList" "itemListElement" $parts)) }}{{ end }}
+    {{ $graph = $graph | append $c }}
+  {{ end }}
+{{ end }}
+{{ with $graph }}<script type="application/ld+json">{{ dict "@context" "https://schema.org" "@graph" . | jsonify | safeJS }}</script>{{ end }}

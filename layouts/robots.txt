@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+# internal search (?q=…) and its index are for readers, not for search results
+Disallow: /*?q=
+Disallow: /index.json
+
+Sitemap: {{ "sitemap.xml" | absURL }}

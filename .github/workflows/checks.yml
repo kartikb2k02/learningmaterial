@@ -1,0 +1,36 @@
+name: checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lessons:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+
+      - name: Go in lessons compiles, vets and runs
+        run: go run ./tools/gocheck -run product-management metrics-and-models
+
+      - name: No dashes in prose
+        run: go run ./tools/stylecheck README.md CONTENT_GUIDE.md product-management metrics-and-models
+
+      - name: Diagrams are valid
+        run: go run ./tools/diagramcheck README.md product-management metrics-and-models
+
+      # Forward references to unwritten topics are expected during the build.
+      # Switch this to the strict form (drop -pending) once a course is complete.
+      - name: Links
+        run: go run ./tools/linkcheck -pending README.md product-management metrics-and-models
+
+      - name: Site builds
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.139.0'
+          extended: true
+      - run: hugo --minify

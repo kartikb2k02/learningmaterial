@@ -1,0 +1,37 @@
+/* Syntax colours (Chroma classes), set as tokens. Terminal blocks are dark, so they get
+   their own palette. */
+:root {
+  --syn-fg: #1d1e24;
+  --syn-comment: #8a8d96;
+  --syn-keyword: #c2255c;
+  --syn-string: #2b7a1f;
+  --syn-number: #a15c00;
+  --syn-func: #2540d9;
+  --syn-type: #0b7285;
+  --syn-punct: #5b5e68;
+}
+.code.is-term {
+  --syn-fg: #e6e7ea;
+  --syn-comment: #7d818c;
+  --syn-keyword: #ff8fab;
+  --syn-string: #a9e08a;
+  --syn-number: #ffc46b;
+  --syn-func: #8fb4ff;
+  --syn-type: #7fe0d4;
+  --syn-punct: #a5a9b3;
+}
+.chroma { color: var(--syn-fg); -webkit-text-size-adjust: none; }
+.chroma :is(.c, .ch, .cm, .c1, .cs) { color: var(--syn-comment); font-style: italic; }
+.chroma :is(.cp, .cpf) { color: var(--syn-type); }
+.chroma :is(.k, .kd, .kn, .kp, .kr, .ow) { color: var(--syn-keyword); }
+.chroma :is(.kt, .nc, .nb, .bp, .nv, .vc, .vg, .vi, .vm) { color: var(--syn-type); }
+.chroma :is(.kc, .no, .m, .mb, .mf, .mh, .mi, .il, .mo, .se, .ld) { color: var(--syn-number); }
+.chroma :is(.s, .sa, .sb, .sc, .dl, .sd, .s2, .sh, .si, .sx, .sr, .s1, .ss, .l) { color: var(--syn-string); }
+.chroma :is(.nf, .fm, .nd, .nt, .na, .nl, .py) { color: var(--syn-func); }
+.chroma :is(.o, .p) { color: var(--syn-punct); }
+.chroma :is(.gp, .go) { color: var(--syn-comment); }
+.chroma .gh, .chroma .gu { color: var(--syn-func); font-weight: 700; }
+.chroma .gi { color: var(--syn-string); }
+.chroma .gd { color: var(--syn-keyword); }
+.chroma .ge { font-style: italic; }
+.chroma .gs { font-weight: 700; }

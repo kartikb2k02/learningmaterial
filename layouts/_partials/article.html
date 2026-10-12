@@ -1,0 +1,103 @@
+{{ $page := . }}
+{{ $course := $page.FirstSection }}
+{{ $kids := $page.Pages }}
+{{ $hasToc := gt (len $page.TableOfContents) 40 }}
+
+{{/* previous / next in reading order */}}
+{{ $seq := partialCached "func/seq.html" (dict "s" $course "top" true) $course.Path }}
+{{ $prev := false }}{{ $next := false }}{{ $found := false }}{{ $last := $course }}
+{{ range $seq }}
+  {{ if and $found (not $next) }}{{ $next = .p }}{{ end }}
+  {{ if eq .p.Path $page.Path }}{{ $found = true }}{{ $prev = $last }}{{ end }}
+  {{ $last = .p }}
+{{ end }}
+
+<div class="layout has-ctx">
+  <aside class="sidebar" id="sidebar">{{ partialCached "sidebar.html" $course $course.Path }}</aside>
+  <div class="scrim"></div>
+
+  <div class="col">
+    {{/* shown when the side columns are hidden: where am I, and what is on this page */}}
+    <div class="ctxbar">
+      <button class="ctx-nav" type="button" data-nav-open aria-label="Open course navigation">{{ partial "icon.html" "list" }}<span class="ctx-here">{{ with $page.Params.label }}<b>{{ . }}</b>{{ end }}{{ $page.Params.short | default $page.Title }}</span></button>
+      <span class="ctx-here">{{ with $page.Params.label }}<b>{{ . }}</b>{{ end }}{{ $page.Params.short | default $page.Title }}</span>
+      {{ if $hasToc }}
+      <details class="ctx-toc">
+        <summary>On this page {{ partial "icon.html" "chevron" }}</summary>
+        {{ $page.TableOfContents | replaceRE ` id="TableOfContents"` "" | safeHTML }}
+      </details>
+      {{ end }}
+    </div>
+
+    <main id="main" class="content">
+      {{ partial "breadcrumbs.html" $page }}
+
+      <header class="page-head">
+        <h1>{{ $page.Title }}</h1>
+        {{ if $kids }}
+          {{ $lessons := partial "func/lessons.html" (dict "s" $page "top" false) }}
+          {{ $min := partial "func/minutes.html" (dict "s" $page "top" false) }}
+          <div class="meta-line">{{ partial "level-badge.html" $page.Params.track }}<span>Topic</span><span>{{ len $lessons }} lessons</span>{{ with partial "func/dur.html" $min }}<span>~{{ . }}</span>{{ end }}</div>
+        {{ else }}
+          {{ partial "meta.html" $page }}
+        {{ end }}
+      </header>
+
+      {{ if $kids }}
+        <div class="block-head"><h2 class="block-title">Lessons, in order</h2></div>
+        <div class="rows lesson-list">
+          {{ range $kids }}
+            <a class="lesson-row" href="{{ .RelPermalink }}">
+              <span class="num">{{ .Params.label }}</span>
+              <span class="lesson-main"><span class="lesson-title">{{ .Params.short }}</span>{{ with .Params.desc }}<span class="lesson-desc">{{ . }}</span>{{ end }}</span>
+              <span class="lesson-diff">{{ .Params.level }}</span>
+              <span class="lesson-time">{{ partial "func/dur.html" (.Params.min | default 0) }}</span>
+              {{ partial "icon.html" (dict "name" "arrow" "class" "go") }}
+            </a>
+          {{ end }}
+        </div>
+        {{ if $page.Content }}<div class="block-head"><h2 class="block-title">About this topic</h2></div>{{ end }}
+      {{ end }}
+
+      {{ $content := $page.Content }}
+      {{ if eq (lower $page.Title) "glossary" }}
+        {{/* every glossary term gets an anchor, so a definition can be linked to and searched */}}
+        {{ range findRE `<(p|td)><strong>[^<]+</strong>` $content | uniq }}
+          {{ $term := . | plainify | htmlUnescape }}
+          {{ $content = replace $content . (printf `<%s id="term-%s"><strong>%s</strong>` (cond (hasPrefix . "<td") "td" "p") (anchorize $term) ($term | htmlEscape)) }}
+        {{ end }}
+      {{ end }}
+      <article class="prose">
+        {{ $content | safeHTML }}
+      </article>
+
+      {{ with (partial "seo/data.html" $page).related }}
+      <nav class="related" aria-labelledby="related-title">
+        <div class="block-head"><h2 class="block-title" id="related-title">Related lessons</h2></div>
+        <div class="rows">
+          {{ range . }}{{ with site.GetPage (printf "/%s" .) }}
+          <a class="lesson-row related-row" href="{{ .RelPermalink }}">
+            <span class="lesson-main"><span class="lesson-title">{{ .Title }}</span><span class="lesson-desc">{{ partial "func/cname.html" .FirstSection }} / {{ .Parent.Params.short }}</span></span>
+            {{ partial "icon.html" (dict "name" "arrow" "class" "go") }}
+          </a>
+          {{ else }}{{ warnf "data/seo.yaml: related page %q (on %s) does not exist" . $page.Path }}{{ end }}{{ end }}
+        </div>
+      </nav>
+      {{ end }}
+
+      <footer class="page-foot">
+        {{ with $course.GetPage "glossary" }}{{ if ne .Path $page.Path }}
+        <p class="foot-note">Unfamiliar term? Look it up in the <a class="ulink" href="{{ .RelPermalink }}">{{ partial "func/cname.html" $course }} glossary</a>.</p>
+        {{ end }}{{ end }}
+        {{ partial "pager.html" (dict "prev" $prev "next" $next) }}
+      </footer>
+    </main>
+  </div>
+
+  <aside class="toc" aria-label="On this page">
+    {{ if $hasToc }}
+    <div class="toc-title">On this page</div>
+    {{ $page.TableOfContents | replaceRE ` id="TableOfContents"` "" | safeHTML }}
+    {{ end }}
+  </aside>
+</div>

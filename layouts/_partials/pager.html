@@ -1,0 +1,4 @@
+<nav class="pager" aria-label="Previous and next">
+  {{ with .prev }}<a class="pager-link prev" rel="prev" href="{{ .RelPermalink }}"><small>← Previous{{ with partial "func/level.html" .Params.track }} · {{ .name }}{{ end }}</small><span>{{ .Title }}</span></a>{{ end }}
+  {{ with .next }}<a class="pager-link next" rel="next" href="{{ .RelPermalink }}"><small>Next{{ with partial "func/level.html" .Params.track }} · {{ .name }}{{ end }} →</small><span>{{ .Title }}</span></a>{{ end }}
+</nav>

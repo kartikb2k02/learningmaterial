@@ -1,0 +1,1 @@
+{{ define "main" }}{{ if eq .Path .FirstSection.Path }}{{ partial "course.html" . }}{{ else }}{{ partial "article.html" . }}{{ end }}{{ end }}

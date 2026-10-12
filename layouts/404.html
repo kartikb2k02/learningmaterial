@@ -1,0 +1,13 @@
+{{ define "main" }}
+<main id="main" class="home notfound">
+  <p class="eyebrow"><span class="pill">404</span></p>
+  <h1>Page not found</h1>
+  <p class="hero-text">That address does not match any page. Try one of the courses:</p>
+  <div class="tile-grid">
+    {{ $i := 0 }}
+    {{ range site.Params.courses }}{{ $cfg := . }}{{ $i = add $i 1 }}{{ with site.GetPage (printf "/%s" .dir) }}
+    <a class="tile" href="{{ .RelPermalink }}" style="--c: var(--c{{ $i }})"><span class="tile-num">{{ printf "%02d" $i }}</span><h2>{{ partial "func/cname.html" . }}</h2><p>{{ $cfg.summary }}</p><span class="tile-go">{{ partial "icon.html" "arrow" }}</span></a>
+    {{ end }}{{ end }}
+  </div>
+</main>
+{{ end }}

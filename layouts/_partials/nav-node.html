@@ -1,0 +1,13 @@
+{{- $title := .Params.short -}}
+{{- $kids := .Pages -}}
+{{- if $kids }}
+<details class="tree-group" data-path="{{ .RelPermalink }}">
+  <summary><span class="tree-title">{{ $title }}</span><span class="count">{{ len $kids }}</span></summary>
+  <div class="tree-kids">
+    <a class="tree-link" href="{{ .RelPermalink }}"><span class="num">·</span><span>Overview</span></a>
+    {{- range $kids }}{{ partial "nav-node.html" . }}{{ end }}
+  </div>
+</details>
+{{- else }}
+<a class="tree-link" href="{{ .RelPermalink }}"><span class="num">{{ .Params.label }}</span><span>{{ $title }}</span></a>
+{{- end -}}

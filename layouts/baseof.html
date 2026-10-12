@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{ partial "seo/head.html" . }}
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect width='20' height='20' rx='4' fill='%230b0b0f'/%3E%3Crect x='5' y='5' width='10' height='10' rx='2' fill='%23ffffff'/%3E%3Crect x='8' y='8' width='7' height='7' fill='%233b4cff'/%3E%3C/svg%3E">
+  <link rel="preload" href="{{ "fonts/InterVariable.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+  {{ $css := slice (resources.Get "css/main.css") (resources.Get "css/syntax.css") | resources.Concat "css/site.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+</head>
+<body class="kind-{{ .Kind }}" style="--c: var(--c{{ partial "func/cidx.html" . }}, var(--accent))">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="read-progress" aria-hidden="true"></div>
+  {{ partial "header.html" . }}
+
+  {{ block "main" . }}{{ end }}
+
+  {{ partial "footer.html" . }}
+
+  <dialog class="search" aria-label="Search">
+    <div class="search-box">{{ partial "icon.html" "search" }}<input type="search" placeholder="Search lessons, topics, concepts…" autocomplete="off" spellcheck="false" aria-label="Search" role="combobox" aria-expanded="true" aria-controls="search-results"><kbd>esc</kbd></div>
+    <ul class="search-results" id="search-results" role="listbox"></ul>
+    <p class="search-hint"><span><kbd>↑</kbd><kbd>↓</kbd> navigate</span><span><kbd>↵</kbd> open</span><span><kbd>esc</kbd> close</span><span class="count" data-search-count></span></p>
+  </dialog>
+  <dialog class="zoom" aria-label="Diagram">
+    <div class="zoom-bar">
+      <button class="zoom-reset" type="button">Reset</button>
+      <span class="zoom-hint">drag to pan · scroll to zoom</span>
+      <button class="icon-btn zoom-close" type="button" aria-label="Close">{{ partial "icon.html" "close" }}</button>
+    </div>
+    <div class="zoom-stage"><div class="zoom-scene"></div></div>
+  </dialog>
+
+  <script>window.LP_INDEX = {{ "index.json" | relURL }}; window.LP_MERMAID = {{ "vendor/mermaid.min.js" | relURL }};{{ if in .RawContent "```mermaid" }} window.LP_LOGO_DIR = {{ "logos/" | relURL }}; window.LP_LOGOS = {{ partialCached "func/logos.html" . }};{{ end }}</script>
+  {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
+  <script src="{{ $js.RelPermalink }}" defer></script>
+</body>
+</html>

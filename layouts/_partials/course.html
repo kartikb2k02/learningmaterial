@@ -1,0 +1,103 @@
+{{ $course := . }}
+{{ $cfg := dict }}
+{{ range site.Params.courses }}{{ if eq .dir $course.Params.srcdir }}{{ $cfg = . }}{{ end }}{{ end }}
+{{ $mods := where .Pages "Kind" "section" }}
+{{ $lessons := partialCached "func/lessons.html" (dict "s" . "top" true) .Path }}
+{{ $min := partial "func/minutes.html" (dict "s" . "top" true) }}
+{{ $seq := partialCached "func/seq.html" (dict "s" . "top" true) .Path }}
+{{ $parts := split .Title " — " }}
+
+<div class="layout is-wide">
+<aside class="sidebar" id="sidebar">{{ partialCached "sidebar.html" . .Path }}</aside>
+<div class="scrim"></div>
+
+<div class="col">
+<main id="main" class="content wide course">
+  {{ partial "breadcrumbs.html" . }}
+
+  <header class="course-head">
+    <h1>{{ index $parts 0 }}</h1>
+    <p class="lede">{{ $cfg.summary | default .Params.desc }}</p>
+    <div class="course-cta">
+      <a class="btn primary" href="{{ with $seq }}{{ (index . 0).p.RelPermalink }}{{ end }}">Start reading {{ partial "icon.html" "arrow" }}</a>
+      <ul class="stat-chips"><li>{{ len site.Params.levels }} levels</li><li>{{ len (where $mods "Params.track" "ne" "") }} topics</li><li>{{ len $lessons }} lessons</li>{{ with partial "func/dur.html" $min }}<li>~{{ . }}</li>{{ end }}</ul>
+    </div>
+  </header>
+
+  <section class="block">
+    <div class="block-head"><h2 class="block-title">Contents</h2></div>
+    <ol class="levels">
+      {{ range site.Params.levels }}
+        {{ $l := partial "func/level.html" .key }}
+        {{ $lmods := where $mods "Params.track" .key }}
+        {{ if $lmods }}
+        {{ $n := 0 }}{{ $lmin := 0 }}
+        {{ range $lmods }}
+          {{ $n = add $n (len (partial "func/lessons.html" (dict "s" . "top" false))) }}
+          {{ $lmin = add $lmin (partial "func/minutes.html" (dict "s" . "top" false)) }}
+        {{ end }}
+        <li class="level" id="level-{{ $l.key }}">
+          <div class="level-rail" aria-hidden="true"><span class="level-dot">{{ $l.num }}</span></div>
+          <div class="level-body">
+            <div class="level-head">
+              <h3>{{ $l.name }}</h3>
+              <p class="level-blurb">{{ $l.blurb }}</p>
+              <p class="level-stats">{{ $n }} lessons{{ with partial "func/dur.html" $lmin }} · ~{{ . }}{{ end }}</p>
+            </div>
+            <ol class="rows tgroup-list">
+              {{ range $lmods }}
+              {{ $kids := .Pages }}
+              {{ $mmin := partial "func/minutes.html" (dict "s" . "top" false) }}
+              <li>
+              <details class="tgroup">
+                <summary>
+                  <span class="tgroup-main"><span class="tgroup-title">{{ .Params.short }}</span>{{ with .Params.desc }}<span class="tgroup-desc">{{ . }}</span>{{ end }}</span>
+                  <span class="tgroup-meta">{{ len $kids }} lessons{{ with partial "func/dur.html" $mmin }} · ~{{ . }}{{ end }}</span>
+                  {{ partial "icon.html" (dict "name" "chevron" "class" "go") }}
+                </summary>
+                <ol class="topic-list">
+                  <li><a class="topic-row is-overview" href="{{ .RelPermalink }}"><span class="num">·</span><span class="topic-title">Overview</span>{{ partial "icon.html" (dict "name" "arrow" "class" "go") }}</a></li>
+                  {{ range $kids }}
+                  <li><a class="topic-row" href="{{ .RelPermalink }}"><span class="num">{{ .Params.label }}</span><span class="topic-title">{{ .Params.short }}</span><span class="topic-diff">{{ .Params.level }}</span><span class="topic-time">{{ partial "func/dur.html" (.Params.min | default 0) }}</span>{{ partial "icon.html" (dict "name" "arrow" "class" "go") }}</a></li>
+                  {{ end }}
+                </ol>
+              </details>
+              </li>
+              {{ end }}
+            </ol>
+          </div>
+        </li>
+        {{ end }}
+      {{ end }}
+    </ol>
+  </section>
+
+  {{ with where $mods "Params.track" "" }}
+  <section class="block">
+    <div class="block-head"><h2 class="block-title">Build</h2></div>
+    <div class="ref-grid">
+      {{ range . }}
+      <a class="ref-card" href="{{ .RelPermalink }}"><strong>{{ .Params.short }}</strong><span>{{ .Params.desc }}</span></a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with where .Pages "Kind" "page" }}
+  <section class="block">
+    <div class="block-head"><h2 class="block-title">Reference</h2></div>
+    <div class="ref-grid">
+      {{ range . }}<a class="ref-card" href="{{ .RelPermalink }}"><strong>{{ .Title }}</strong><span>{{ .Params.desc }}</span></a>{{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{ if .Content }}
+  <section class="block">
+    <div class="block-head"><h2 class="block-title">About</h2></div>
+    <article class="prose">{{ .Content }}</article>
+  </section>
+  {{ end }}
+</main>
+</div>
+</div>

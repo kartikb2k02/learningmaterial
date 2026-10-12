@@ -1,0 +1,8 @@
+{{- /* A fenced code block: language label + copy button, rendered at build time.
+       Shell blocks are marked as terminals so they read differently from source code. */ -}}
+{{- $names := dict "go" "Go" "bash" "Shell" "sh" "Shell" "shell" "Shell" "zsh" "Shell" "console" "Shell" "python" "Python" "cpp" "C++" "cuda" "CUDA C++" "c" "C" "yaml" "YAML" "json" "JSON" "sql" "SQL" "promql" "PromQL" "nginx" "nginx" -}}
+{{- $term := in (slice "bash" "sh" "shell" "zsh" "console") .label -}}
+<div class="code{{ if $term }} is-term{{ end }}">
+  <div class="code-head"><span class="code-lang">{{ index $names .label | default .label }}</span><button class="copy-btn" type="button" aria-label="Copy code">{{ partial "icon.html" (dict "name" "copy" "class" "ico-copy") }}{{ partial "icon.html" (dict "name" "check" "class" "ico-done") }}<span>Copy</span></button></div>
+  {{ transform.Highlight .inner .lang .options }}
+</div>

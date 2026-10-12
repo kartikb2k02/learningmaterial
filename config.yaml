@@ -1,0 +1,114 @@
+baseURL: https://kartikb2k02.github.io/learningmaterial/
+title: Operator
+locale: en
+enableGitInfo: false
+disableKinds: [taxonomy, term, rss]
+enableRobotsTXT: true
+
+# ─────────────────────────────────────────────────────────────────────────────
+# COURSES
+# Every course is a plain folder of markdown at the repo root. To publish one,
+# add its folder name below. Folders that are not listed are ignored.
+#
+# Conventions the site understands (all optional):
+#   README.md in a folder        → that folder's landing page
+#   a folder inside a course     → a topic; its order comes from `levels` below
+#   01-, 02-… file/folder prefix → lesson order
+#   first "# Heading" in a file  → page title
+#   ```mermaid fenced blocks     → rendered diagrams
+#   "Level: … | Estimated time: … min" header block → difficulty, prerequisites, time
+# ─────────────────────────────────────────────────────────────────────────────
+params:
+  hero:
+    title: Learn how products are built, grown and sold
+  footer: Operator is a working library for people who ship, price and sell software.
+  seo:
+    home_title: Product, Growth, GTM and Operations, from first principles | Operator
+    description: Practitioner courses on product management, growth, go to market, revenue operations and building with AI. Every lesson ends in a diagram, a number you can run, and an artifact.
+    image: social-card.png
+  author:
+    name: Kartik Bhalerao
+    url: https://github.com/kartikb2k02
+  # github: https://github.com/kartikb2k02/learningmaterial
+
+  # The five learning levels, in order. Every topic of every course belongs to one.
+  levels:
+    - { key: foundations,  name: Foundations,  blurb: Build the mental model. }
+    - { key: basic,        name: Basic,        blurb: Learn the core mechanisms. }
+    - { key: intermediate, name: Intermediate, blurb: Run the playbooks. }
+    - { key: advanced,     name: Advanced,     blurb: Operate at scale. }
+    - { key: expert,       name: Expert,       blurb: Make the calls and defend them. }
+
+  courses:
+    - dir: product-management
+      short: Product
+      summary: The product function from first principles. How to find a problem worth solving, choose a strategy, define it, ship it, measure it, price it, and how the whole job bends by archetype and by sector.
+      levels:
+        foundations:  [I-the-product-function, II-product-strategy]
+        basic:        [III-discovery-and-problem-framing, IV-definition-and-delivery, V-technical-foundations]
+        intermediate: [VI-design-and-user-experience, VII-analytics-and-experimentation, VIII-pricing-and-packaging]
+        advanced:     [IX-product-archetypes, X-platform-and-api-products, XI-data-and-ml-products, XII-trust-safety-and-abuse]
+        expert:       [XIII-product-by-sector, XIV-lifecycle-migrations-and-sunsets, XV-product-operations-and-the-org, XVI-worked-product-decisions]
+
+    - dir: metrics-and-models
+      short: Metrics
+      summary: Every number an operator is judged on. What it measures, the formula, the denominator people get wrong, what good looks like by sector, and a program that computes it. Nothing else in this library defines a metric.
+      levels:
+        foundations:  [I-how-to-read-a-metric]
+        basic:        [II-funnel-and-acquisition]
+        intermediate: [III-retention-and-cohorts, IV-revenue-and-efficiency]
+        advanced:     [V-sales-and-pipeline-math, VI-unit-economics-with-ai-costs]
+        expert:       [VII-benchmarks-and-their-limits]
+
+    - dir: growth-engineering
+      title: Growth Engineering
+      short: Growth
+      summary: Growth as a system rather than a list of tactics. The loop, the model, the experiment machine, and the four places compounding actually comes from.
+      soon: true
+
+    - dir: gtm-engineering
+      title: GTM Engineering
+      short: GTM
+      summary: Taking a product to a market. Sizing it, naming the buyer, positioning against the real alternative, picking a motion, building pipeline arithmetic that holds, and launching.
+      soon: true
+
+    - dir: revenue-operations
+      title: Revenue Operations
+      short: Operations
+      summary: The machinery underneath. Operating cadence, the funnel as a data model, systems of record, reporting you can trust, process design, and the economics of running it.
+      soon: true
+
+    - dir: ai-engineering
+      title: AI Engineering
+      short: AI
+      summary: Building products with a model inside them. The primitives, context and retrieval, where a workflow beats an agent, how to know it works, how it should feel, and what it costs to run.
+      soon: true
+
+# Lets `hugo server` live reload when a course file changes. Courses are read from
+# the repo root by content/_content.gotmpl, not from content/.
+# When you add a course, add a mount for it here too.
+module:
+  mounts:
+    - source: content
+      target: content
+    - source: assets
+      target: assets
+    - source: product-management
+      target: assets/_watch/product-management
+    - source: metrics-and-models
+      target: assets/_watch/metrics-and-models
+
+outputs:
+  home: [html, json]
+  section: [html]
+  page: [html]
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+  tableOfContents:
+    startLevel: 2
+    endLevel: 3

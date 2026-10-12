@@ -1,0 +1,5 @@
+{{/* key -> {key, name, blurb, num} for a learning level, or an empty dict. */}}
+{{ $out := dict }}
+{{ $key := . }}
+{{ range $i, $l := site.Params.levels }}{{ if eq $l.key $key }}{{ $out = merge $l (dict "num" (printf "%02d" (add $i 1)) "n" (add $i 1)) }}{{ end }}{{ end }}
+{{ return $out }}

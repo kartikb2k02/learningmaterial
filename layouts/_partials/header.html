@@ -1,0 +1,19 @@
+<header class="topbar">
+  <div class="topbar-in">
+    <button class="icon-btn menu-btn" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar"><span class="when-closed">{{ partial "icon.html" "menu" }}</span><span class="when-open">{{ partial "icon.html" "close" }}</span></button>
+    <a class="brand" href="{{ site.Home.RelPermalink }}">
+      <span class="brand-mark" aria-hidden="true"><i></i></span>
+      <span>{{ site.Title }}</span>
+    </a>
+    <nav class="topnav" aria-label="Courses">
+      {{ $cur := "" }}{{ with .FirstSection }}{{ $cur = .Path }}{{ end }}
+      {{ $i := 0 }}
+      {{ range site.Params.courses }}{{ $i = add $i 1 }}{{ with site.GetPage (printf "/%s" .dir) }}
+      <a href="{{ .RelPermalink }}" style="--c: var(--c{{ $i }})" title="{{ partial "func/cname.html" . }}"{{ if eq .Path $cur }} aria-current="page"{{ end }}>{{ partial "func/sname.html" . }}</a>
+      {{ end }}{{ if .soon }}<span class="nav-soon" title="{{ .title }} — coming soon">{{ replace .title " Engineering" "" }} <small>soon</small></span>{{ end }}{{ end }}
+    </nav>
+    <span class="topbar-gap"></span>
+    <button class="search-btn" type="button" aria-label="Search" aria-keyshortcuts="Control+K Meta+K">{{ partial "icon.html" "search" }}<span>Search</span><kbd data-kbd>Ctrl K</kbd></button>
+    {{ with site.Params.github }}<a class="icon-btn gh-btn" href="{{ . }}" target="_blank" rel="noopener" aria-label="Source on GitHub" title="Source on GitHub">{{ partial "icon.html" "github" }}</a>{{ end }}
+  </div>
+</header>

@@ -1,0 +1,4 @@
+{{/* URLs of everything in a section that counts toward progress. */}}
+{{ $out := slice }}
+{{ range partial "func/seq.html" (dict "s" .s "top" .top) }}{{ if .leaf }}{{ $out = $out | append .p.RelPermalink }}{{ end }}{{ end }}
+{{ return $out }}

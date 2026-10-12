@@ -1,0 +1,16 @@
+{{/* Home page drawer (small screens): every course, its levels and topics, at a glance. */}}
+{{ partial "path-switch.html" false }}
+<nav class="tree" aria-label="All courses">
+  {{ $i := 0 }}
+  {{ range site.Params.courses }}{{ $i = add $i 1 }}{{ with site.GetPage (printf "/%s" .dir) }}
+  {{ $mods := where .Pages "Kind" "section" }}
+  <a class="side-course" href="{{ .RelPermalink }}" style="--c: var(--c{{ $i }})"><i aria-hidden="true"></i>{{ partial "func/cname.html" . }}</a>
+  {{ range site.Params.levels }}
+    {{ $l := partial "func/level.html" .key }}
+    {{ with where $mods "Params.track" .key }}
+    <div class="tree-label"><span class="lvl-num">{{ $l.num }}</span>{{ $l.name }}</div>
+    {{ range . }}<a class="tree-link" href="{{ .RelPermalink }}"><span>{{ .Params.short }}</span></a>{{ end }}
+    {{ end }}
+  {{ end }}
+  {{ end }}{{ end }}
+</nav>

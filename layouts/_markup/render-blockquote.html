@@ -1,0 +1,10 @@
+{{- /* Plain blockquotes are quiet callouts. GitHub-style alerts get a label:
+       > [!NOTE]  > [!TIP]  > [!WARNING]  > [!IMPORTANT] */ -}}
+{{- if eq .Type "alert" -}}
+<div class="callout callout-{{ .AlertType }}" role="note">
+  <p class="callout-title">{{ with .AlertTitle }}{{ . }}{{ else }}{{ .AlertType }}{{ end }}</p>
+  {{ .Text }}
+</div>
+{{- else -}}
+<blockquote>{{ .Text }}</blockquote>
+{{- end -}}

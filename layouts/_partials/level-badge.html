@@ -1,0 +1,4 @@
+{{- /* A level is shown as its name plus five bars, n of them filled — never by colour alone. */ -}}
+{{- with partial "func/level.html" . -}}
+<span class="lvl" title="Level {{ .n }} of 5: {{ .name }}"><span class="lvl-bars" aria-hidden="true">{{ $n := .n }}{{ range seq 5 }}<i{{ if le . $n }} class="on"{{ end }}></i>{{ end }}</span>{{ .name }}</span>
+{{- end -}}

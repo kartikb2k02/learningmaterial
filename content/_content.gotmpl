@@ -1,0 +1,149 @@
+{{- /*
+  Builds the whole site from the course folders listed under params.courses in config.yaml.
+  Every folder containing markdown becomes a section (README.md is its landing page) and
+  every other .md file becomes a lesson. Order, title and metadata come from the files
+  themselves, so course folders stay plain markdown with no front matter.
+*/ -}}
+{{- range site.Params.courses -}}
+  {{- $dir := . -}}
+  {{- if reflect.IsMap . }}{{ $dir = .dir }}{{ end -}}
+  {{- $soon := and (reflect.IsMap .) .soon -}}
+  {{- if $soon -}}
+    {{- /* announced in config.yaml, not written yet: nothing to build */ -}}
+  {{- else if os.FileExists $dir -}}
+    {{- template "walk" (dict "ctx" $ "dir" $dir) -}}
+  {{- else -}}
+    {{- warnf "config.yaml lists course %q but that folder does not exist" $dir -}}
+  {{- end -}}
+{{- end -}}
+
+{{- define "walk" -}}
+  {{- $hasMd := false -}}
+  {{- $readme := "" -}}
+  {{- range os.ReadDir .dir -}}
+    {{- $fs := printf "%s/%s" $.dir .Name -}}
+    {{- if .IsDir -}}
+      {{- if not (hasPrefix .Name ".") }}{{ template "walk" (dict "ctx" $.ctx "dir" $fs) }}{{ end -}}
+    {{- else if findRE `(?i)\.md$` .Name -}}
+      {{- $hasMd = true -}}
+      {{- if eq (lower .Name) "readme.md" -}}
+        {{- $readme = $fs -}}
+      {{- else -}}
+        {{- template "add" (dict "ctx" $.ctx "file" $fs "path" (replaceRE `(?i)\.md$` "" $fs) "kind" "page" "dir" $.dir) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if $hasMd }}{{ template "add" (dict "ctx" $.ctx "file" $readme "path" .dir "kind" "section" "dir" .dir) }}{{ end -}}
+{{- end -}}
+
+{{- define "add" -}}
+  {{- $raw := "" -}}
+  {{- /* read through the assets/_watch mount (see config.yaml) so edits live-reload */ -}}
+  {{- $fm := dict -}}
+  {{- $mod := time.Now -}}
+  {{- with .file -}}
+    {{- $raw = (resources.Get (printf "_watch/%s" .)).Content -}}
+    {{- with findRESubmatch `(?s)\A---\n(.*?)\n---\n` $raw 1 }}{{ $fm = index (index . 0) 1 | transform.Unmarshal (dict "format" "yaml") }}{{ end -}}
+    {{- $raw = replaceRE `(?s)\A---\n.*?\n---\n` "" $raw -}}
+    {{- $mod = (os.Stat .).ModTime -}}
+  {{- end -}}
+  {{- $name := path.Base .path -}}
+
+  {{- /* order + label from a "V-foo" / "05-foo" prefix */ -}}
+  {{- $roman := dict "i" 1 "ii" 2 "iii" 3 "iv" 4 "v" 5 "vi" 6 "vii" 7 "viii" 8 "ix" 9 "x" 10 "xi" 11 "xii" 12 "xiii" 13 "xiv" 14 "xv" 15 "xvi" 16 "xvii" 17 "xviii" 18 "xix" 19 "xx" 20 "xxi" 21 "xxii" 22 "xxiii" 23 "xxiv" 24 "xxv" 25 "xxvi" 26 "xxvii" 27 "xxviii" 28 "xxix" 29 "xxx" 30 -}}
+  {{- $prefix := index (split (lower $name) "-") 0 -}}
+  {{- $weight := 9999 -}}
+  {{- $label := "" -}}
+  {{- $strip := "" -}}
+  {{- if in $name "-" -}}
+    {{- if findRE `^\d+$` $prefix -}}
+      {{- $weight = add 1 (int (strings.TrimLeft "0" $prefix | default "0")) -}}
+      {{- $label = $prefix -}}
+      {{- $strip = `^\w+ \d+\s*[—–:-]\s*` -}}
+    {{- else if isset $roman $prefix -}}
+      {{- $weight = index $roman $prefix -}}
+      {{- $strip = `^[IVXLC]+\s*[—–:-]\s*` -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- /* title = leading "# Heading", which is then removed from the body */ -}}
+  {{- $title := replaceRE `^([ivxlc]+|\d+)-` "" (lower $name) | humanize | title -}}
+  {{- $body := $raw -}}
+  {{- with findRESubmatch `\A\s*#[ \t]+([^\n]+?)[ \t]*(\n|\z)` $raw 1 -}}
+    {{- $title = index (index . 0) 1 | replaceRE "[*`]" "" -}}
+    {{- $body = replaceRE `\A\s*#[ \t]+[^\n]*` "" $raw 1 -}}
+  {{- end -}}
+  {{- $short := $title -}}
+  {{- with $strip }}{{ $short = replaceRE . "" $title }}{{ end -}}
+  {{- /* topic folders are shown by name only: no number, and the title loses its "V — " */ -}}
+  {{- if isset $roman $prefix }}{{ $title = $short }}{{ end -}}
+
+  {{- /* level / duration from the "Level: … | Estimated time: …" block */ -}}
+  {{- $level := "" -}}
+  {{- $min := 0 -}}
+  {{- with findRESubmatch `(?m)^Level:\s*(.+?)\s*$` $body 1 }}{{ $level = index (index . 0) 1 }}{{ end -}}
+  {{- with findRESubmatch `(?i)time:\s*0*(\d+)(?:\s*-\s*\d+)?\s*(min|h)` $body 1 -}}
+    {{- $m := index . 0 -}}
+    {{- $min = mul (int (index $m 1)) (cond (eq (lower (index $m 2)) "h") 60 1) -}}
+  {{- end -}}
+
+  {{- $prereq := "" -}}
+  {{- $diff := 0 -}}
+  {{- with findRESubmatch `(?m)^Prerequisites:\s*(.+?)\s*$` $body 1 }}{{ $prereq = index (index . 0) 1 }}{{ end -}}
+  {{- with findRESubmatch `(?i)difficulty:\s*(\d)/5` $body 1 }}{{ $diff = int (index (index . 0) 1) }}{{ end -}}
+
+  {{- /* learning level ("track") = the level the page's topic folder is listed under in config.yaml.
+         The order of that list is also the order of the topics, so a topic folder needs no number. */ -}}
+  {{- $segs := split .path "/" -}}
+  {{- $track := "" -}}
+  {{- if gt (len $segs) 1 -}}
+    {{- range site.Params.courses -}}
+      {{- if and (reflect.IsMap .) (eq .dir (index $segs 0)) -}}
+        {{- $course := . -}}
+        {{- $n := 0 -}}
+        {{- range site.Params.levels -}}
+          {{- $k := .key -}}
+          {{- range index ($course.levels | default dict) $k -}}
+            {{- $n = add $n 1 -}}
+            {{- if eq . (index $segs 1) }}{{ $track = $k }}{{ if eq (len $segs) 2 }}{{ $weight = $n }}{{ end }}{{ end -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- /* optional front matter overrides what was inferred */ -}}
+  {{- with $fm.title }}{{ $title = . }}{{ end -}}
+  {{- with $fm.level }}{{ $track = lower . }}{{ end -}}
+  {{- with $fm.difficulty }}{{ $level = title . }}{{ end -}}
+  {{- with $fm.reading_time }}{{ $min = int . }}{{ end -}}
+  {{- with $fm.prerequisites }}{{ $prereq = delimit . ", " }}{{ end -}}
+
+  {{- /* blurb = first paragraph after the title (skipping the metadata block and any leading headings) */ -}}
+  {{- $desc := "" -}}
+  {{- $rest := replaceRE "(?s)\\A\\s*```.*?```\\s*" "" $body 1 | replaceRE `\A\s*(---\s*)*` "" | replaceRE `\A(\s*#{2,}[^\n]*\n)+\s*` "" -}}
+  {{- $para := index (split $rest "\n\n") 0 | replaceRE `(?m)^>\s?` "" -}}
+  {{- if not (findRE "^(```|#|\\|)" $para) -}}
+    {{- $desc = $para | replaceRE `\[([^\]]+)\]\([^)]*\)` "$1" | replaceRE "[*`★]" "" | replaceRE `\s+` " " | strings.TrimSpace | truncate 190 -}}
+  {{- end -}}
+  {{- /* pages that open with a code block, table or one-line teaser: use their first real paragraph */ -}}
+  {{- if lt (len $desc) 50 -}}
+    {{- range split (replaceRE "(?s)```.*?```" "" $rest) "\n\n" -}}
+      {{- $p := . | replaceRE `(?m)^>\s?` "" | strings.TrimSpace -}}
+      {{- if and (lt (len $desc) 50) (gt (len $p) 70) (not (findRE `^(#|\||[-*] |\d+\. |<|\[!)` $p)) -}}
+        {{- $desc = $p | replaceRE `\[([^\]]+)\]\([^)]*\)` "$1" | replaceRE "[*`★]" "" | replaceRE `\s+` " " | strings.TrimSpace | truncate 190 -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- .ctx.AddPage (dict
+      "path" .path
+      "kind" .kind
+      "title" $title
+      "weight" $weight
+      "content" (dict "mediaType" "text/markdown" "value" $body)
+      "dates" (dict "date" $mod "lastmod" $mod)
+      "params" (dict "short" $short "label" $label "level" $level "min" $min "desc" ($fm.description | default $desc) "srcdir" .dir
+                     "track" $track "prereq" $prereq "difficulty" $diff "tags" ($fm.tags | default slice))
+  ) -}}
+{{- end -}}

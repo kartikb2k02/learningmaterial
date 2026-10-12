@@ -1,0 +1,6 @@
+{{- $in := trim .Inner "\n" -}}
+{{- /* A block that starts with "Level:" is lesson metadata. It is shown under the page title
+       (see _partials/meta.html), so it renders nothing here. */ -}}
+{{- if not (hasPrefix $in "Level:") -}}
+<div class="code is-plain"><pre class="ascii" tabindex="0"><code>{{ $in }}</code></pre></div>
+{{- end -}}
