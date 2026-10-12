@@ -11,6 +11,8 @@
 //	HTML in labels   a label containing < must be quoted, and its <b> and <small> tags
 //	                 must be balanced, or Mermaid drops or mangles the label
 //	reserved ids     a node called "end" breaks the parser
+//	label quoting    a label that opens with a quote must close it before the
+//	                 bracket, or Mermaid swallows the rest of the line
 //	classed nodes    every id in a class statement must be a node declared in the diagram
 package main
 
@@ -114,6 +116,21 @@ func problems(d string, logos map[string]bool) []string {
 	}
 	for _, s := range regexp.MustCompile(`(?m)^\s*subgraph\s+([A-Za-z][A-Za-z0-9_]*)`).FindAllStringSubmatch(d, -1) {
 		declared[s[1]] = true
+	}
+
+	for _, l := range strings.Split(d, "\n") {
+		for _, open := range []string{`["`, `("`, `{"`, `[("`} {
+			i := strings.Index(l, open)
+			if i < 0 {
+				continue
+			}
+			rest := l[i+len(open):]
+			j := strings.Index(rest, `"`)
+			k := strings.IndexAny(rest, "]})")
+			if j < 0 || (k >= 0 && k < j) {
+				out = append(out, fmt.Sprintf("label opens with a quote and never closes it: %s", trim(l)))
+			}
+		}
 	}
 
 	for _, c := range classSt.FindAllStringSubmatch(d, -1) {
