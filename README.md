@@ -55,8 +55,16 @@ and the site goes stale or starts returning 404 with nothing in the log to expla
 to memory makes `public/` irrelevant to the server, and `check.sh` builds to a temporary directory
 for the same reason.
 
-Needs Hugo extended 0.126 or newer, because the site is generated from the course folders by a
-content adapter rather than from `content/`. Go is needed only for the tools in `tools/`.
+Needs **Hugo extended 0.146.0 or newer**, and the floor is hard rather than cautious: `layouts/`
+uses the template system that shipped in 0.146.0, where partials live in `layouts/_partials` and
+`baseof`, `home`, `page` and `section` sit at the root of `layouts`. An older Hugo finds none of
+them, so the build fails on the first page with `partial "seo/head.html" not found` rather than
+with anything about versions. The content adapter that generates the site from the course folders
+instead of from `content/` needs 0.126, which is where the old and wrong floor came from.
+
+Go is needed only for the tools in `tools/`. Two places pin the version and both have to agree with
+this line: `.github/workflows/checks.yml`, and the `HUGO_VERSION` variable in the Cloudflare Pages
+project, whose own default is older than the floor on every build image before v3.
 
 ```bash
 go run ./tools/gocheck -run product-management     # format, vet and run every Go block

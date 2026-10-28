@@ -14,28 +14,15 @@ jobs:
         with:
           go-version: '1.22'
 
-      - name: Config parses
-        uses: peaceiris/actions-hugo@v3
+      # The layouts directory uses the template system introduced in Hugo
+      # v0.146.0 (layouts/_partials, and baseof/home/page/section at the root).
+      # Anything older cannot find a single partial and the build dies on the
+      # first page. Keep this in step with the version in the README.
+      - uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.139.0'
+          hugo-version: '0.167.0'
           extended: true
-      - run: hugo config > /dev/null
-      - run: go run ./tools/configcheck
-      - run: go run ./tools/levelcheck
 
-      - name: Go in lessons compiles, vets and runs
-        run: go run ./tools/gocheck -run product-management metrics-and-models
-
-      - name: No dashes in prose
-        run: go run ./tools/stylecheck README.md CONTENT_GUIDE.md product-management metrics-and-models
-
-      - name: Diagrams are valid
-        run: go run ./tools/diagramcheck README.md product-management metrics-and-models
-
-      # Forward references to unwritten topics are expected during the build.
-      # Switch this to the strict form (drop -pending) once a course is complete.
-      - name: Links
-        run: go run ./tools/linkcheck -pending README.md product-management metrics-and-models
-
-      - name: Site builds
-        run: hugo --minify
+      # One gate, the same script that runs locally, so CI and a laptop cannot
+      # disagree about whether the library is publishable.
+      - run: ./check.sh
