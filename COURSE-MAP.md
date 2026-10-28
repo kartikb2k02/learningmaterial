@@ -1,6 +1,7 @@
 # Course Map
 
-**Fathom** · product.kartikbhalerao.in · one course, six levels, 34 topics, about 221 lessons.
+**Fathom** · product.kartikbhalerao.in · two courses on the same six levels.
+**Product Management**, 34 topics and about 221 lessons. **Growth Engineering**, 19 topics and about 119 lessons, mapped at the end of this file.
 
 Every lesson below is written as *the question it answers*, which is the convention the topic
 `README.md` tables use, so each block is copy and paste ready when the topic gets written.
@@ -482,3 +483,267 @@ loose `.md` file at the course root becomes a **Reference** card.
 4. The remaining Intermediate and Advanced topics.
 5. **Expert**, largest and most referenced, so it benefits from everything above being linkable.
 6. The six remaining **sector** lessons.
+
+---
+
+# Growth Engineering
+
+The second course. It owns four things the product course does not: the loops, the channels, the
+product surfaces that move a rate, and the machinery that makes a measured change possible.
+
+**The boundary rule.** Every metric definition stays in the product course and growth links to it.
+Funnel mechanics, retention definitions, cohort tables, experiment statistics, acquisition cost,
+payback, lifetime value, revenue retention, gross margin, the value metric, tiers and sector market
+shape are all defined there, once. A growth lesson that restates one of them is a bug.
+
+| Level | Topics | Lessons | What the level is for |
+|---|---|---|---|
+| Foundations ✅ | 3 | 18 | Growth as a system: the function, the loops, the model |
+| Basic ✅ | 4 | 24 | One channel at a time, and how each one actually turns |
+| Intermediate ✅ | 4 | 25 | The product surfaces that move the numbers |
+| Advanced ✅ | 3 | 20 | The machinery: instrumentation, experiments, cadence |
+| Expert ✅ | 4 | 25 | Motion, economics, and growth once a model is in the loop |
+| Sectors ✅ | 1 | 7 | The same loops, bent by the market they run in |
+
+✅ **The course is complete: 119 lessons across nineteen topics, all five levels.** The Reference
+shelf holds a roadmap, six runnable workflows, a glossary of seventy one growth terms and a dated
+reference list; the Build shelf holds six project briefs.
+
+## `the-growth-function` ✅ written
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | What a Growth Team Actually Does | What are the three jobs, and why is the team's name on the arrows rather than the boxes? |
+| 02 | Growth, Marketing and Product | Where are the real lines between the three, and what breaks at each seam? |
+| 03 | Where Growth Sits | Standalone, embedded, or nobody: what does each arrangement actually produce? |
+| 04 | The Growth Charter | How do you write down what this team may touch, before the first argument rather than after? |
+| 05 | What Growth Is Not | Which familiar practices borrow against the future, and what is the exchange rate? |
+| 06 | What Good Looks Like | How is this job judged when a third of well designed experiments are meant to fail? |
+
+## `loops-and-compounding` ✅ written
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | Funnels Leak, Loops Compound | Why is the funnel the wrong default picture? |
+| 02 | The Four Loop Types | Viral, content, paid and sales: how does each one actually turn? |
+| 03 | Reading a Loop | What are the inputs, the action, the output and the reinvestment step? |
+| 04 | Loop Speed and Loop Strength | Which matters more, and how do you measure both? |
+| 05 | Why Most Loops Die | What are the common break points, and which are fixable? |
+| 06 | Drawing Your Own Loop | How do you get from a vague story to a loop you can forecast? |
+
+## `the-growth-model` ✅ written
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | Your Business as One Equation | What is the single arithmetic statement your growth depends on? |
+| 02 | Finding the Input Metrics | Which handful of numbers actually feed the output? |
+| 03 | Building the Model | How do you build it so somebody else can argue with it? |
+| 04 | What a Forecast Can and Cannot Promise | Where does the model stop being honest? |
+| 05 | Sensitivity | Which input moves the output, and which only feels important? |
+| 06 | Using the Model to Say No | How does the model kill an idea before anyone builds it? |
+
+# Basic
+
+## `acquisition-channels` ✅ written
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | Why Companies Have One or Two Channels | Why does the long list of channels collapse in practice? |
+| 02 | Channel Fit | How do price, frequency and purchase trigger decide the channel? |
+| 03 | Testing a Channel Properly | What is a fair test, and how much does a fair test cost? |
+| 04 | Saturation and the Ceiling | How do you know a channel is finished rather than badly run? |
+| 05 | When a Channel Dies | What happens the week the algorithm changes, and what do you do? |
+| 06 | Attribution | Why do the numbers never agree, and which one do you act on? |
+
+## `content-and-search` ✅ written
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | How Search Works Now | What actually decides what gets shown? |
+| 02 | Intent and the Money Pages | Which queries convert, and which only flatter traffic charts? |
+| 03 | Programmatic Pages | How does the method work, and when does it become a liability? |
+| 04 | Content That Compounds | What is the difference between an asset and a post? |
+| 05 | Authority and Honest Ways to Earn It | What works, and what gets you penalised? |
+| 06 | Search Inside Answer Engines | What changes when the answer is written instead of linked? |
+
+## `paid-acquisition` ✅ written
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | What You Are Actually Buying | What does the money buy, and when does it stop buying it? |
+| 02 | The Auction in Plain Words | How is the price set, and what do you control in it? |
+| 03 | Creative Is the Targeting | Why did targeting move into the creative, and what follows? |
+| 04 | Landing Page and Offer Fit | Where does a paid click really get lost? |
+| 05 | Reading a Paid Report | Which columns lie, and which decide the budget? |
+| 06 | When Paid Is a Loop | When does paid compound, and when is it a drip you cannot stop? |
+
+## `virality-and-referral` ✅ written
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | The Viral Coefficient in Plain Words | What does the number mean, and why is cycle time the real variable? |
+| 02 | Why Referral Programmes Do Nothing | What is wrong with the standard give ten, get ten? |
+| 03 | Collaboration Loops | Why does sharing inside the product beat an incentive? |
+| 04 | Designing an Invite | What makes an invitation accepted rather than ignored? |
+| 05 | Rewards | What do you give, to whom, and at which moment? |
+| 06 | Abuse and Fraud | How is every referral scheme gamed, and what stops it? |
+
+# Intermediate
+
+## `activation-and-onboarding` ✅ written
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | What Activation Means Here | How do you define it for your product rather than copy someone else's? |
+| 02 | Finding the Aha Moment | How do you find it in data without fooling yourself with correlation? |
+| 03 | Time to Value | Where do the minutes go, and which can you delete? |
+| 04 | Friction Worth Keeping | When does asking for more make activation go up? |
+| 05 | Empty States and First Run | What should the product show somebody with no data yet? |
+| 06 | Checklists and Tours | When do they help, and when do they read as an insult? |
+| 07 | Measuring an Onboarding Change | Why is this the hardest thing in the product to test honestly? |
+
+## `engagement-and-resurrection` ✅ written
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | Natural Frequency | How often should this product be used, and who decides? |
+| 02 | Triggers | External and internal: how does the handover between them happen? |
+| 03 | Habits Without Dark Patterns | Where is the line, and what does crossing it cost? |
+| 04 | Spotting Users About to Leave | Which signals come early enough to act on? |
+| 05 | Winning Back the Dormant | What actually brings somebody back, and how often is it worth trying? |
+| 06 | What Not to Send | How do you decide to stay quiet? |
+
+## `lifecycle-messaging` ✅ written
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | The Message Map | Who gets what, when, and who is allowed to decide? |
+| 02 | Email That Is Not Ignored | What still works, and what does deliverability actually depend on? |
+| 03 | Push and Notifications | How do you use them without burning the permission for good? |
+| 04 | In Product Messaging | Which messages belong inside the product rather than outside it? |
+| 05 | The Shared Attention Budget | Why does every team want to send one more, and who holds the cap? |
+| 06 | Measuring a Campaign Honestly | What does an open rate tell you, and what does a holdout tell you? |
+
+## `monetisation-and-conversion` ✅ written
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | Where the Paying Decision Happens | Why is it rarely on the pricing page? |
+| 02 | Trial, Freemium or Reverse Trial | What does each one select for? |
+| 03 | Paywalls | Hard, soft and usage based: what does each teach the user? |
+| 04 | The Upgrade Moment | How do you find the moment somebody is already convinced? |
+| 05 | Expansion as a Loop | How does an account grow without a salesperson in the room? |
+| 06 | Cancel Flows and Saves | What is a fair save, and what is a trap that returns as a chargeback? |
+
+# Advanced
+
+## `instrumentation-and-the-event-model` ✅ written
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | Why Growth Work Dies Without Instrumentation | What does a team actually lose when the events are wrong? |
+| 02 | Designing an Event Taxonomy | What are the naming rules, and why does the first week decide the next three years? |
+| 03 | Identity | Anonymous, user and account: how do you stitch them without lying? |
+| 04 | The Tracking Plan as a Contract | Who signs it, and what happens when engineering ships without it? |
+| 05 | Client, Server or Both | Which events go where, and what does each side miss? |
+| 06 | Data Quality and the Slow Rot | How does a clean implementation decay, and how do you catch it? |
+| 07 | Consent and What You May Collect | What are you allowed to keep, and for how long? |
+
+## `the-experiment-machine` ✅ written
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | What an Experimentation Platform Does | What are the parts, and what breaks without each? |
+| 02 | Flags, Rollouts and Experiments | Three different things on one switch: where does the confusion cost you? |
+| 03 | Assignment and Exposure | Where do the silent bugs live, and how do they bias a result? |
+| 04 | Guardrails and Automatic Stops | Which metrics stop a test on their own? |
+| 05 | Experiment Velocity | Why does the count of tests predict output better than the quality of ideas? |
+| 06 | The Backlog | How do you order ideas when everyone is certain about theirs? |
+| 07 | Writing the Result | How do you write it so the organisation believes it and acts? |
+
+## `growth-process-and-cadence` ✅ written
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | The Weekly Growth Meeting | What is on the agenda, and what should never be? |
+| 02 | From Idea to Ship | What is the pipeline, and where does it jam? |
+| 03 | Scoring Ideas | What is a scoring framework good for, and what is it not? |
+| 04 | Writing Down What You Learned | How do you stop the team rerunning the same test in two years? |
+| 05 | Working With Product and Engineering | Who owns the surface when growth wants to change it? |
+| 06 | Growth Debt | What accumulates, and when do you pay it down? |
+
+# Expert
+
+## `product-led-growth` ✅ written
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | What PLG Actually Requires | Which products can do this, and which cannot? |
+| 02 | Self Serve, Sales Assist, Hybrid | How do the three motions share one funnel? |
+| 03 | Product Qualified Leads | What signal is worth a salesperson's hour? |
+| 04 | Bottom Up Inside a Company | How does one user become forty, and where does it stall? |
+| 05 | When PLG Is the Wrong Answer | What are the honest disqualifiers? |
+| 06 | The Enterprise Ceiling | What stops the motion, and what do you build to get past it? |
+
+## `growth-economics` ✅ written
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | Reading Unit Economics as a Growth Lead | Which numbers are yours to move, and which are not? |
+| 02 | Payback by Channel | Why does a blended number hide the decision you need to make? |
+| 03 | The Marginal Pound | Where does the next unit of spend go, and how do you prove it? |
+| 04 | Setting and Defending a Budget | What argument actually survives the finance meeting? |
+| 05 | Forecasting Against a Target | What do you do when the model and the target disagree? |
+| 06 | Buying Revenue at a Loss | When is it a strategy, and when is it a slow failure? |
+
+## `ai-in-growth` ✅ written
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | What a Model Changes About Growth Work | Which parts of this job does a model genuinely change? |
+| 02 | Content at Scale and the Quality Floor | What happens to a content loop when everyone can produce infinite pages? |
+| 03 | Personalisation That Is Not Creepy | Where is the line, and what does crossing it do to trust? |
+| 04 | Onboarding by Agent | When does an agent beat a checklist, and what does it cost per user? |
+| 05 | AI Outbound and the Spam Equilibrium | What happens to a channel when sending becomes free? |
+| 06 | What These Loops Cost to Run | What is the cost per activated user once a model is in the loop? |
+| 07 | How They Fail | What are the failure modes, and which are visible from a dashboard? |
+
+## `growth-for-ai-products` ✅ written
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | Why AI Products Grow Differently | What is structurally different about the curve? |
+| 02 | Free Tiers When Every Use Costs Money | How much can you give away, and to whom? |
+| 03 | Activation When the First Output Is Bad | How do you get a second attempt out of somebody? |
+| 04 | Retention When the Model Changes | What happens to habit when the product changes under the user? |
+| 05 | The Demo Loop | Why does sharing output work as a channel, and when does it stop? |
+| 06 | Usage Growth That Destroys Margin | What do you do when your best cohort is your most expensive? |
+
+# Sectors
+
+## `growth-by-sector` ✅ written
+
+Seven lessons, one per sector, carrying function deltas only. Market shape stays in
+`product-management/product-by-sector`, and each lesson links to it rather than restating buyer,
+cycle or regulation.
+
+| # | Lesson | The question it answers |
+|---|---|---|
+| 01 | Enterprise B2B SaaS | What does growth own when the user is not the buyer? |
+| 02 | Fintech | What does growth do when compliance owns the onboarding flow? |
+| 03 | Ecommerce and D2C | What changes when the cycle is short enough to measure everything? |
+| 04 | Marketplaces | How do you grow two sides without breaking the balance between them? |
+| 05 | Devtools and Infrastructure | How do you grow when your users block analytics and read your source? |
+| 06 | Healthtech | Which rates may not be optimised at all, and who decides? |
+| 07 | Vertical SaaS | What is the growth process below the statistical power floor? |
+
+# Build order for growth
+
+1. ~~Finish Foundations.~~ ✅ Done, 18 lessons.
+2. ~~The channels at Basic.~~ ✅ Done, 24 lessons. Written earlier than planned, so the dated
+   material in them comes up for review first.
+3. **`instrumentation-and-the-event-model`** next, out of order, because every later lesson
+   assumes it and because it is the subject most growth writing skips. 7 lessons.
+4. **`activation-and-onboarding`**, the surface with the most available lift in most products.
+5. **`the-experiment-machine`**, which completes the measurement half of the course.
+6. Expert, then the sector lessons.

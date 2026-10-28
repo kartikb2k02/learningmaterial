@@ -1,26 +1,37 @@
 {{ $course := . }}
 {{ $mods := where .Pages "Kind" "section" }}
+{{ $lessons := partialCached "func/lessons.html" (dict "s" . "top" true) .Path }}
 {{ partial "path-switch.html" $course }}
-<a class="side-course" href="{{ .RelPermalink }}"><i aria-hidden="true"></i>{{ partial "func/cname.html" . }}</a>
+
+{{/* the course, as a soft card in its own colour */}}
+<a class="side-head" href="{{ .RelPermalink }}">
+  <b>{{ partial "func/cname.html" . }}</b>
+  <span>{{ len $mods }} topics · {{ len $lessons }} lessons</span>
+</a>
+
 <nav class="tree" aria-label="Course contents">
   {{ range site.Params.levels }}
     {{ $l := partial "func/level.html" .key }}
     {{ with where $mods "Params.track" .key }}
+    {{ $n := 0 }}{{ range . }}{{ $n = add $n (math.Max 1 (len .RegularPagesRecursive)) }}{{ end }}
     <details class="tree-level" data-level="{{ $l.key }}" open>
-      <summary class="tree-label"><span class="lvl-dot" aria-hidden="true"></span><span class="lvl-num">{{ $l.num }}</span>{{ $l.name }}</summary>
+      <summary class="tree-label"><span class="lvl-badge">{{ $l.num }}</span><span class="lvl-name">{{ $l.name }}</span><span class="lvl-n">{{ $n }}</span></summary>
       <div class="tree-kids">{{ range . }}{{ partial "nav-node.html" . }}{{ end }}</div>
     </details>
     {{ end }}
   {{ end }}
+
   {{ with where $mods "Params.track" "" }}
+  {{ $n := 0 }}{{ range . }}{{ $n = add $n (math.Max 1 (len .RegularPagesRecursive)) }}{{ end }}
   <details class="tree-level" open>
-    <summary class="tree-label"><span class="lvl-dot" aria-hidden="true"></span>Build</summary>
+    <summary class="tree-label"><span class="lvl-badge">··</span><span class="lvl-name">Build</span><span class="lvl-n">{{ $n }}</span></summary>
     <div class="tree-kids">{{ range . }}{{ partial "nav-node.html" . }}{{ end }}</div>
   </details>
   {{ end }}
+
   {{ with where .Pages "Kind" "page" }}
   <details class="tree-level" open>
-    <summary class="tree-label"><span class="lvl-dot" aria-hidden="true"></span>Reference</summary>
+    <summary class="tree-label"><span class="lvl-badge">§</span><span class="lvl-name">Reference</span><span class="lvl-n">{{ len . }}</span></summary>
     <div class="tree-kids">{{ range . }}<a class="tree-link" href="{{ .RelPermalink }}"><span class="num">§</span><span>{{ .Title }}</span></a>{{ end }}</div>
   </details>
   {{ end }}

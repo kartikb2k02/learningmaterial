@@ -68,7 +68,22 @@ params:
       title: Growth Engineering
       short: Growth
       summary: "Growth as a system rather than a list of tactics: the loops, the model, and the experiment machine."
-      soon: true
+      levels:
+        foundations:  [the-growth-function, loops-and-compounding, the-growth-model]
+        basic:        [acquisition-channels, content-and-search, paid-acquisition, virality-and-referral]
+        intermediate: [activation-and-onboarding, engagement-and-resurrection, lifecycle-messaging, monetisation-and-conversion]
+        advanced:     [instrumentation-and-the-event-model, the-experiment-machine, growth-process-and-cadence]
+        expert:       [product-led-growth, growth-economics, ai-in-growth, growth-for-ai-products]
+        sectors:      [growth-by-sector]
+      # The six level names are shared by every course. Their default blurbs are
+      # written for the product course, so growth states what each level means here.
+      levelblurbs:
+        foundations:  "Growth as a system: the function, the loops, the model."
+        basic:        "One channel at a time, and how each one actually turns."
+        intermediate: "The product surfaces that move the numbers."
+        advanced:     "The machinery: instrumentation, experiments, cadence."
+        expert:       "Motion, economics, and growth once a model is in the loop."
+        sectors:      "The same loops, bent by the market they run in."
 
     - dir: gtm-engineering
       title: GTM Engineering
@@ -99,6 +114,8 @@ module:
       target: assets
     - source: product-management
       target: assets/_watch/product-management
+    - source: growth-engineering
+      target: assets/_watch/growth-engineering
 
 outputs:
   home: [html, json]

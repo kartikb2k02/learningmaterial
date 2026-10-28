@@ -151,7 +151,7 @@ unbalanced `<b>` makes Mermaid drop the label. `linkcheck -pending` is the view 
 course is being written; forward references are tracked rather than forbidden, and the strict form
 has to pass before a course is called complete.
 
-Three gotchas that have each cost time already:
+Four gotchas that have each cost time already:
 
 * **Never build into `public/` while `hugo server` is running.** This version renders the server to
   disk, so `hugo` and `rm -rf public` fight the process serving your pages: the site goes stale or
@@ -166,6 +166,13 @@ Three gotchas that have each cost time already:
   builds happily with a truncated string. Use block mappings, never flow mappings.
 * **Home page card summaries wrap to two lines at about 100 characters.** Longer than that and the
   cards stop lining up, which is what the length is tuned for.
+
+* **A brand new lesson file needs the server restarted.** `content/_content.gotmpl` enumerates the
+  course folders with `os.ReadDir` when the site is built, so Hugo watches the files it already
+  knows about and has no way to learn that one appeared. Editing an existing lesson live reloads
+  normally; adding a file, a topic folder or a `module.mounts` entry does not, and the page simply
+  returns 404 with nothing in the log. Restart `hugo server` after creating a file, not after
+  changing one.
 
 One thing no tool can check: **the prose around a program must match what the program prints.**
 Run the program, read its output, then write the paragraph. Three of the first five programs in

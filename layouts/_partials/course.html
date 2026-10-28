@@ -41,7 +41,7 @@
           <div class="level-body">
             <div class="level-head">
               <h3>{{ $l.name }}</h3>
-              <p class="level-blurb">{{ $l.blurb }}</p>
+              <p class="level-blurb">{{ with index ($cfg.levelblurbs | default dict) $l.key }}{{ . }}{{ else }}{{ $l.blurb }}{{ end }}</p>
               <p class="level-stats">{{ $n }} lessons{{ with partial "func/dur.html" $lmin }} · ~{{ . }}{{ end }}</p>
             </div>
             <ol class="rows tgroup-list">

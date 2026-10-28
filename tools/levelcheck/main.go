@@ -25,6 +25,25 @@ var (
 	lessonFile  = regexp.MustCompile(`^\d\d-.*\.md$`)
 )
 
+// courseBlock returns the slice of config.yaml belonging to one course entry:
+// from its "- dir: <course>" line to the next entry, or to the end of the list.
+// Without this every course but the first would be checked against the first
+// course's levels, and every one of its lessons would report as unlisted.
+func courseBlock(cfg []byte, course string) []byte {
+	start := regexp.MustCompile(`(?m)^    - dir:[ \t]*` + regexp.QuoteMeta(course) + `[ \t]*$`).FindIndex(cfg)
+	if start == nil {
+		return nil
+	}
+	rest := cfg[start[1]:]
+	if next := regexp.MustCompile(`(?m)^    - dir:`).FindIndex(rest); next != nil {
+		return rest[:next[0]]
+	}
+	if end := regexp.MustCompile(`(?m)^\w`).FindIndex(rest); end != nil {
+		return rest[:end[0]]
+	}
+	return rest
+}
+
 func main() {
 	course := "product-management"
 	if len(os.Args) > 1 {
@@ -35,9 +54,14 @@ func main() {
 		fmt.Fprintf(os.Stderr, "levelcheck: %v\n", err)
 		os.Exit(2)
 	}
-	m := levelsBlock.FindSubmatch(cfg)
+	block := courseBlock(cfg, course)
+	if block == nil {
+		fmt.Fprintf(os.Stderr, "levelcheck: config.yaml lists no course %q\n", course)
+		os.Exit(2)
+	}
+	m := levelsBlock.FindSubmatch(block)
 	if m == nil {
-		fmt.Fprintln(os.Stderr, "levelcheck: no levels block found in config.yaml")
+		fmt.Fprintf(os.Stderr, "levelcheck: course %q has no levels block in config.yaml\n", course)
 		os.Exit(2)
 	}
 	want := map[string]string{}

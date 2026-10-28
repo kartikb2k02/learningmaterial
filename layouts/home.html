@@ -1,59 +1,94 @@
 {{ define "main" }}
+{{/* ──────────────────────────────────────────────────────────────────────────
+     The home page is a board of flat pastel cards: a heading, then the cards
+     it names. No icons and no panel chrome — a card is told apart by its
+     colour, and the round corner arrow is the only affordance. Every number
+     is counted from the content at build time.
+     ────────────────────────────────────────────────────────────────────── */}}
 {{ $live := where site.Params.courses "soon" "ne" true }}
-{{ $words := split site.Params.hero.title " " }}
+{{ $soon := where site.Params.courses "soon" "eq" true }}
+{{ $lessonPages := where site.RegularPages "Params.track" "ne" "" }}
+{{ $levels := site.Params.levels }}
+{{ $palette := slice "mint" "pink" "yellow" "lilac" "sky" }}
+
 <aside class="sidebar drawer-only" id="sidebar">{{ partialCached "sidebar-home.html" . }}</aside>
 <div class="scrim"></div>
 
-<main id="main" class="home">
-  <section class="hero">
-    <div class="hero-copy">
-      {{/* the last word of the headline carries the highlight */}}
-      <h1>{{ delimit (first (sub (len $words) 1) $words) " " }} <em>{{ index (last 1 $words) 0 }}</em></h1>
-      <div class="hero-actions">
-        <a class="btn primary" href="#courses">Browse the courses {{ partial "icon.html" "arrow" }}</a>
-      </div>
-    </div>
-  </section>
+<main id="main" class="home board">
 
-  <section id="courses" class="block">
-    <div class="block-head"><h2 class="block-title">Courses</h2><p class="block-lede">{{ len $live }} deep courses, organised by topic. Read one end to end, or jump straight to the lesson you need.</p></div>
-    <div class="tile-grid">
+  {{/* ── courses ────────────────────────────────────────────────────────── */}}
+  <section id="courses" class="sec reveal">
+    <div class="sec-head">
+      <h2 class="sec-title">Pick your depth <span>{{ add (len $live) (len $soon) }} courses</span></h2>
+      <a class="sec-link" href="/product-management/">View all</a>
+    </div>
+
+    <div class="ccards">
       {{ $i := 0 }}
-      {{ range site.Params.courses }}
+      {{ range $live }}
         {{ $cfg := . }}
+        {{ $f := index $palette (mod $i (len $palette)) }}
         {{ $i = add $i 1 }}
-        {{ if $cfg.soon }}
-        <div class="tile is-soon">
-          <span class="tile-num">{{ printf "%02d" $i }}</span>
-          <h3>{{ $cfg.title }}</h3>
-          <p>{{ $cfg.summary }}</p>
-          <span class="tile-meta"><span>Coming soon</span></span>
-        </div>
-        {{ end }}
         {{ with site.GetPage (printf "/%s" $cfg.dir) }}
         {{ $lessons := partialCached "func/lessons.html" (dict "s" . "top" true) .Path }}
-        {{ $min := partial "func/minutes.html" (dict "s" . "top" true) }}
         {{ $mods := where (where .Pages "Kind" "section") "Params.track" "ne" "" }}
-        <a class="tile" href="{{ .RelPermalink }}" style="--c: var(--c{{ $i }})">
-          <span class="tile-num">{{ printf "%02d" $i }}</span>
+        {{ $covered := slice }}
+        {{ range $mods }}{{ if not (in $covered .Params.track) }}{{ $covered = $covered | append .Params.track }}{{ end }}{{ end }}
+        {{ $pct := math.Round (div (mul (len $covered) 100.0) (len $levels)) }}
+        <a class="ccard reveal" href="{{ .RelPermalink }}" style="--f: var(--f-{{ $f }}); --fd: var(--f-{{ $f }}-d); --i: {{ $i }}">
+          <span class="ccard-tag">Live</span>
+          <span class="go-btn" aria-hidden="true">↗</span>
           <h3>{{ partial "func/cname.html" . }}</h3>
           <p>{{ $cfg.summary | default .Params.desc }}</p>
-          <span class="tile-meta"><span>{{ len $mods }} topics</span><span>{{ len $lessons }} lessons</span>{{ with partial "func/dur.html" $min }}<span>~{{ . }}</span>{{ end }}</span>
-          <span class="tile-go">{{ partial "icon.html" "arrow" }}</span>
+          <span class="ccard-meta">{{ len $mods }} topics · {{ len $lessons }} lessons</span>
+          <span class="prog">
+            <span class="prog-l">Levels</span>
+            <span class="prog-t"><i style="--w: {{ $pct }}%"></i></span>
+            <b>{{ len $covered }}/{{ len $levels }}</b>
+          </span>
         </a>
         {{ end }}
       {{ end }}
-    </div>
-    <p class="list-note">Courses are plain Markdown folders. Growth, go to market and operations for AI products are being written.</p>
-  </section>
 
-  <section class="block">
-    <div class="block-head"><h2 class="block-title">Recently updated</h2></div>
-    <div class="rows recent">
-      {{ range first 6 (where site.RegularPages "Params.track" "ne" "").ByLastmod.Reverse }}
-      <a href="{{ .RelPermalink }}"><span>{{ .Title }}</span><span class="muted">{{ partial "func/cname.html" .FirstSection }} · {{ (partial "func/level.html" .Params.track).name }}</span>{{ partial "icon.html" (dict "name" "arrow" "class" "go") }}</a>
+      {{ range $soon }}
+        {{ $f := index $palette (mod $i (len $palette)) }}
+        {{ $i = add $i 1 }}
+        <div class="ccard is-soon reveal" style="--f: var(--f-{{ $f }}); --fd: var(--f-{{ $f }}-d); --i: {{ $i }}">
+          <span class="ccard-tag">Writing</span>
+          <span class="go-btn" aria-hidden="true">↗</span>
+          <h3>{{ .title }}</h3>
+          <p>{{ .summary }}</p>
+          <span class="ccard-meta">Not yet published</span>
+          <span class="prog">
+            <span class="prog-l">Levels</span>
+            <span class="prog-t"><i style="--w: 0%"></i></span>
+            <b>0/{{ len $levels }}</b>
+          </span>
+        </div>
       {{ end }}
     </div>
+  </section>
+
+  {{/* ── recently updated ───────────────────────────────────────────────── */}}
+  <section class="sec reveal">
+    <div class="sec-head">
+      <h2 class="sec-title">Recently updated <span>({{ len $lessonPages }})</span></h2>
+      <a class="sec-link" href="/product-management/">Browse every lesson</a>
+    </div>
+    <ul class="rlist">
+      {{ range $n, $p := first 8 $lessonPages.ByLastmod.Reverse }}
+      {{ $lv := partial "func/level.html" $p.Params.track }}
+      <li data-level="{{ $p.Params.track }}" class="reveal" style="--i: {{ $n }}">
+        <a href="{{ $p.RelPermalink }}">
+          <span class="rl-lvl">{{ $lv.name }}</span>
+          <span class="rl-t">{{ $p.Title }}</span>
+          <span class="rl-c">{{ partial "func/cname.html" $p.FirstSection }}</span>
+          <span class="rl-d">{{ $p.Lastmod.Format "2 Jan" }}</span>
+          <span class="go-btn" aria-hidden="true">↗</span>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
   </section>
 </main>
 {{ end }}

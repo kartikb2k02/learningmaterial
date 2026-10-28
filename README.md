@@ -9,7 +9,7 @@ to do both: measure honestly, with numbers you can rerun, and explain the mechan
 | Course | What it covers |
 |---|---|
 | [`product-management/`](product-management/README.md) | Building products with a model inside them. The product function, what a model changes, discovery, behaviour specs, context and agents, evaluation, pricing, cost, trust and safety, the sectors, and every metric the job is judged on. 23 topics. |
-| `growth-engineering/` | Growth as a system rather than a list of tactics. *Coming soon.* |
+| [`growth-engineering/`](growth-engineering/README.md) | Growth as a system rather than a list of tactics: the loops, the channels, the product surfaces that move a rate, and the instrumentation underneath. The product course owns every metric definition; this one links to them. Foundations and Basic complete, 7 topics of 19 written. |
 | `gtm-engineering/` | Taking a product to a market: buyer, positioning, motion, pipeline, launch. *Coming soon.* |
 | `revenue-operations/` | Operating cadence, the funnel as a data model, systems of record, process. *Coming soon.* |
 | `ai-engineering/` | Reserved. Most of this material now lives inside the product course. *Coming soon.* |

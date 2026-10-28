@@ -9,9 +9,11 @@
 set -e
 go run ./tools/configcheck
 go run ./tools/levelcheck
-go run ./tools/stylecheck README.md CONTENT_GUIDE.md COURSE-MAP.md product-management
-go run ./tools/diagramcheck README.md product-management
+go run ./tools/levelcheck growth-engineering
+go run ./tools/stylecheck README.md CONTENT_GUIDE.md COURSE-MAP.md product-management growth-engineering
+go run ./tools/diagramcheck README.md product-management growth-engineering
 go run ./tools/gocheck -run product-management
-go run ./tools/linkcheck -pending README.md product-management | tail -1
+go run ./tools/gocheck -run growth-engineering
+go run ./tools/linkcheck -pending README.md product-management growth-engineering | tail -1
 hugo --quiet --destination "$(mktemp -d)/site"
 echo "build: ok"

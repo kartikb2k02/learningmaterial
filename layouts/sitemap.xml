@@ -1,8 +1,9 @@
-{{- /* Every published page, generated from the course folders. No <lastmod>: the only dates
-       available are file modification times, which are not real publishing dates. */ -}}
+{{- /* Every published page, generated from the course folders. <lastmod> is the
+       page's own modification date — the same date the site shows on a lesson,
+       so search engines and readers are told the same thing. */ -}}
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   {{- range where site.Pages "Kind" "in" (slice "home" "section" "page") }}
-  <url><loc>{{ .Permalink }}</loc></url>
+  <url><loc>{{ .Permalink }}</loc>{{ with .Lastmod }}<lastmod>{{ .Format "2006-01-02" }}</lastmod>{{ end }}</url>
   {{- end }}
 </urlset>

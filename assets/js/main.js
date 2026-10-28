@@ -19,6 +19,8 @@
     if (active) {
       active.classList.add('is-active');
       for (let d = active.closest('details'); d; d = d.parentElement.closest('details')) d.open = true;
+      // mark the level you are reading inside, so the tree says where you are
+      active.closest('.tree-level')?.classList.add('is-here');
     } else {
       $$('details', sidebar).filter((d) => here.startsWith(d.dataset.path)).forEach((d) => (d.open = true));
     }
@@ -174,12 +176,10 @@
         document.head.append(css);
       }
       await mermaid.run({ nodes: diagrams });
-      // A very wide diagram scrolls sideways instead of shrinking its text to nothing.
-      diagrams.forEach((d) => {
-        const svg = $('svg', d);
-        const w = svg?.viewBox.baseVal.width || 0;
-        if (svg && w > d.parentElement.clientWidth * 1.3) svg.style.minWidth = `${Math.round(w * 0.78)}px`;
-      });
+      // Mermaid writes its own min-width on the svg, which would push a wide
+      // diagram past the text. Drop it so every diagram fits the measure; the
+      // expand button is there for reading one at full size.
+      for (const d of diagrams) $('svg', d)?.style.removeProperty('min-width');
     } catch (err) {
       console.error('mermaid failed', err);
     }
@@ -360,4 +360,38 @@
       if (dlg.open && e.key !== '/') dlg.close(); else openSearch();
     }
   });
+  /* ── scroll reveal ────────────────────────────────────────────────────── */
+  // Panels and cards fade up as they enter the viewport, and the bars inside
+  // them fill once they are there. Everything is visible without this: the
+  // hidden state only applies under html.js, which is set in the head.
+  const reveals = $$('.reveal');
+  if (reveals.length && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    // stagger siblings that did not ask for an index of their own
+    for (const el of reveals) {
+      if (!el.style.getPropertyValue('--i') && el.parentElement) {
+        const sibs = [...el.parentElement.children].filter((c) => c.classList.contains('reveal'));
+        if (sibs.length > 1) el.style.setProperty('--i', String(Math.min(sibs.indexOf(el), 5)));
+      }
+      io.observe(el);
+    }
+  } else {
+    for (const el of reveals) el.classList.add('in');
+  }
+
+  // A table wider than the measure scrolls inside its own box rather than
+  // spilling past the text, so every block on the page shares two edges.
+  for (const t of $$('.prose > table')) {
+    const box = document.createElement('div');
+    box.className = 'tbl';
+    t.replaceWith(box);
+    box.append(t);
+  }
+
 })();
