@@ -9,10 +9,14 @@ jobs:
   lessons:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
         with:
           go-version: '1.22'
+          # The tools import nothing outside the standard library, so there is
+          # no go.sum and nothing to cache. Left on, setup-go looks for one and
+          # warns on every run.
+          cache: false
 
       # The layouts directory uses the template system introduced in Hugo
       # v0.146.0 (layouts/_partials, and baseof/home/page/section at the root).
